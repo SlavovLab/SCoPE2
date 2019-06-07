@@ -22,7 +22,7 @@ The fate and physiology of individual cells are controlled by networks of protei
 
 ------------
 
-![]({{site.baseurl}}/assets/images/SCOPE2-ac){: width="70%" .center-image}
+![]({{site.baseurl}}/assets/images/SCOPE2-ac.pdf){: width="70%" .center-image}
 
 ------------
 
