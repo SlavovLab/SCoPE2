@@ -5,7 +5,7 @@ nav_order: 2
 permalink: docs/do-ms
 ---
 
-# Adding Input Folders
+# 1xM Standards
 
 <iframe id="Report example"
     title="Report example"
