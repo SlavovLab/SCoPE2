@@ -25,11 +25,11 @@ exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "pac
 search_enabled: true
 
 # Aux links for the upper right navigation
-aux_links:
-  "bioRxiv Preprint":
-    - "https://www.biorxiv.org/content/10.1101/512152v1"
-  "GitHub Repository":
-    - "https://github.com/SlavovLab/SCoPE2"
+#aux_links:
+#  "bioRxiv Preprint":
+#    - "https://www.biorxiv.org/content/10.1101/512152v1"
+#  "GitHub Repository":
+#    - "https://github.com/SlavovLab/SCoPE2"
 
 github_link: https://github.com/SlavovLab/SCoPE2
 preprint_link: https://www.biorxiv.org/content/10.1101/512152v1
