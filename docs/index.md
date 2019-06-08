@@ -7,11 +7,13 @@ permalink: /
 ---
 
 # **SCoPE2**: 
-## Quantifying proteins at high-throughput with mass spectrometry
+
 {: .fs-9 }
 
 <u>S</u>ingle <u>C</u>ell <u>P</u>rot<u>E</u>omics by Mass Spectrometry (Version 2)
 {: .fs-6 .fw-300}
+
+### Quantifying proteins in single cells at high-throughput with mass spectrometry
 
 [Article](https://www.biorxiv.org/){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Perspective](https://pubs.acs.org/doi/10.1021/acs.jproteome.8b00257){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}[Protocol](https://www.biorxiv.org/){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Data Repository](https://github.com/SlavovLab/){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[GitHub Repository](https://github.com/SlavovLab/){: .btn .fs-5 .mb-4 .mb-md-0 }
 
