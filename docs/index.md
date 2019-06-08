@@ -6,7 +6,8 @@ description: "SCoPE2: Quantifying proteins at high-throughput with mass spectrom
 permalink: /
 ---
 
-# **SCoPE2: Quantifying proteins at high-throughput with mass spectrometry**
+# **SCoPE2**: 
+## Quantifying proteins at high-throughput with mass spectrometry
 {: .fs-9 }
 
 <u>S</u>ingle <u>C</u>ell <u>P</u>rot<u>E</u>omics by Mass Spectrometry (Version 2)
