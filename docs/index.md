@@ -15,7 +15,7 @@ permalink: /
 
 ### Quantifying proteins in single cells at high-throughput with mass spectrometry
 
-[Article](https://www.biorxiv.org/){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Perspective](https://pubs.acs.org/doi/10.1021/acs.jproteome.8b00257){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}[Protocol](https://www.biorxiv.org/){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Data Repository](https://github.com/SlavovLab/){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[GitHub Repository](https://github.com/SlavovLab/){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Article](https://www.biorxiv.org/){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Perspective](https://pubs.acs.org/doi/10.1021/acs.jproteome.8b00257){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}[Data Repository](https://github.com/SlavovLab/){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[GitHub Repository](https://github.com/SlavovLab/){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ------------
 

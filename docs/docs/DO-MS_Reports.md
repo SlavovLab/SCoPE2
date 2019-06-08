@@ -5,11 +5,11 @@ nav_order: 2
 permalink: docs/do-ms
 ---
 
-# 1xM Standards
+# SCoPE2 preprint data: 76 1xM standard sets, 62 SCoPE2 sets, 4 bulk proteomics sets
 
 <iframe id="Report example"
     title="Report example"
     width="1000"
     height="2000"
-    src="https://web.northeastern.edu/slavov/qeqc/190522/report.html">
+    src="http://slavovlab.net/scope2/DO-MS_Report_FP94-97.html">
 </iframe>
