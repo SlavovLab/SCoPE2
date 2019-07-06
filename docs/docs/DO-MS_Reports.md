@@ -7,7 +7,7 @@ permalink: docs/do-ms
 
 ## SCoPE2 DO-MS plots: 
 
-To facilitate the exploration of the SCoPE2 data, we plotted the distributions of important and informative features of the LC-MS/MS data using the methodology of [Data-driven Optimization of MS (DO-MS)](https://do-ms.slavovlab.net) developed by Huffman, et al., _Journal of Proteome Research_, 2019, DOI: [10.1021/acs.jproteome.9b00039](https://doi.org/10.1021/acs.jproteome.9b00039)
+To facilitate the exploration of the SCoPE2 data, we plotted the distributions of important and informative features of the LC-MS/MS data using the methodology of [Data-driven Optimization of MS (DO-MS)](https://do-ms.slavovlab.net) developed by Huffman, et al., _J. of Proteome Research_, 2019, DOI: [10.1021/acs.jproteome.9b00039](https://doi.org/10.1021/acs.jproteome.9b00039)
 
 
 * [Set 1](https://web.northeastern.edu/slavov/SCoPE/A1_glance/)
