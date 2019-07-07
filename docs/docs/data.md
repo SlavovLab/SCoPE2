@@ -1,16 +1,19 @@
 ---
 layout: default
-title: Data
+title: Download data
 nav_order: 2
 permalink: docs/data
 ---
 
-# SCoPE2 data
+# SCoPE2 data download
 
 
+------------
+### Quantifying proteins in single cells at high-throughput with mass spectrometry
 
 [SCoPE2 Preprint](https://www.biorxiv.org/content/10.1101/665307v1){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Perspective](https://pubs.acs.org/doi/10.1021/acs.jproteome.8b00257){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}[Data Repository](ftp://massive.ucsd.edu/MSV000083945){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[GitHub - coming soon](https://github.com/SlavovLab/){: .btn .fs-5 .mb-4 .mb-md-0 }
 
+------------
 
 
 ## SCoPE2 data processed to ASCII text matrices
