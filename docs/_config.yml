@@ -33,11 +33,11 @@ search_enabled: true
 
 aux_links:
   "bioRxiv Preprint":
-    - "https://www.biorxiv.org/content/10.1101/512152v1"
+    - "https://doi.org/10.1101/665307"
   "Slavov Lab":
     - "http://SlavovLab.net"
-    
-    
+
+
     
 github_link: https://github.com/SlavovLab/SCoPE2
 preprint_link: https://www.biorxiv.org/content/10.1101/512152v1
