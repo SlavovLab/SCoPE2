@@ -24,3 +24,5 @@ These presentations were recorded at the 2019 Single-Cell proteomics Conference 
 * [Design of single-cell proteomics experiments using SCoPE2](https://youtu.be/mz6Yq2XSu-8)
 * [Sample preparation for single-cell MS analysis by SCoPE2](https://youtu.be/Eq_s6Jlzfnk)
 * [High-throughput single-cell proteomics quantifies the emergence of macrophage heterogeneity](https://youtu.be/NNLh4nE687I)
+
+{% include youtubePlayer.html id=https://youtu.be/mz6Yq2XSu-8 %}
