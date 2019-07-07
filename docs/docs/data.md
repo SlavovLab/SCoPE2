@@ -40,5 +40,5 @@ permalink: docs/data
 ## SCoPE2 RAW data and search results from MaxQuant
 
 * **MassIVE Repository:**
-  - [http: MSV000083945](https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?task=de6aace2096845378ab9ef288e43aa75)
-  - [ftp: MSV000083945](ftp://massive.ucsd.edu/MSV000083945)
+  - [**http:**  MSV000083945](https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?task=de6aace2096845378ab9ef288e43aa75)
+  - [**ftp:**&nbsp; MSV000083945](ftp://massive.ucsd.edu/MSV000083945)
