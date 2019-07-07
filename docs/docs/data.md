@@ -22,15 +22,17 @@ permalink: docs/data
 
 
 * [Peptides-raw.csv](http://slavovlab.net/scope2/data/Peptides-raw.csv)
- - Peptides by single cells at 1% FDR based on [DART-ID](https://dart-id.slavovlab.net/). The first 2 columns list the corresponding protein identifiers and peptide sequences and each subsequent column corresponds to a single cell.
+  - Peptides by single cells at 1% FDR based on [DART-ID](https://dart-id.slavovlab.net/). The first 2 columns list the corresponding protein identifiers and peptide sequences and each subsequent column corresponds to a single cell.
 
+&nbsp;
 
 * [Proteins-processed.csv](http://slavovlab.net/scope2/data/Proteins-processed.csv)
-  - Proteins by single cells at 1% FDR, imputed and batch corrected.
-
+   - Proteins by single cells at 1% FDR, imputed and batch corrected.
+   
+&nbsp;
 
 * [Cells.csv](http://slavovlab.net/scope2/data/Cells.csv)
- - Annotation by single cells. Each column corresponds to a single cell and the rows include relevant metadata, such as, cell type if known, measurements from the isolation of the cell, and derivative quantities, i.e., rRI, CVs, reliability.
+   - Annotation by single cells. Each column corresponds to a single cell and the rows include relevant metadata, such as, cell type if known, measurements from the isolation of the cell, and derivative quantities, i.e., rRI, CVs, reliability.
 
 &nbsp;
 
@@ -38,5 +40,5 @@ permalink: docs/data
 ## SCoPE2 RAW data and search results from MaxQuant
 
 * **MassIVE Repository:**
- - [http: MSV000083945](https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?task=de6aace2096845378ab9ef288e43aa75)
- - [ftp: MSV000083945](ftp://massive.ucsd.edu/MSV000083945)
+  - [http: MSV000083945](https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?task=de6aace2096845378ab9ef288e43aa75)
+  - [ftp: MSV000083945](ftp://massive.ucsd.edu/MSV000083945)
