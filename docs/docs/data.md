@@ -22,7 +22,7 @@ permalink: docs/data
 
 
 * [Peptides-raw.csv](http://slavovlab.net/scope2/data/Peptides-raw.csv)
-  - Peptides **x** single cells at 1% FDR.  The first 2 columns list the corresponding protein identifiers and peptide sequences and each subsequent column corresponds to a single cell. Peptide identification is based on spectra analyzed by [MaxQuant](https://www.maxquant.org/)  and is enhanced by using [DART-ID](https://dart-id.slavovlab.net/) to incorporating retention time information. See [Specht et al., 2019](https://www.biorxiv.org/content/10.1101/665307v1) for details.   
+  - Peptides **x** single cells at 1% FDR.  The first 2 columns list the corresponding protein identifiers and peptide sequences and each subsequent column corresponds to a single cell. Peptide identification is based on spectra analyzed by [MaxQuant](https://www.maxquant.org/)  and is enhanced by using [DART-ID](https://dart-id.slavovlab.net/) to incorporate retention time information. See [Specht et al., 2019](https://www.biorxiv.org/content/10.1101/665307v1) for details.   
 
 &nbsp;
 
