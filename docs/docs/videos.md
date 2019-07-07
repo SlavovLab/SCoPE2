@@ -1,6 +1,6 @@
 ---
 layout: default
-title: SCoPE2 Videos
+title: SCoPE2 videos
 nav_order: 2
 permalink: docs/videos
 ---
