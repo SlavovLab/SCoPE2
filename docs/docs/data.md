@@ -23,15 +23,17 @@ permalink: docs/data
 
 * [Peptides-raw.csv](http://slavovlab.net/scope2/data/Peptides-raw.csv)
   - Peptides by single cells at 1% FDR based on [DART-ID](https://dart-id.slavovlab.net/). The first 2 columns list the corresponding protein identifiers and peptide sequences and each subsequent column corresponds to a single cell.
+
 &nbsp;
 
 * [Proteins-processed.csv](http://slavovlab.net/scope2/data/Proteins-processed.csv)
    - Proteins by single cells at 1% FDR, imputed and batch corrected.
+
 &nbsp;
 
 * [Cells.csv](http://slavovlab.net/scope2/data/Cells.csv)
    - Annotation by single cells. Each column corresponds to a single cell and the rows include relevant metadata, such as, cell type if known, measurements from the isolation of the cell, and derivative quantities, i.e., rRI, CVs, reliability.
-   
+
 &nbsp;
 
 
