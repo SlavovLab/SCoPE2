@@ -2,10 +2,10 @@
 layout: default
 title: DO-MS reports
 nav_order: 2
-permalink: docs/do-ms
+permalink: docs/videos
 ---
 
-# Distribution plots of SCoPE2 data:
+# Videos of SCoPE2 presentations
 
 
 ------------
@@ -16,8 +16,10 @@ permalink: docs/do-ms
 ------------
 
 
-To facilitate the exploration of the SCoPE2 data, we plotted the distributions of important and informative features of the LC-MS/MS data using the methodology of [Data-driven Optimization of MS (DO-MS)](https://do-ms.slavovlab.net) developed by Huffman, et al., _J. of Proteome Research_, 2019, DOI: [10.1021/acs.jproteome.9b00039](https://doi.org/10.1021/acs.jproteome.9b00039)
+These presentations were recorded at the 2019 Single-Cell proteomics Conference [SCP2019](https://do-ms.slavovlab.net). All SCP2019 videos can be found at the [SCP2019 play list](http://bit.ly/SCP2019-Videos ) and from the [Slavov Lab YouTube Channel](http://bit.ly/Slavov-Videos)
 
+
+https://youtu.be/mz6Yq2XSu-8
 
 * [Set 1](https://web.northeastern.edu/slavov/SCoPE/A1_glance/)
 * [Set 2](https://web.northeastern.edu/slavov/SCoPE/B1_glance/)
