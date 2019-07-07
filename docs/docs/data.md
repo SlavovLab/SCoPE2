@@ -32,8 +32,11 @@ Annotation by single cells. Each column corresponds to a single cell and the row
 [Cells.csv](http://slavovlab.net/scope2/data/Cells.csv)
 
 
+&nbsp;
 
 
 ## SCoPE2 RAW data and search results from MaxQuant
 
-**MassIVE Repository:** [MSV000083945](ftp://massive.ucsd.edu/MSV000083945)
+**MassIVE Repository:** [http: MSV000083945](https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?task=de6aace2096845378ab9ef288e43aa75)
+
+**MassIVE Repository:** [ftp: MSV000083945](ftp://massive.ucsd.edu/MSV000083945)
