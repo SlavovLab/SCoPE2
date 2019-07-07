@@ -31,6 +31,13 @@ search_enabled: true
 #  "GitHub Repository":
 #    - "https://github.com/SlavovLab/SCoPE2"
 
+# Aux links for the upper right navigation
+aux_links:
+    "SCoPE-MS":
+      - "http://SlavovLab.net/2016_SCoPE-MS/index.html"
+  "Slavov Lab":
+    - "http://SlavovLab.net"
+
 github_link: https://github.com/SlavovLab/SCoPE2
 preprint_link: https://www.biorxiv.org/content/10.1101/512152v1
 jpr_link: https://pubs.acs.org/doi/10.1021/acs.jproteome.9b00039
