@@ -12,4 +12,4 @@ To facilitate the exploration of the SCoPE2 data, we plotted the distributions o
 
 * [Set 1](https://web.northeastern.edu/slavov/SCoPE/A1_glance/)
 * [Set 2](https://web.northeastern.edu/slavov/SCoPE/B1_glance/)
-* [Set 3](https://web.northeastern.edu/slavov/SCoPE/B1_glance/)
+* [Set 3](https://web.northeastern.edu/slavov/SCoPE/B2_glance/)
