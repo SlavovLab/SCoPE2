@@ -7,7 +7,7 @@ permalink: docs/videos
 
 # Videos of SCoPE2 presentations
 
-
+&nbsp;
 
 ### Quantifying proteins in single cells at high-throughput with mass spectrometry
 

@@ -7,7 +7,7 @@ permalink: docs/do-ms
 
 # Distribution plots of SCoPE2 data:
 
-
+&nbsp;
 
 ### Quantifying proteins in single cells at high-throughput with mass spectrometry
 
