@@ -15,6 +15,7 @@ permalink: docs/videos
 
 ------------
 
+&nbsp;
 
 These presentations were recorded at the 2019 Single-Cell proteomics Conference [SCP2019](https://do-ms.slavovlab.net). All SCP2019 videos can be found at the [SCP2019 play list](http://bit.ly/SCP2019-Videos ) and from the [Slavov Lab YouTube Channel](http://bit.ly/Slavov-Videos)
 
