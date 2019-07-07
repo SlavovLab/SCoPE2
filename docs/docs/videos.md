@@ -3,6 +3,7 @@ layout: default
 title: SCoPE2 videos
 nav_order: 4
 permalink: docs/videos
+description: "Watch video presentations on generating and analyzing SCoPE2 single-cell proteomics data" 
 ---
 
 # Videos of SCoPE2 presentations
