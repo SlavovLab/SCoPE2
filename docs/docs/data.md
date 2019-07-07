@@ -16,7 +16,7 @@ permalink: docs/data
 
 ------------
 
-&nbsp;
+
 
 ## SCoPE2 data processed to ASCII text matrices
 
