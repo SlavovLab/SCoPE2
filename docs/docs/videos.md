@@ -1,6 +1,6 @@
 ---
 layout: default
-title: DO-MS reports
+title: SCoPE2 Videos
 nav_order: 2
 permalink: docs/videos
 ---
@@ -19,8 +19,8 @@ permalink: docs/videos
 These presentations were recorded at the 2019 Single-Cell proteomics Conference [SCP2019](https://do-ms.slavovlab.net). All SCP2019 videos can be found at the [SCP2019 play list](http://bit.ly/SCP2019-Videos ) and from the [Slavov Lab YouTube Channel](http://bit.ly/Slavov-Videos)
 
 
-https://youtu.be/mz6Yq2XSu-8
 
-* [Set 1](https://web.northeastern.edu/slavov/SCoPE/A1_glance/)
-* [Set 2](https://web.northeastern.edu/slavov/SCoPE/B1_glance/)
-* [Set 3](https://web.northeastern.edu/slavov/SCoPE/B2_glance/)
+
+* [Design of single-cell proteomics experiments using SCoPE2](https://youtu.be/mz6Yq2XSu-8)
+* [Sample preparation for single-cell MS analysis by SCoPE2](https://youtu.be/Eq_s6Jlzfnk)
+* [High-throughput single-cell proteomics quantifies the emergence of macrophage heterogeneity](https://youtu.be/NNLh4nE687I)
