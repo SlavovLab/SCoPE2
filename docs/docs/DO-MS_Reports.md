@@ -1,7 +1,7 @@
 ---
 layout: default
 title: DO-MS reports
-nav_order: 2
+nav_order: 3
 permalink: docs/do-ms
 ---
 
