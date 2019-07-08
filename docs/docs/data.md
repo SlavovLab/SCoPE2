@@ -1,20 +1,45 @@
 ---
 layout: default
-title: Data
+title: Download data
 nav_order: 2
 permalink: docs/data
+description: "download single-cell proteomics data from SCoPE2, a second generation SCoPE-MS" 
 ---
 
-## SCoPE2 preprint data: 
+# SCoPE2 data download
 
-Peptides by single cells at 1% FDR and including peptides identified by DART-ID. The first 2 columns list the corresponding protein identifiers and peptide sequences and each subsequent column corresponds to a single cell.
+&nbsp;
 
-[Peptides-raw.csv](http://slavovlab.net/scope2/data/Peptides-raw.csv)
 
-Proteins by single cells at 1% FDR, imputed and batch corrected.
+### Quantifying proteins in single cells at high-throughput with mass spectrometry
 
-[Proteins-processed.csv](http://slavovlab.net/scope2/data/Proteins-processed.csv)
+[SCoPE2 Preprint](https://www.biorxiv.org/content/10.1101/665307v1){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Perspective](https://pubs.acs.org/doi/10.1021/acs.jproteome.8b00257){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}[Data Repository](ftp://massive.ucsd.edu/MSV000083945){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[GitHub](https://github.com/SlavovLab/){: .btn .fs-5 .mb-4 .mb-md-0 }
 
-Annotation by single cells. Each column corresponds to a single cell and the rows include relevant metadata, such as, cell type if known, measurements from the isolation of the cell, and derivative quantities, i.e., rRI, CVs, reliability.
+------------
 
-[Cells.csv](http://slavovlab.net/scope2/data/Cells.csv)
+
+
+## SCoPE2 data processed to ASCII text matrices
+
+
+* [Peptides-raw.csv](http://slavovlab.net/scope2/data/Peptides-raw.csv)
+  - `Peptides` **x** `single cells` at 1% FDR.  The first 2 columns list the corresponding protein identifiers and peptide sequences and each subsequent column corresponds to a single cell. Peptide identification is based on spectra analyzed by [MaxQuant](https://www.maxquant.org/)  and is enhanced by using [DART-ID](https://dart-id.slavovlab.net/) to incorporate retention time information. See [Specht et al., 2019](https://www.biorxiv.org/content/10.1101/665307v1) for details.   
+
+&nbsp;
+
+* [Proteins-processed.csv](http://slavovlab.net/scope2/data/Proteins-processed.csv)
+   - `Proteins` **x** `single cells` at 1% FDR, imputed and batch corrected.
+
+&nbsp;
+
+* [Cells.csv](http://slavovlab.net/scope2/data/Cells.csv)
+   - `Annotation` **x**  `single cells`. Each column corresponds to a single cell and the rows include relevant metadata, such as, cell type if known, measurements from the isolation of the cell, and derivative quantities, i.e., rRI, CVs, reliability.
+
+&nbsp;
+
+
+## SCoPE2 RAW data and search results from MaxQuant
+
+* **MassIVE Repository:**
+  - [**http:**  MSV000083945](https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?task=de6aace2096845378ab9ef288e43aa75)
+  - [**ftp:** &nbsp; MSV000083945](ftp://massive.ucsd.edu/MSV000083945)

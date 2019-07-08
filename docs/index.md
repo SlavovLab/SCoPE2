@@ -2,11 +2,11 @@
 layout: default
 title: Home
 nav_order: 1
-description: "SCoPE2: Quantifying proteins at high-throughput with mass spectrometry"
+description: "SCoPE2: Quantifying proteins at high-throughput with mass spectrometry; second generation SCoPE-MS"
 permalink: /
 ---
 
-# **SCoPE2**: 
+# **SCoPE2**:
 
 {: .fs-9 }
 
@@ -15,7 +15,7 @@ permalink: /
 
 ### Quantifying proteins in single cells at high-throughput with mass spectrometry
 
-[Article](https://www.biorxiv.org/content/10.1101/665307v1){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Perspective](https://pubs.acs.org/doi/10.1021/acs.jproteome.8b00257){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}[Data Repository](ftp://massive.ucsd.edu/MSV000083945){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[GitHub - coming soon](https://github.com/SlavovLab/){: .btn .fs-5 .mb-4 .mb-md-0 }
+[SCoPE2 Preprint](https://www.biorxiv.org/content/10.1101/665307v1){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Perspective](https://pubs.acs.org/doi/10.1021/acs.jproteome.8b00257){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}[Data Repository](ftp://massive.ucsd.edu/MSV000083945){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[GitHub - coming soon](https://github.com/SlavovLab/){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ------------
 
@@ -31,6 +31,6 @@ The fate and physiology of individual cells are controlled by networks of protei
 
 ## About the project
 
-SCoPE2 is a project developed in the [Slavov Laboratory](https://web.northeastern.edu/slavovlab/) at [Northeastern University](https://www.northeastern.edu/) [Bioengineering](http://www.bioe.neu.edu/), and was authored by [Harrison Specht](https://twitter.com/harrisonspecht), [Ed Emmott](http://edemmott.co.uk/), Toni Koller, and [Nikolai Slavov](https://web.northeastern.edu/slavovlab/).
+SCoPE2 is a project developed in the [Slavov Laboratory](http://slavovlab.net) at [Northeastern University](https://www.northeastern.edu/) [Bioengineering](http://www.bioe.neu.edu/), and was authored by [Harrison Specht](https://twitter.com/harrisonspecht), [Ed Emmott](http://edemmott.co.uk/), Toni Koller, and [Nikolai Slavov](http://www.bioe.neu.edu/people/slavov-nikolai).
 
 Contact the authors by email: [nslavov\{at\}northeastern.edu](mailto:nslavov@northeastern.edu).
