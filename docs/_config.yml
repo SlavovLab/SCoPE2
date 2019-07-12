@@ -40,7 +40,7 @@ aux_links:
 
     
 github_link: https://github.com/SlavovLab/SCoPE2
-preprint_link: https://www.biorxiv.org/content/10.1101/512152v1
+preprint_link: https://www.biorxiv.org/content/10.1101/512152v2
 jpr_link: https://pubs.acs.org/doi/10.1021/acs.jproteome.9b00039
 
 # Color scheme currently only supports "dark" or nil (default)
@@ -48,7 +48,7 @@ color_scheme: blue
 
 # Google Analytics Tracking (optional)
 # e.g, UA-1234567-89
-ga_tracking: ~
+ga_tracking: UA-4005755-3
 
 plugins:
   - jekyll-seo-tag
