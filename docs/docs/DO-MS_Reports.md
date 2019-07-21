@@ -3,6 +3,7 @@ layout: default
 title: DO-MS reports
 nav_order: 3
 permalink: docs/do-ms
+description: "explore single-cell proteomics data from SCoPE2, a second generation SCoPE-MS" 
 ---
 
 # Distribution plots of SCoPE2 data:

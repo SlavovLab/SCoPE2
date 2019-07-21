@@ -2,7 +2,7 @@
 layout: default
 title: Home
 nav_order: 1
-description: "SCoPE2: Quantifying proteins at high-throughput with mass spectrometry"
+description: "SCoPE2: Quantifying proteins at high-throughput with mass spectrometry; second generation SCoPE-MS"
 permalink: /
 ---
 
