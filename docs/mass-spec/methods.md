@@ -23,7 +23,7 @@ SCoPE2 uses and builds upon related methods and technologies developed in the [S
 
 * [Single-Cell ProtEomics by Mass Spectrometry (SCoPE-MS)](http://slavovlab.net/2016_SCoPE-MS/index.html)
 * [Data-driven Alignment of Retention Times for IDentification (DART-ID)](https://dart-id.slavovlab.net)
-* [Data-driven Optimization of Mass-Spectrometry(DO-MS)](https://do-ms.slavovlab.net)
+* [Data-driven Optimization of Mass-Spectrometry (DO-MS)](https://do-ms.slavovlab.net)
 
 
 
@@ -34,4 +34,4 @@ SCoPE2 uses and builds upon related methods and technologies developed in the [S
 
 &nbsp;
 
-Read more about our [single-cell proteomics research](https://web.northeastern.edu/slavovlab/research.htm#SCoPE-MS) and the [single-cell conference](https://single-cell.net) we organize.  
+Read more about our [single-cell proteomics research](https://web.northeastern.edu/slavovlab/research.htm#SCoPE-MS) and the [single-cell proteomics conference](https://single-cell.net) that we organize.  
