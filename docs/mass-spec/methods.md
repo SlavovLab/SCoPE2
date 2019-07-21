@@ -34,4 +34,4 @@ SCoPE2 uses and builds upon related methods and technologies developed in the [S
 
 &nbsp;
 
-Read more about our [single-cell proteomics research](https://web.northeastern.edu/slavovlab/research.htm#SCoPE-MS) and the [single-cell proteomics conference](https://single-cell.net) that we organize.  
+Read more about our [single-cell proteomics research](https://web.northeastern.edu/slavovlab/research.htm#SCoPE-MS) and the [single-cell proteomics conference](http://single-cell.net) that we organize.  
