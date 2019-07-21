@@ -1,13 +1,13 @@
 ---
 layout: default
-title: MS Methods
+title: Related methods
 nav_order: 5
 description: "Methods for single-cell proteomics developed in the Slavov Laboratory, Northeastern University, Boston"
 permalink: mass-spec/methods
 
 ---
 
-# Related methods
+# Related methods for ultrasensitive mass-spec analysis
 
 &nbsp;
 
@@ -19,7 +19,7 @@ permalink: mass-spec/methods
 
 
 
-SCoPE2 uses and builds upon other methods developed in the [Slavov Laboratory](http://slavovlab.net). These methods include:
+SCoPE2 uses and builds upon related methods and technologies developed in the [Slavov Laboratory](http://slavovlab.net). Related methods include:
 
 * [Single-Cell ProtEomics by Mass Spectrometry (SCoPE-MS)](http://slavovlab.net/2016_SCoPE-MS/index.html)
 * [Data-driven Alignment of Retention Times for IDentification (DART-ID)](https://dart-id.slavovlab.net)
