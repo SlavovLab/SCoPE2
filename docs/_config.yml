@@ -13,7 +13,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.github_repo }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: SCoPE2 - Single-Cell ProtEomics by Mass-Spectrometry
+title: SCoPE2
+long_title: Single-Cell ProtEomics by Mass-Spectrometry
 description: Single-cell protein analysis by SCoPE2 | Slavov Laboratory
 baseurl: ~ # the subpath of your site, e.g. /blog
 url: https://scope2.slavovlab.net # the base hostname & protocol for your site
