@@ -30,8 +30,8 @@ The fate and physiology of individual cells are controlled by networks of protei
 ------------
 
 ## Highlights 
-[Technology feature at Nature Methods](https://www.nature.com/articles/s41592-019-0540-6)
-[Single-cell proteomics for the Human Cell Atlas ](https://news.northeastern.edu/2019/07/08/northeastern-university-proteomics-researcher-receives-grant-from-chan-zuckerberg-initiative-to-help-map-all-cells-in-the-human-body-to-better-understand-cancer-diabetes-and-other-diseases/)
+* [Technology feature at Nature Methods](https://www.nature.com/articles/s41592-019-0540-6)
+* [Single-cell proteomics for the Human Cell Atlas ](https://news.northeastern.edu/2019/07/08/northeastern-university-proteomics-researcher-receives-grant-from-chan-zuckerberg-initiative-to-help-map-all-cells-in-the-human-body-to-better-understand-cancer-diabetes-and-other-diseases/)
 
 ## About the project
 
