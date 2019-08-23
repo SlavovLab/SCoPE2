@@ -29,6 +29,9 @@ The fate and physiology of individual cells are controlled by networks of protei
 
 ------------
 
+## Highlights 
+Technology feature at Nature Methods (https://www.nature.com/articles/s41592-019-0540-6)
+
 ## About the project
 
 SCoPE2 is a project developed in the [Slavov Laboratory](http://slavovlab.net) at [Northeastern University](https://www.northeastern.edu/) [Bioengineering](http://www.bioe.neu.edu/), and was authored by [Harrison Specht](https://twitter.com/harrisonspecht), [Ed Emmott](http://edemmott.co.uk/), [Toni Koller](http://slavovlab.net/people.htm), and [Nikolai Slavov](http://www.bioe.neu.edu/people/slavov-nikolai).
