@@ -14,9 +14,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: SCoPE2
-description: SCoPE2 Documentation | Slavov Laboratory
+long_title: Single-Cell ProtEomics by Mass-Spectrometry
+description: Single-cell protein analysis by SCoPE2 | Slavov Laboratory
 baseurl: ~ # the subpath of your site, e.g. /blog
-url: https://scope2.slavovlab.net # the base hostname & protocol for your site, e.g. http://example.com
+url: https://scope2.slavovlab.net # the base hostname & protocol for your site
 
 permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"]
@@ -35,7 +36,7 @@ aux_links:
   "bioRxiv Preprint":
     - "https://doi.org/10.1101/665307"
   "Slavov Lab":
-    - "http://SlavovLab.net"
+    - "http://slavovlab.net"
 
 
     
@@ -49,6 +50,7 @@ color_scheme: blue
 # Google Analytics Tracking (optional)
 # e.g, UA-1234567-89
 ga_tracking: UA-4005755-3
+
 
 plugins:
   - jekyll-seo-tag

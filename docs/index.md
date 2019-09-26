@@ -29,8 +29,12 @@ The fate and physiology of individual cells are controlled by networks of protei
 
 ------------
 
+## Highlights 
+* [Technology feature at Nature Methods](https://www.nature.com/articles/s41592-019-0540-6)
+* [Single-cell proteomics for the Human Cell Atlas ](https://news.northeastern.edu/2019/07/08/northeastern-university-proteomics-researcher-receives-grant-from-chan-zuckerberg-initiative-to-help-map-all-cells-in-the-human-body-to-better-understand-cancer-diabetes-and-other-diseases/)
+
 ## About the project
 
-SCoPE2 is a project developed in the [Slavov Laboratory](http://slavovlab.net) at [Northeastern University](https://www.northeastern.edu/) [Bioengineering](http://www.bioe.neu.edu/), and was authored by [Harrison Specht](https://twitter.com/harrisonspecht), [Ed Emmott](http://edemmott.co.uk/), Toni Koller, and [Nikolai Slavov](http://www.bioe.neu.edu/people/slavov-nikolai).
+SCoPE2 is a project developed in the [Slavov Laboratory](http://slavovlab.net) at [Northeastern University](https://www.northeastern.edu/) [Bioengineering](http://www.bioe.neu.edu/), and was authored by [Harrison Specht](https://twitter.com/harrisonspecht), [Ed Emmott](http://edemmott.co.uk/), [Toni Koller](http://slavovlab.net/people.htm), and [Nikolai Slavov](http://www.bioe.neu.edu/people/slavov-nikolai).
 
 Contact the authors by email: [nslavov\{at\}northeastern.edu](mailto:nslavov@northeastern.edu).
