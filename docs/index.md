@@ -15,7 +15,7 @@ permalink: /
 
 ### Quantifying proteins in single cells at high-throughput with mass spectrometry
 
-[SCoPE2 Preprint](https://www.biorxiv.org/content/10.1101/665307v1){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Perspective](https://pubs.acs.org/doi/10.1021/acs.jproteome.8b00257){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}[A dream of single-cell proteomics](https://www.nature.com/articles/s41592-019-0540-6){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Data Repository](ftp://massive.ucsd.edu/MSV000083945){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[GitHub](https://github.com/SlavovLab/SCoPE2/tree/master/code){: .btn .fs-5 .mb-4 .mb-md-0 }
+[SCoPE2 Preprint](https://doi.org/10.1101/665307){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Perspective](https://pubs.acs.org/doi/10.1021/acs.jproteome.8b00257){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}[A dream of single-cell proteomics](https://www.nature.com/articles/s41592-019-0540-6){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Data Repository](ftp://massive.ucsd.edu/MSV000083945){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[GitHub](https://github.com/SlavovLab/SCoPE2/tree/master/code){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ------------
 
@@ -35,6 +35,6 @@ The fate and physiology of individual cells are controlled by protein interactio
 
 ## About the project
 
-SCoPE2 is a project developed in the [Slavov Laboratory](http://slavovlab.net) at [Northeastern University](https://www.northeastern.edu/) [Bioengineering](http://www.bioe.neu.edu/), and was authored by [Harrison Specht](https://twitter.com/harrisonspecht), [Ed Emmott](http://edemmott.co.uk/), [Toni Koller](http://slavovlab.net/people.htm), and [Nikolai Slavov](http://www.bioe.neu.edu/people/slavov-nikolai).
+SCoPE2 is a project developed in the [Slavov Laboratory](http://slavovlab.net) at [Northeastern University](https://www.northeastern.edu/) [Bioengineering](http://www.bioe.neu.edu/), and was authored by [Harrison Specht](harrisonspecht.com), [Ed Emmott](http://edemmott.co.uk/), Aleksandra Petelski, R. Gray Huffman, David H Perlman, Marco Serra, [Peter Kharchenko](http://pklab.med.harvard.edu/), [Toni Koller](http://slavovlab.net/people.htm), and [Nikolai Slavov](http://www.bioe.neu.edu/people/slavov-nikolai).
 
 Contact the authors by email: [nslavov\{at\}northeastern.edu](mailto:nslavov@northeastern.edu).
