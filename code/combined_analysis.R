@@ -36,7 +36,7 @@ norm_10_100_median<-T
 only_fp94_97<-T
 
 # Load the data fresh from search output, else use saved version (.RData, which is quicker to load)
-load_fresh<-F
+load_fresh<-T
 
 # Correct for isotopic cross-contamination from TMT11 -- this will not work properly because MQ did the correction already 
 # for the data I am using
@@ -65,23 +65,28 @@ k.t<-3
 ####################################################################################################################################
 # Execute all scripts in this order, some later scripts contain variables created in previous scripts
 
-source("final/mPOP_source_functions.R") # 
-source("final/import.R") # 
-source("final/score.R") # 
-source("final/data_transformations.R") # 
-source("final/missing_data.R") 
+source("mPOP_source_functions.R") # 
+source("import.R") # 
+source("score.R") # 
+source("data_transformations.R") # 
 
-source("final/bulk_markers.R") # 
-source("final/dimensional_reduction_colored.R") # 
-source("final/spectral_ordering_mac_v_mono.R") # 
-source("final/spectral_ordering_mac.R") #
+source("dimensional_reduction_fix.R")
 
-source("final/coverage.R") # 
-source("final/density_corr.R") # 
-source("final/eigenvector_density.R") # 
-source("final/Seurat.R") # 
-source("final/ion_counting_v4.R") # 
-source("final/figure_2b_v3.R") # 
+
+
+source("missing_data.R") 
+
+source("bulk_markers.R") # 
+source("dimensional_reduction_colored.R") # 
+source("spectral_ordering_mac_v_mono.R") # 
+source("spectral_ordering_mac.R") #
+
+source("coverage.R") # 
+source("density_corr.R") # 
+source("eigenvector_density.R") # 
+source("Seurat.R") # 
+source("ion_counting_v4.R") # 
+source("figure_2b_v3.R") # 
 
 
 ####################################################################################################################################
