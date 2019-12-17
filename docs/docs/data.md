@@ -52,6 +52,10 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 
 &nbsp;
 
+* [Additional files necessary for R script execution](https://drive.google.com/open?id=1VzBfmNxziRYqayx3SP-cOe2gu129Obgx)
+
+&nbsp;
+
 * [Data from v1 of SCoPE2 preprint](https://drive.google.com/open?id=1cMQ-SIGpHwSfx9wJF2fIa-t8yX329LPM)
 
 &nbsp;
