@@ -58,11 +58,11 @@
 }
 
 .navigation-list-item {
-  @include fs-3;
+  @include fs-5;
   margin: 0;
 
   @include mq(md) {
-    @include fs-5;
+    @include fs-3;
   }
 
   .navigation-list-child-list {
