@@ -6,7 +6,7 @@ permalink: docs/data
 description: "download single-cell proteomics data from SCoPE2, a second generation SCoPE-MS"
 ---
 
-# SCoPE2 data download
+# Download single-cell protein and RNA data
 
 &nbsp;
 
@@ -23,7 +23,7 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 
 
 * [Peptides-raw.csv](https://drive.google.com/open?id=1c9fwYI4qf9LzaQHf0wXoYAr2fuqNhNll)
-  - `Peptides` **x** `single cells` at 1% FDR.  The first 2 columns list the corresponding protein identifiers and peptide sequences and each subsequent column corresponds to a single cell. Peptide identification is based on spectra analyzed by [MaxQuant](https://www.maxquant.org/)  and is enhanced by using [DART-ID](https://dart-id.slavovlab.net/) to incorporate retention time information. See [Specht et al., 2019](https://www.biorxiv.org/content/10.1101/665307v1) for details.   
+  - `Peptides` **x** `single cells` at 1% FDR.  The first 2 columns list the corresponding protein identifiers and peptide sequences and each subsequent column corresponds to a single cell. Peptide identification is based on spectra analyzed by [MaxQuant](https://www.maxquant.org/)  and is enhanced by using [DART-ID](https://dart-id.slavovlab.net/) to incorporate retention time information. See [Specht et al., 2019](https://www.biorxiv.org/content/10.1101/665307v3) for details.   
 
 &nbsp;
 
@@ -56,7 +56,7 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 
 &nbsp;
 
-* [Data from v1 of SCoPE2 preprint](https://drive.google.com/open?id=1cMQ-SIGpHwSfx9wJF2fIa-t8yX329LPM)
+* [Data](https://drive.google.com/open?id=1cMQ-SIGpHwSfx9wJF2fIa-t8yX329LPM) from the [first version (v1) of SCoPE2 preprint](https://www.biorxiv.org/content/10.1101/665307v1)
 
 &nbsp;
 
