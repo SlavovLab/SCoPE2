@@ -62,7 +62,7 @@
   margin: 0;
 
   @include mq(md) {
-    @include fs-3;
+    @include fs-6;
   }
 
   .navigation-list-child-list {
