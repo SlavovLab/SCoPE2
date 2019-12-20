@@ -58,11 +58,11 @@
 }
 
 .navigation-list-item {
-  @include fs-6;
+  @include fs-5;
   margin: 0;
 
   @include mq(md) {
-    @include fs-5;
+    @include fs-4;
   }
 
   .navigation-list-child-list {
@@ -78,8 +78,8 @@
 
 .navigation-list-link {
   display: block;
-  padding-top: $sp-1;
-  padding-bottom: $sp-1;
+  padding-top: $sp-4;
+  padding-bottom: $sp-3;
 
   &.active {
     font-weight: 600;
