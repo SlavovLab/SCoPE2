@@ -3,7 +3,7 @@ layout: default
 title: Download data
 nav_order: 2
 permalink: docs/data
-description: "download single-cell proteomics data from SCoPE2, a second generation SCoPE-MS" 
+description: "download single-cell proteomics data from SCoPE2, a second generation SCoPE-MS"
 ---
 
 # SCoPE2 data download
@@ -38,17 +38,17 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 &nbsp;
 
 * [Joint protein-RNA data](https://drive.google.com/open?id=1bzLv2h6A91CtWMc73rKZrZGmyHP5c4B5)
-   - `Gene` **x**  `single cells`. Boths sets imputed and batch-corrected separately then combined, taking only genes common to both data sets. Uniprot accession numbers used to denote gene. 
+   - `Gene` **x**  `single cells`. Boths sets imputed and batch-corrected separately then combined, taking only genes common to both data sets. Uniprot accession numbers used to denote gene.
 
 &nbsp;
 
 * [mRNA biological replicate one, raw data](https://drive.google.com/open?id=1cN6UgSrZfqKdOjwJ0VyEYp6m_Fy9eANR)
-   - `Transcript` **x**  `single cells`. Raw UMI counts. 
+   - `Transcript` **x**  `single cells`. Raw UMI counts.
 
 &nbsp;
 
 * [mRNA biological replicate two, raw data](https://drive.google.com/open?id=1cuoYiqKgzVnUoFnFmrpXWKVfaFwiboeo)
-   - `Transcript` **x**  `single cells`. Raw UMI counts. 
+   - `Transcript` **x**  `single cells`. Raw UMI counts.
 
 &nbsp;
 
@@ -69,3 +69,7 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 * **MassIVE Repository 2:**
   - [**http:**  MSV000084660](https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000084660)
   - [**ftp:** &nbsp; MSV000084660](ftp://massive.ucsd.edu/MSV000084660)
+
+  * **GEO Repository**
+  - [**http:**  GSE142392](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE142392)
+  
