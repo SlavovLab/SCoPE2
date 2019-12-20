@@ -70,6 +70,6 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
   - [**http:**  MSV000084660](https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?accession=MSV000084660)
   - [**ftp:** &nbsp; MSV000084660](ftp://massive.ucsd.edu/MSV000084660)
 
-  * **GEO Repository**
+## scRNA-seq 10x Genomics RAW and processed data
+* **GEO Repository**
   - [**http:**  GSE142392](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE142392)
-  
