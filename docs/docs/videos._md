@@ -1,0 +1,32 @@
+---
+layout: default
+title: SCoPE2 videos
+nav_order: 4
+description: "Video presentations from the single-cell proteomics conference, Northeastern University, Boston, MA"
+permalink: docs/videos
+---
+
+# Videos of SCoPE2 presentations
+
+&nbsp;
+
+### Quantifying proteins in single cells at high-throughput with mass spectrometry
+
+[SCoPE2 Preprint](https://www.biorxiv.org/content/10.1101/665307v1){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Perspective](https://pubs.acs.org/doi/10.1021/acs.jproteome.8b00257){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}[Data Repository](ftp://massive.ucsd.edu/MSV000083945){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[GitHub](https://github.com/SlavovLab/){: .btn .fs-5 .mb-4 .mb-md-0 }
+
+------------
+
+
+
+These presentations were recorded at the 2019 [Single-Cell proteomics Conference](http://single-cell.net) [SCP2019](https://web.northeastern.edu/scp2019/). All SCP2019 videos can be found at the [SCP2019 play list](http://bit.ly/SCP2019-Videos ) and from the [Slavov Lab YouTube Channel](http://bit.ly/Slavov-Videos).
+
+
+
+
+* [Design of single-cell proteomics experiments using SCoPE2](https://youtu.be/mz6Yq2XSu-8)
+* [Sample preparation for single-cell MS analysis by SCoPE2](https://youtu.be/Eq_s6Jlzfnk)
+* [High-throughput single-cell proteomics quantifies the emergence of macrophage heterogeneity](https://youtu.be/NNLh4nE687I)
+
+&nbsp;
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/NNLh4nE687I" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

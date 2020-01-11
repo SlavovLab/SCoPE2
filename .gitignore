@@ -1,0 +1,10 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+code/prefilter_ev.RData
+code/ev_prefiltering.csv
+code/dimensional_reduction_fix.R
+code/combined_analysis.R
+code/code.Rproj
+code/combined_analysis.R

@@ -2,6 +2,7 @@
 layout: default
 title: SCoPE2 videos
 nav_order: 4
+description: "Video presentations from the single-cell proteomics conference, Northeastern University, Boston, MA"
 permalink: docs/videos
 description: "Watch video presentations on generating and analyzing SCoPE2 single-cell proteomics data" 
 ---
@@ -12,13 +13,13 @@ description: "Watch video presentations on generating and analyzing SCoPE2 singl
 
 ### Quantifying proteins in single cells at high-throughput with mass spectrometry
 
-[SCoPE2 Preprint](https://www.biorxiv.org/content/10.1101/665307v1){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Perspective](https://pubs.acs.org/doi/10.1021/acs.jproteome.8b00257){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}[Data Repository](ftp://massive.ucsd.edu/MSV000083945){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[GitHub](https://github.com/SlavovLab/){: .btn .fs-5 .mb-4 .mb-md-0 }
+[SCoPE2 Preprint](https://doi.org/10.1101/665307){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Perspective](https://pubs.acs.org/doi/10.1021/acs.jproteome.8b00257){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}[A dream of single-cell proteomics](https://www.nature.com/articles/s41592-019-0540-6){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Data Repository 1](ftp://massive.ucsd.edu/MSV000083945){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[Data Repository 2](ftp://massive.ucsd.edu/MSV000084660){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[GitHub](https://github.com/SlavovLab/SCoPE2/tree/master/code){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ------------
 
 
 
-These presentations were recorded at the 2019 Single-Cell proteomics Conference [SCP2019](https://do-ms.slavovlab.net). All SCP2019 videos can be found at the [SCP2019 play list](http://bit.ly/SCP2019-Videos ) and from the [Slavov Lab YouTube Channel](http://bit.ly/Slavov-Videos).
+These presentations were recorded at the 2019 [Single-Cell proteomics Conference](http://single-cell.net) [SCP2019](https://web.northeastern.edu/scp2019/). All SCP2019 videos can be found at the [SCP2019 play list](http://bit.ly/SCP2019-Videos ) and from the [Slavov Lab YouTube Channel](http://bit.ly/Slavov-Videos).
 
 
 
