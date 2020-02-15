@@ -33,9 +33,11 @@ The fate and physiology of individual cells are controlled by protein interactio
 * [Technology feature at Nature Methods](https://www.nature.com/articles/s41592-019-0540-6)
 * [Single-cell proteomics for the Human Cell Atlas](https://news.northeastern.edu/2019/07/08/northeastern-university-proteomics-researcher-receives-grant-from-chan-zuckerberg-initiative-to-help-map-all-cells-in-the-human-body-to-better-understand-cancer-diabetes-and-other-diseases/)
 * [News in Proteomics Research](http://proteomicsnews.blogspot.com/2019/12/over-1000-single-cell-proteomes-2700.html)
-* [Unpicking the proteome in single cells](https://science.sciencemag.org/content/367/6477/512)
 * [The single cell proteomics revolution](https://www.bioanalysis-zone.com/2020/02/11/single-cell-proteomics-revolution_bo/)
 
+## Perspectives
+* [Transformative Opportunities for Single-Cell Proteomics](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6089608/)
+* [Unpicking the proteome in single cells](https://science.sciencemag.org/content/367/6477/512)
 
 ## About the project
 
