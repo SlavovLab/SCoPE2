@@ -1,35 +1,35 @@
-rm(list=ls()); source("code/functions_parameters.R")
+source("code/functions_parameters.R")
 
 # Import ------------------------------------------------------------------
 
 # Load raw data and annotations
 
   # ev<-read_csv("dat/ev_tmt11_tmt16_2.csv")
-  # 
+  #
   # parse_row<-grep("|",ev$Leading.razor.protein, fixed=T)
-  # 
+  #
   # split_prot<-str_split(ev$Leading.razor.protein[parse_row], pattern = fixed("|"))
   # split_prot2<-unlist(split_prot)[seq(2,3*length(split_prot),3)]
-  # 
+  #
   # ev$Leading.razor.protein[parse_row]<-split_prot2
-  # 
+  #
   # #grep("|",ev$Leading.razor.protein, fixed=T)
-  # 
+  #
   # design<-read.csv("dat/annotation.csv")
-  # 
+  #
   # batch<-read.csv("dat/batch.csv")
-  # 
+  #
   # # Attach batch data to protein data
   # ev[,colnames(batch)[-1]]<-NA
   # for(X in batch$set){
-  # 
+  #
   #   ev$lcbatch[ev$Raw.file==X] <- as.character(batch$lcbatch[batch$set%in%X])
   #   ev$sortday[ev$Raw.file==X] <- as.character(batch$sortday[batch$set%in%X])
   #   ev$digest[ev$Raw.file==X] <- as.character(batch$digest[batch$set%in%X])
-  # 
+  #
   # }
-  # 
-  # 
+  #
+  #
   #  save(ev,batch,design,file="dat/raw.RData")
 
 load("dat/raw.RData")
@@ -64,27 +64,27 @@ sc.runs<-all.runs[!all.runs%in%c(c10.runs,c1000.runs,c100.runs,ladder.runs, carr
 
 # To demonstrate raison d'etre for reference channel, only use unbalanced single cell sets and normalize to mean:
 if(ref_demo){
-  
+
   m0_u_ratio<-c()
   rawt<-c()
-  
+
   design2<-design[design$Set%in%sc.runs, ]
-  
+
   for(i in 1:nrow(design2)){
-    
+
     xt<-design2$Set[i]
     m0count<-length(which(design2[i,-1]=="sc_m0"))
     ucount<-length(which(design2[i,-1]=="sc_u"))
-    
+
     rawt<-c(rawt, xt)
     m0_u_ratio<-c(m0_u_ratio, m0count / ucount)
-    
+
   }
-  
+
   unbalanced_sets_m0<-rawt[m0_u_ratio < quantile(m0_u_ratio, prob=0.1) | m0_u_ratio > quantile(m0_u_ratio, prob=0.9) ]
-  
+
   sc.runs<-unbalanced_sets_m0
-  
+
 }
 
 # Remove blank runs, if any
@@ -113,7 +113,7 @@ ri.index<-which(colnames(ev)%in%paste0("Reporter.intensity.",1:16))
 not.described<-unique(ev$Raw.file)[ !unique(ev$Raw.file) %in% paste0(design$Set) ]
 ev<-ev[!ev$Raw.file%in%not.described,]
 
-# Filter out reverse hits, contaminants, and contaminated spectra... 
+# Filter out reverse hits, contaminants, and contaminated spectra...
 ev<-ev[-which(ev$Reverse=="+"),]
 if(length(grep("REV", ev$Leading.razor.protein))>0){ ev<-ev[-grep("REV", ev$Leading.razor.protein),] }
 if(length(grep("CON", ev$Leading.razor.protein))>0){ ev<-ev[-grep("CON", ev$Leading.razor.protein),] }
@@ -167,25 +167,25 @@ ev<-as.data.frame(ev)
 ev[ev$Raw.file%in%sc.runs, ri.index] <- ev[ev$Raw.file%in%sc.runs, ri.index] / ev[ev$Raw.file%in%sc.runs, ri.index[2]]
 
 if(ref_demo){
-  
-  ev[ev$Raw.file%in%sc.runs, ri.index] <- ev[ev$Raw.file%in%sc.runs, ri.index] / rowMeans(ev[ev$Raw.file%in%sc.runs, ri.index], na.rm=T) 
-  
-  
+
+  ev[ev$Raw.file%in%sc.runs, ri.index] <- ev[ev$Raw.file%in%sc.runs, ri.index] / rowMeans(ev[ev$Raw.file%in%sc.runs, ri.index], na.rm=T)
+
+
 }
 
 # Organize data into a more convenient data structure:
 
 
 # Create empty data frame
-ev.melt<-melt(ev[0, c("Raw.file","modseq","Leading.razor.protein","lcbatch","sortday","digest", colnames(ev)[ri.index]) ], 
-              id.vars = c("Raw.file","modseq","Leading.razor.protein","lcbatch","sortday","digest")) 
+ev.melt<-melt(ev[0, c("Raw.file","modseq","Leading.razor.protein","lcbatch","sortday","digest", colnames(ev)[ri.index]) ],
+              id.vars = c("Raw.file","modseq","Leading.razor.protein","lcbatch","sortday","digest"))
 
 colnames(ev.melt)<-c("Raw.file","sequence","protein","lcbatch","sortday","digest","celltype","quantitation")
 
 
 # Record mapping of cell type to Channel:
 ct.v<-c()
-qt.v<-c() 
+qt.v<-c()
 
 # Create a unique ID string
 unique.id.numeric<-1:16
@@ -195,41 +195,41 @@ RI_keep<-ri.index
 
 # Give each sample a unique identifier
 for(X in unique(ev$Raw.file)){
-  
+
   # Subset data by X'th experiment
   ev.t<-ev[ev$Raw.file%in%X, ]
-  
+
   if(is.na(X)){next}
-  
-  # Name the RI columns by what sample type they are: carrier, single cell, unused, etc... 
+
+  # Name the RI columns by what sample type they are: carrier, single cell, unused, etc...
   colnames(ev.t)[ri.index]<-paste0(as.character(unlist(design[design$Set==X,-1])),"-", unique.id)
-  
+
   if(length(RI_keep)>0){
-    
+
     if( X%in%c(c10.runs, c100.runs) ){
-      
+
       ev.t[,RI_keep]<-ev.t[,RI_keep] / apply(ev.t[, RI_keep], 1, median.na)
-      
+
     }
-    
+
     # Melt it! and combine with other experimental sets
     ev.t.melt<-melt(ev.t[, c("Raw.file","modseq","Leading.razor.protein","lcbatch","sortday","digest", colnames(ev.t)[RI_keep]) ],
                     id.vars = c("Raw.file","modseq","Leading.razor.protein","lcbatch","sortday","digest"));
-    
+
     # Record mapping of cell type to Channel:
     ct.v<-c(ct.v, unique.id[which(ri.index%in%RI_keep)] )
-    qt.v<-c(qt.v, colnames(ev)[RI_keep] ) 
-    
+    qt.v<-c(qt.v, colnames(ev)[RI_keep] )
+
     colnames(ev.t.melt)<-c("Raw.file","sequence","protein","lcbatch","sortday","digest","celltype","quantitation")
-    
+
     ev.melt<-rbind(ev.melt, ev.t.melt)
-    
+
   }
-  
+
   # Update unique ID string
   unique.id.numeric<-unique.id.numeric + 16
   unique.id<-paste0("i", unique.id.numeric)
-  
+
 }
 
 c2q<-data.frame(ct.v, qt.v); colnames(c2q)<-c("celltype","channel")
@@ -277,7 +277,7 @@ if(save_tmp == T){
 save(c2q,
      ev.matrix.sc,
      ev.melt,
-     ev.melt.pep, 
+     ev.melt.pep,
      ev.melt.uniqueID,
      sc.runs,
      c10.runs,
@@ -315,11 +315,11 @@ xd <- xd %>% mutate_if(is.factor, as.character)
 
 xd1 <- xd %>%
   group_by(id) %>%
-  mutate(norm_q1 = quantitation / median(quantitation, na.rm=T)) 
+  mutate(norm_q1 = quantitation / median(quantitation, na.rm=T))
 
 xd2 <- xd1 %>%
   group_by(sequence, Raw.file) %>%
-  mutate(norm_q = quantitation / mean(norm_q1, na.rm=T)) 
+  mutate(norm_q = quantitation / mean(norm_q1, na.rm=T))
 
 xd3<- xd2 %>%
   filter(celltype%in%c("sc_m0", "sc_u","sc_0"))
@@ -376,32 +376,32 @@ xdf$control[xdf$celltype=="sc_0"]<-"ctl"
 
 my_col3<-c( "black", "purple2")
 
-# Plot! 
-px<-ggplot(data=xdf, aes(x=cvm)) + geom_density(aes(fill=control, alpha=0.5), adjust=4) + theme_pubr() + 
-  scale_fill_manual(values=my_col3[c(1,2)]) + 
-  xlab("Quantification variability") + ylab("Density") + rremove("y.ticks") + rremove("y.text") + 
+# Plot!
+px<-ggplot(data=xdf, aes(x=cvm)) + geom_density(aes(fill=control, alpha=0.5), adjust=4) + theme_pubr() +
+  scale_fill_manual(values=my_col3[c(1,2)]) +
+  xlab("Quantification variability") + ylab("Density") + rremove("y.ticks") + rremove("y.text") +
   font("xylab", size=35) +
-  font("x.text", size=30) + 
-  #xlim(c(-0.15, 0.35)) + 
-  # annotate("text", x=0.27, y= 14, label=paste0(scrate,"% single cells passed"), size=8, color=my_col3[c(2)])+ 
-  # annotate("text", x=0.27, y= 12.5, label=paste0(sc0rate,"% control wells passed"), size=8, color=my_col3[c(1)])+ 
-  annotate("text", x=0.272, y= 14, label=paste0(length(sc_kept)," single cells"), size=10, color=my_col3[c(2)])+ 
-  annotate("text", x=0.265, y= 12, label=paste0(length(sc0_kept)," control wells"), size=10, color=my_col3[c(1)])+ 
-  annotate("text", x=0.5, y= 14, label=paste0(length(sc_total) -length(sc_kept)," single cells"), size=10, color=my_col3[c(2)])+ 
-  annotate("text", x=0.5, y= 12, label=paste0(length(sc0_total) - length(sc0_kept)," control wells"), size=10, color=my_col3[c(1)])+ 
-  #annotate("text", x=0.25, y= 3, label="Macrophage-like", size=6) + 
+  font("x.text", size=30) +
+  #xlim(c(-0.15, 0.35)) +
+  # annotate("text", x=0.27, y= 14, label=paste0(scrate,"% single cells passed"), size=8, color=my_col3[c(2)])+
+  # annotate("text", x=0.27, y= 12.5, label=paste0(sc0rate,"% control wells passed"), size=8, color=my_col3[c(1)])+
+  annotate("text", x=0.272, y= 14, label=paste0(length(sc_kept)," single cells"), size=10, color=my_col3[c(2)])+
+  annotate("text", x=0.265, y= 12, label=paste0(length(sc0_kept)," control wells"), size=10, color=my_col3[c(1)])+
+  annotate("text", x=0.5, y= 14, label=paste0(length(sc_total) -length(sc_kept)," single cells"), size=10, color=my_col3[c(2)])+
+  annotate("text", x=0.5, y= 12, label=paste0(length(sc0_total) - length(sc0_kept)," control wells"), size=10, color=my_col3[c(1)])+
+  #annotate("text", x=0.25, y= 3, label="Macrophage-like", size=6) +
   rremove("legend") + geom_vline(xintercept=0.4, lty=2, size=2, color="gray50")
 
 
 ggsave("figs/cv_2.pdf", plot=px, device="pdf", width=9, height=5)
 
 if(save_tmp == T){
-  
+
 # Save data
 save(c2q,
      ev.matrix.sc,
      ev.melt,
-     ev.melt.pep, 
+     ev.melt.pep,
      ev.melt.uniqueID,
      sc.runs,
      c10.runs,
@@ -425,30 +425,30 @@ if(save_tmp == T){
 }
 
 
-# Perform normalizations / transformations in multiple steps with visual sanity checks: 
+# Perform normalizations / transformations in multiple steps with visual sanity checks:
 b.t<-"FD"
 xlim.t<-c(-2,2)
 par(mfrow=c(3,3))
 
-# Original data, normalized to reference channel, filtered for failed wells: 
+# Original data, normalized to reference channel, filtered for failed wells:
 t0<-ev.matrix.sc.f
 
 
 hist(c(t0), breaks=b.t, xlim=xlim.t)
 
-# Column then row normalize by median or mean (see source functions): 
+# Column then row normalize by median or mean (see source functions):
 t1<-cr_norm(t0)
 hist(c(t1), breaks=b.t, xlim=xlim.t)
 
 
 
-# Filter for missing data: 
+# Filter for missing data:
 t2<-filt.mat.rc(t1, na.row, na.col)
 hist(c(t2), breaks=b.t, xlim=xlim.t)
 
 
 
-# Log2 transform: 
+# Log2 transform:
 t3<-log2(t2)
 t3[t3==Inf]<-NA
 t3[t3==-Inf]<-NA
@@ -457,7 +457,7 @@ hist(c(t3), breaks=b.t, xlim=xlim.t)
 
 mean(ncol(t3)-na.count(t3))
 
-# # Collapse to protein level by median: 
+# # Collapse to protein level by median:
 t3m<-data.frame(t3)
 t3m$pep<-rownames(t3)
 t3m$prot <- ev.melt.pep$protein[match(t3m$pep, ev.melt.pep$sequence)]
@@ -468,11 +468,11 @@ t4m<-dcast(t3m2, prot ~ id, value.var = "qp", fill=NA)
 t4<-as.matrix(t4m[,-1]); row.names(t4)<-t4m[,1]
 hist(c(t4), breaks=b.t, xlim=xlim.t)
 
-# Re-column and row normalize: 
+# Re-column and row normalize:
 t4b<-cr_norm_log(t4)
 hist(c(t4b), breaks=b.t, xlim=xlim.t)
 
-# Assign to a final variable name: 
+# Assign to a final variable name:
 ev.matrix.sc.f.n<-t4b
 
 mean(ncol(ev.matrix.sc.f.n)-na.count(ev.matrix.sc.f.n))
@@ -525,17 +525,17 @@ mod<-model.matrix(~as.factor(celltype), data=mod)
 matrix.sc.batch <- ComBat(sc.imp, batch=batch.covs, mod=mod, par.prior=T)
 t6<-matrix.sc.batch
 
-# visual sanity checks post-imputation: 
+# visual sanity checks post-imputation:
 hist(c(t5), breaks=b.t, xlim=xlim.t)
 hist(c(t6), breaks=b.t, xlim=xlim.t)
- 
+
 par(mfrow=c(1,1))
 
 # Save data
 save(c2q,
      ev.matrix.sc,
      ev.melt,
-     ev.melt.pep, 
+     ev.melt.pep,
      ev.melt.uniqueID,
      sc.runs,
      c10.runs,
@@ -557,46 +557,46 @@ save(c2q,
 
 # Determine monocyte and macrophage markers from bulk data ----------------
 
-# Which genes up or down regulated in mono vs. mac in bulk proteomic data? 
-# Take the 100 cell TMT11-plex data, put on log2 scale and renormalize: 
+# Which genes up or down regulated in mono vs. mac in bulk proteomic data?
+# Take the 100 cell TMT11-plex data, put on log2 scale and renormalize:
 
 # p100<-collapse_to_protein(log2(ev.matrix.100.n), ev.melt, T)
 # p100<-cr_norm_log(p100)
 # save(p100, "dat/p100.RData")
 load("dat/p100.RData")
 
-# Calculate fold-change between cell types and significance of that fold-change using the distributions of the protein values in 
-# each of those cell types: 
+# Calculate fold-change between cell types and significance of that fold-change using the distributions of the protein values in
+# each of those cell types:
 
 # Initialize variables to store protein, p-value, fold-change:
 pc<-c()
 pval<-c()
 fc<-c()
 
-# Iterate over every protein: 
+# Iterate over every protein:
 for(X in rownames(p100)){
-  
+
   # Separate data according to cell type
   m0.id<-ev.melt.uniqueID$id[ev.melt.uniqueID$celltype=="m0_100"]
   u.id<-ev.melt.uniqueID$id[ev.melt.uniqueID$celltype=="u_100"]
-  
-  # As long as there is data for both cell types: 
+
+  # As long as there is data for both cell types:
   if( !all(is.na(p100[rownames(p100)==X, colnames(p100)%in%m0.id])) & !all(is.na(p100[rownames(p100)==X, colnames(p100)%in%u.id])) ){
-    
+
     fc.t<-NA
     pval.t<-NA
-    
-    pval.t<-t.test( p100[rownames(p100)==X, colnames(p100)%in%m0.id], 
-                    p100[rownames(p100)==X, colnames(p100)%in%u.id], 
+
+    pval.t<-t.test( p100[rownames(p100)==X, colnames(p100)%in%m0.id],
+                    p100[rownames(p100)==X, colnames(p100)%in%u.id],
                     alternative = "two.sided" )$p.value
-    
-    fc.t<- mean(p100[rownames(p100)==X, colnames(p100)%in%m0.id], na.rm = T) - 
+
+    fc.t<- mean(p100[rownames(p100)==X, colnames(p100)%in%m0.id], na.rm = T) -
       mean(p100[rownames(p100)==X, colnames(p100)%in%u.id], na.rm = T)
-    
+
     pc<-c(pc, X); pval<-c(pval, pval.t); fc<-c(fc, fc.t)
-    
+
   }
-  
+
 }
 
 # Organize data
@@ -606,7 +606,7 @@ df100<-data.frame(pc, pval, fc)
 df100<-df100[df100$pval<0.01, ]
 df100<-df100[order(df100$fc, decreasing=T),]
 
-# Take top 30 most differentiatial proteins, up and down: 
+# Take top 30 most differentiatial proteins, up and down:
 mono_genes<-df100[df100$fc<0, ]
 mono_genes<-mono_genes[order(mono_genes$fc, decreasing=F), ]
 mono_genes30<-mono_genes$pc[1:30]
@@ -625,43 +625,43 @@ mat.input.100<-cr_norm(filt.mat.rc(ev.matrix.100, 0.6, 0.8))
 
 
 inset.ratios<-function(mat.input, ev.melt.f, m0i, ui){
-  
+
   rat.p<-c()
   rat.raws<-c()
   for(Y in unique(ev.melt.f$Raw.file)){
-    
+
     #print(Y)
-    
+
     ### Get col ids ###
     m0.ids <- as.character(unique(ev.melt.f[ (ev.melt.f$celltype == m0i )&(ev.melt.f$Raw.file==Y), "id"]))
     u.ids <- as.character(unique(ev.melt.f[ (ev.melt.f$celltype == ui )&(ev.melt.f$Raw.file==Y), "id"]))
-    
+
     #print(u.ids)
-    
+
     rat.t<-NA
-    
+
     if(length(m0.ids)>1 & length(u.ids)>1){
-      
+
       rat.t<-rowMeans(mat.input[,m0.ids], na.rm=T) / rowMeans(mat.input[,u.ids], na.rm=T)
-      
+
       # print(rat.t[1])
-      
+
     }
-    
+
     if(length(m0.ids)>1 & length(u.ids)==1){
-      
+
       rat.t<-rowMeans(mat.input[,m0.ids], na.rm=T) / (mat.input[,u.ids])
-      
+
     }
-    
+
     rat.raws<-cbind(rat.raws, rat.t)
-    
-    
+
+
   }
-  
+
   rat.p<-rowMeans(rat.raws, na.rm=T)
-  
-  
+
+
   names(rat.p)<-rownames(mat.input)
   return(rat.p)
 }
@@ -700,9 +700,9 @@ temp.df<-data.frame(x, y)
 # Record the positions of the NA values in either x or y
 na.v<-c()
 for(i in 1:nrow(temp.df)){
-  
+
   na.v<-c( na.v, any(is.na(temp.df[i,])) )
-  
+
 }
 
 # Remove those points
@@ -719,7 +719,7 @@ get_density <- function(x, y, n = 100) {
   iy <- findInterval(y, dens$y)
   ii <- cbind(ix, iy)
   return(dens$z[ii])
-  
+
 }
 
 dens <- get_density(x, y, k)
@@ -780,90 +780,90 @@ mat.input.sc<-cr_norm(filt.mat.rc(ev.matrix.sc.f[rownames(ev.matrix.sc.f)%in%xxx
 mat.input.10<-cr_norm(filt.mat.rc(ev.matrix.10, 0.99, 0.99))
 mat.input.100<-cr_norm(filt.mat.rc(ev.matrix.100, 0.99, 0.99))
 inset.ratios<-function(mat.input, ev.melt.f, m0i, ui){
-  
+
   rat.p<-c()
   rat.raws<-c()
   for(Y in unique(ev.melt.f$Raw.file)){
-    
+
     #print(Y)
-    
+
     ### Get col ids ###
     m0.ids <- as.character(unique(ev.melt.f[ (ev.melt.f$celltype == m0i )&(ev.melt.f$Raw.file==Y), "id"]))
     u.ids <- as.character(unique(ev.melt.f[ (ev.melt.f$celltype == ui )&(ev.melt.f$Raw.file==Y), "id"]))
-    
+
     #print(u.ids)
-    
+
     rat.t<-rep(NA, nrow(mat.input))
-    
-    
+
+
     if(length(m0.ids)>1 & length(u.ids)>1){
-      
+
       rat.t<-rowMeans(mat.input[,m0.ids], na.rm=T) / rowMeans(mat.input[,u.ids], na.rm=T)
-      
+
       # print(rat.t[1])
-      
+
     }
-    
+
     if(length(m0.ids)>1 & length(u.ids)==1){
-      
+
       rat.t<-rowMeans(mat.input[,m0.ids], na.rm=T) / (mat.input[,u.ids])
-      
+
     }
-    
+
     rat.raws<-cbind(rat.raws, rat.t)
-    
-    
+
+
   }
-  
+
   rownames(rat.raws)<-rownames(mat.input)
-  rat.raws2<-filt.mat.rc(rat.raws, (1-(10/ncol(rat.raws))), 1 ) 
-  
+  rat.raws2<-filt.mat.rc(rat.raws, (1-(10/ncol(rat.raws))), 1 )
+
   rat.p<-rowMeans(rat.raws2, na.rm=T)
-  
+
   names(rat.p)<-rownames(mat.input)[rownames(mat.input)%in%rownames(rat.raws2)]
   return(rat.p)
 }
 
 inset.ratios100<-function(mat.input, ev.melt.f, m0i, ui){
-  
+
   rat.p<-c()
   rat.raws<-c()
   for(Y in unique(ev.melt.f$Raw.file)){
-    
+
     #print(Y)
-    
+
     ### Get col ids ###
     m0.ids <- as.character(unique(ev.melt.f[ (ev.melt.f$celltype == m0i )&(ev.melt.f$Raw.file==Y), "id"]))
     u.ids <- as.character(unique(ev.melt.f[ (ev.melt.f$celltype == ui )&(ev.melt.f$Raw.file==Y), "id"]))
-    
+
     #print(u.ids)
-    
+
     rat.t<-NA
-    
+
     if(length(m0.ids)>1 & length(u.ids)>1){
-      
+
       rat.t<-rowMeans(mat.input[,m0.ids], na.rm=T) / rowMeans(mat.input[,u.ids], na.rm=T)
-      
+
       # print(rat.t[1])
-      
+
     }
-    
+
     if(length(m0.ids)>1 & length(u.ids)==1){
-      
+
       rat.t<-rowMeans(mat.input[,m0.ids], na.rm=T) / (mat.input[,u.ids])
-      
+
     }
-    
+
     rat.raws<-cbind(rat.raws, rat.t)
-    
-    
+
+
   }
-  
+
   rownames(rat.raws)<-rownames(mat.input)
   rat.raws2<-rat.raws
-  
+
   rat.p<-rowMeans(rat.raws2, na.rm=T)
-  
+
   names(rat.p)<-rownames(mat.input)[rownames(mat.input)%in%rownames(rat.raws2)]
   return(rat.p)
 }
@@ -909,9 +909,9 @@ temp.df<-data.frame(x, y)
 # Record the positions of the NA values in either x or y
 na.v<-c()
 for(i in 1:nrow(temp.df)){
-  
+
   na.v<-c( na.v, any(is.na(temp.df[i,])) )
-  
+
 }
 
 # Remove those points
@@ -928,7 +928,7 @@ get_density <- function(x, y, n = 100) {
   iy <- findInterval(y, dens$y)
   ii <- cbind(ix, iy)
   return(dens$z[ii])
-  
+
 }
 
 dens <- get_density(x, y, k)
@@ -945,7 +945,7 @@ cols[rownames(df.c)%in%xxxr]<-"orange"
 
 cols[rownames(df.c)%in%xxxt]<-"green2"
 
-# Take only proteins that have quantification in both bulk and sc to count number of each type: 
+# Take only proteins that have quantification in both bulk and sc to count number of each type:
 dfxx<-rowSums(df.c)
 dfxxx<-dfxx[!is.na(dfxx)]
 
@@ -979,7 +979,7 @@ text(2.32-0.5-0.1, -1.3, paste0(nreceptor," receptors"), cex=2.5,col="orange")
 text(1.9, -0.75, paste0(nkinase, " kinases"), cex=2.5,col="red")
 text(2.3, -0.3, paste0(ntf, " TFs"), cex=2.5,col="green2")
 
-     
+
 mtext(expression("SCoPE2, log"[2]), side=2, padj = -1.4, cex=3)
 mtext(expression("Bulk, log"[2]), side=1, padj = 1.8, cex=3)
 
@@ -992,18 +992,18 @@ dev.off()
 # protx<-c()
 # aucx<-c()
 # for(X in unique(evx$Leading.razor.protein)){
-# 
+#
 #   protx<-c(protx, X)
 #   aucx<-c(aucx, median(evx$Intensity[evx$Leading.razor.protein%in%X], na.rm=T))
-# 
+#
 # }
-# 
+#
 # pframe<-data.frame(protx, aucx)
-# 
+#
 # plow<-pframe$protx[pframe$aucx < quantile(pframe$aucx, probs = 0.33,na.rm = T)]
 # pmed<-pframe$protx[(pframe$aucx >= quantile(pframe$aucx, probs = 0.33,na.rm = T) ) & (pframe$aucx <= quantile(pframe$aucx, probs = 0.66,na.rm = T) )]
 # phigh<-pframe$protx[pframe$aucx > quantile(pframe$aucx, probs = 0.66,na.rm = T)]
-# 
+#
 # save(plow,pframe, file="dat/plow.RData")
 
 load("dat/plow.RData")
@@ -1017,45 +1017,45 @@ mat.input.10<-cr_norm(filt.mat.rc(ev.matrix.10, 0.99, 0.99))
 mat.input.100<-cr_norm(filt.mat.rc(ev.matrix.100, 0.99, 0.99))
 
 inset.ratios<-function(mat.input, ev.melt.f, m0i, ui){
-  
+
   rat.p<-c()
   rat.raws<-c()
   for(Y in unique(ev.melt.f$Raw.file)){
-    
+
     #print(Y)
-    
+
     ### Get col ids ###
     m0.ids <- as.character(unique(ev.melt.f[ (ev.melt.f$celltype == m0i )&(ev.melt.f$Raw.file==Y), "id"]))
     u.ids <- as.character(unique(ev.melt.f[ (ev.melt.f$celltype == ui )&(ev.melt.f$Raw.file==Y), "id"]))
-    
+
     #print(u.ids)
-    
+
     rat.t<-rep(NA, nrow(mat.input))
-    
+
     if(length(m0.ids)>1 & length(u.ids)>1){
-      
+
       rat.t<-rowMeans(mat.input[,m0.ids], na.rm=T) / rowMeans(mat.input[,u.ids], na.rm=T)
-      
+
       # print(rat.t[1])
-      
+
     }
-    
+
     if(length(m0.ids)>1 & length(u.ids)==1){
-      
+
       rat.t<-rowMeans(mat.input[,m0.ids], na.rm=T) / (mat.input[,u.ids])
-      
+
     }
-    
+
     rat.raws<-cbind(rat.raws, rat.t)
-    
-    
+
+
   }
-  
+
   rownames(rat.raws)<-rownames(mat.input)
   rat.raws2<-filt.mat.rc(rat.raws, (1-(10/ncol(rat.raws))), 1 )
-  
+
   rat.p<-rowMeans(rat.raws2, na.rm=T)
-  
+
   names(rat.p)<-rownames(mat.input)[rownames(mat.input)%in%rownames(rat.raws2)]
   return(rat.p)
 }
@@ -1063,45 +1063,45 @@ inset.ratios<-function(mat.input, ev.melt.f, m0i, ui){
 
 
 inset.ratios100<-function(mat.input, ev.melt.f, m0i, ui){
-  
+
   rat.p<-c()
   rat.raws<-c()
   for(Y in unique(ev.melt.f$Raw.file)){
-    
+
     #print(Y)
-    
+
     ### Get col ids ###
     m0.ids <- as.character(unique(ev.melt.f[ (ev.melt.f$celltype == m0i )&(ev.melt.f$Raw.file==Y), "id"]))
     u.ids <- as.character(unique(ev.melt.f[ (ev.melt.f$celltype == ui )&(ev.melt.f$Raw.file==Y), "id"]))
-    
+
     #print(u.ids)
-    
+
     rat.t<-NA
-    
+
     if(length(m0.ids)>1 & length(u.ids)>1){
-      
+
       rat.t<-rowMeans(mat.input[,m0.ids], na.rm=T) / rowMeans(mat.input[,u.ids], na.rm=T)
-      
+
       # print(rat.t[1])
-      
+
     }
-    
+
     if(length(m0.ids)>1 & length(u.ids)==1){
-      
+
       rat.t<-rowMeans(mat.input[,m0.ids], na.rm=T) / (mat.input[,u.ids])
-      
+
     }
-    
+
     rat.raws<-cbind(rat.raws, rat.t)
-    
-    
+
+
   }
-  
+
   rownames(rat.raws)<-rownames(mat.input)
   rat.raws2<-rat.raws
-  
+
   rat.p<-rowMeans(rat.raws2, na.rm=T)
-  
+
   names(rat.p)<-rownames(mat.input)[rownames(mat.input)%in%rownames(rat.raws2)]
   return(rat.p)
 }
@@ -1143,9 +1143,9 @@ temp.df<-data.frame(x, y)
 # Record the positions of the NA values in either x or y
 na.v<-c()
 for(i in 1:nrow(temp.df)){
-  
+
   na.v<-c( na.v, any(is.na(temp.df[i,])) )
-  
+
 }
 
 # Remove those points
@@ -1162,7 +1162,7 @@ get_density <- function(x, y, n = 100) {
   iy <- findInterval(y, dens$y)
   ii <- cbind(ix, iy)
   return(dens$z[ii])
-  
+
 }
 
 dens <- get_density(x, y, k)
@@ -1252,7 +1252,7 @@ dev.off()
 PCx<-"PC1"
 PCy<-"PC2"
 
-# Data to use: 
+# Data to use:
 matrix.sc.batch<-matrix.sc.batch[!is.na(rownames(matrix.sc.batch)), ]
 mat.sc.imp<-cr_norm_log(matrix.sc.batch)
 
@@ -1260,10 +1260,10 @@ mat.sc.imp<-cr_norm_log(matrix.sc.batch)
 r1<-cor(t(matrix.sc.batch))
 rsum<-rowSums(r1^2)
 
-# Calculate the weighted data matrix: 
+# Calculate the weighted data matrix:
 
 X.m <- mat.sc.imp
-X.m <- diag(rsum) %*%  X.m 
+X.m <- diag(rsum) %*%  X.m
 pca.imp.cor <- cor(X.m)
 
 # PCA
@@ -1277,34 +1277,34 @@ pca_var <- sc.pca$values
 percent_var<- pca_var/sum(pca_var)*100
 plot(1:length(percent_var), percent_var, xlab="PC", ylab="% of variance explained")
 
-# Map meta data 
+# Map meta data
 pca.melt <- melt(scx); colnames(pca.melt)<-c("id","pc","value")
 add.cols<-colnames(ev.melt)[4:7]
 pca.melt[,add.cols]<-NA
 
 for(X in unique(pca.melt$id)){
-  
+
   pca.melt[pca.melt$id==X, add.cols]<-ev.melt.uniqueID[ev.melt.uniqueID$id==X, add.cols]
-  
+
 }
 
 
-# Re map ... 
+# Re map ...
 pca.display <- dcast(pca.melt, id ~ pc, value.var = "value", fill=NA)
 
 pca.display[,add.cols]<-NA
 
 for(X in unique(pca.display$id)){
-  
+
   pca.display[pca.display$id==X, add.cols]<-ev.melt.uniqueID[ev.melt.uniqueID$id==X, add.cols]
-  
+
 }
 
 
 # Map to TMT channel
 #pca.display$channel<-c2q[c2q$celltype%in%pca.display$id, "channel"]
 
-# Load in bulk proteomic data to color the PCA plot: 
+# Load in bulk proteomic data to color the PCA plot:
 m.m<-mat.sc.imp[rownames(mat.sc.imp)%in%mono_genes30, match(pca.display$id, colnames(mat.sc.imp))]; dim(m.m)
 mac.m<-mat.sc.imp[rownames(mat.sc.imp)%in%mac_genes30,match(pca.display$id, colnames(mat.sc.imp)) ]; dim(mac.m)
 
@@ -1318,37 +1318,37 @@ pca.display$mac<-int.mac#[length(int.mac):1]
 # Display celltype
 pg1<-ggscatter(pca.display, x =PCx, y = PCy , color="celltype", size = 2, alpha=0.5) +
   xlab(paste0(PCx,"  (", round(percent_var[1],0),"%)")) +
-  ylab(paste0(PCy,"  (", round(percent_var[2],0),"%)")) + 
-  font("ylab",size=30) + 
-  font("xlab",size=30) + 
-  font("xy.text", size=20) + 
-  rremove("legend") + 
-  scale_color_manual(values = my_colors[2:3]) + 
-  annotate("text", x=-0.025, y=0.21,label="Macrophage", color=my_colors[2], size=10)  + 
-  annotate("text", x=0.03, y=0.21, label="Monocyte", color=my_colors[3], size=10) + 
+  ylab(paste0(PCy,"  (", round(percent_var[2],0),"%)")) +
+  font("ylab",size=30) +
+  font("xlab",size=30) +
+  font("xy.text", size=20) +
+  rremove("legend") +
+  scale_color_manual(values = my_colors[2:3]) +
+  annotate("text", x=-0.025, y=0.21,label="Macrophage", color=my_colors[2], size=10)  +
+  annotate("text", x=0.03, y=0.21, label="Monocyte", color=my_colors[3], size=10) +
   annotate("text", x=0.05-0.02, y=-0.155, label=paste0(dim(mat.sc.imp)[1], " proteins"), size=8) +
   annotate("text", x=0.062-0.03, y=-0.11, label=paste0(dim(mat.sc.imp)[2], " cells"), size=8)
 
-# Adjust color scale: 
+# Adjust color scale:
 varx<-int.m
 qs.varx<-quantile(rescale(varx), probs=c(0,0.3,0.5,0.7,1))
 
 # Display celltype
 pg2<-ggscatter(pca.display, x =PCx, y = PCy , color="mono", size = 1, alpha=0.7) +
   xlab(paste0(PCx,"  (", round(percent_var[1],0),"%)")) +
-  ylab(paste0(PCy,"  (", round(percent_var[2],0),"%)")) + 
-  font("ylab",size=30) + 
-  font("xlab",size=30) + 
-  font("xy.text", size=20) + 
-  scale_color_gradientn(colors=c("purple","yellow2"), values=qs.varx) + 
-  #annotate("text", x=-0.04, y=0.21,label="Macrophage", color=my_colors[2], size=10)  + 
-  # annotate("text", x=0.04, y=0.21, label="Monocyte", color=my_colors[3], size=10) + 
+  ylab(paste0(PCy,"  (", round(percent_var[2],0),"%)")) +
+  font("ylab",size=30) +
+  font("xlab",size=30) +
+  font("xy.text", size=20) +
+  scale_color_gradientn(colors=c("purple","yellow2"), values=qs.varx) +
+  #annotate("text", x=-0.04, y=0.21,label="Macrophage", color=my_colors[2], size=10)  +
+  # annotate("text", x=0.04, y=0.21, label="Monocyte", color=my_colors[3], size=10) +
   #annotate("text", x=0.05-0.01, y=-0.155, label=paste0(dim(mat.sc.imp)[1], " proteins"), size=8) +
-  #annotate("text", x=0.062-0.014, y=-0.13, label=paste0(dim(mat.sc.imp)[2], " cells"), size=8) + 
+  #annotate("text", x=0.062-0.014, y=-0.13, label=paste0(dim(mat.sc.imp)[2], " cells"), size=8) +
   rremove("xylab")+
-  rremove("xy.text") + 
-  rremove("ticks") + 
-  rremove("legend") + 
+  rremove("xy.text") +
+  rremove("ticks") +
+  rremove("legend") +
   ggtitle("Monocyte genes")
 
 # Adjust color scale:
@@ -1358,38 +1358,38 @@ qs.varx<-quantile(rescale(varx), probs=c(0,0.3,0.5,0.7,1))
 # Display celltype
 pg3<-ggscatter(pca.display, x =PCx, y = PCy , color="mac", size = 1, alpha=0.7) +
   xlab(paste0(PCx,"  (", round(percent_var[1],0),"%)")) +
-  ylab(paste0(PCy,"  (", round(percent_var[2],0),"%)")) + 
-  font("ylab",size=30) + 
-  font("xlab",size=30) + 
-  font("xy.text", size=20) + 
-  scale_color_gradientn(colors=c("purple","yellow2"), values=qs.varx) + 
-  #annotate("text", x=-0.04, y=0.21,label="Macrophage", color=my_colors[2], size=10)  + 
-  #annotate("text", x=0.04, y=0.21, label="Monocyte", color=my_colors[3], size=10) + 
+  ylab(paste0(PCy,"  (", round(percent_var[2],0),"%)")) +
+  font("ylab",size=30) +
+  font("xlab",size=30) +
+  font("xy.text", size=20) +
+  scale_color_gradientn(colors=c("purple","yellow2"), values=qs.varx) +
+  #annotate("text", x=-0.04, y=0.21,label="Macrophage", color=my_colors[2], size=10)  +
+  #annotate("text", x=0.04, y=0.21, label="Monocyte", color=my_colors[3], size=10) +
   #annotate("text", x=0.05-0.01, y=-0.155, label=paste0(dim(mat.sc.imp)[1], " proteins"), size=8) +
-  #annotate("text", x=0.062-0.014, y=-0.13, label=paste0(dim(mat.sc.imp)[2], " cells"), size=8) + 
+  #annotate("text", x=0.062-0.014, y=-0.13, label=paste0(dim(mat.sc.imp)[2], " cells"), size=8) +
   rremove("xylab")+
-  rremove("xy.text") + 
-  rremove("ticks") + 
-  ylab("Macrophage-genes") + 
-  rremove("legend")+ 
+  rremove("xy.text") +
+  rremove("ticks") +
+  ylab("Macrophage-genes") +
+  rremove("legend")+
   ggtitle("Macrophage genes")
 
 # ggscatter(pca.display, x =PCx, y = PCy , color="mac", size = 3, alpha=0.7) +
 #   xlab(paste0(PCx,"  (", round(percent_var[1],0),"%)")) +
-#   ylab(paste0(PCy,"  (", round(percent_var[2],0),"%)")) + 
-#   font("ylab",size=30) + 
-#   font("xlab",size=30) + 
-#   font("xy.text", size=20) + 
-#   scale_color_gradientn(colors=c("purple","yellow2"), values=qs.varx) + 
-#   #annotate("text", x=-0.04, y=0.21,label="Macrophage", color=my_colors[2], size=10)  + 
-#   #annotate("text", x=0.04, y=0.21, label="Monocyte", color=my_colors[3], size=10) + 
+#   ylab(paste0(PCy,"  (", round(percent_var[2],0),"%)")) +
+#   font("ylab",size=30) +
+#   font("xlab",size=30) +
+#   font("xy.text", size=20) +
+#   scale_color_gradientn(colors=c("purple","yellow2"), values=qs.varx) +
+#   #annotate("text", x=-0.04, y=0.21,label="Macrophage", color=my_colors[2], size=10)  +
+#   #annotate("text", x=0.04, y=0.21, label="Monocyte", color=my_colors[3], size=10) +
 #   #annotate("text", x=0.05-0.01, y=-0.155, label=paste0(dim(mat.sc.imp)[1], " proteins"), size=8) +
-#   #annotate("text", x=0.062-0.014, y=-0.13, label=paste0(dim(mat.sc.imp)[2], " cells"), size=8) + 
+#   #annotate("text", x=0.062-0.014, y=-0.13, label=paste0(dim(mat.sc.imp)[2], " cells"), size=8) +
 #   rremove("xylab")+
-#   rremove("xy.text") + 
-#   rremove("ticks") + 
-#   ylab("Macrophage-genes") + 
-#   #rremove("legend")+ 
+#   rremove("xy.text") +
+#   rremove("ticks") +
+#   ylab("Macrophage-genes") +
+#   #rremove("legend")+
 #   ggtitle("Macrophage genes")
 
 
@@ -1409,7 +1409,7 @@ ggsave(px, filename = "figs/pca.pdf", device="pdf", width = 8, height = 5)
 PCx<-"PC1"
 PCy<-"PC2"
 
-# Data to use: 
+# Data to use:
 mat.sc.imp<-cr_norm_log(matrix.sc.batch[rownames(matrix.sc.batch)%in%gns, ])
 dim(mat.sc.imp)
 
@@ -1417,10 +1417,10 @@ dim(mat.sc.imp)
 r1<-cor(t(mat.sc.imp))
 rsum<-rowSums(r1^2)
 
-# Calculate the weighted data matrix: 
+# Calculate the weighted data matrix:
 
 X.m <- mat.sc.imp
-X.m <- diag(rsum) %*%  X.m 
+X.m <- diag(rsum) %*%  X.m
 pca.imp.cor <- cor(X.m)
 
 # PCA
@@ -1434,41 +1434,41 @@ pca_var <- sc.pca$values
 percent_var<- pca_var/sum(pca_var)*100
 plot(1:length(percent_var), percent_var, xlab="PC", ylab="% of variance explained")
 
-# Map meta data 
+# Map meta data
 pca.melt <- melt(scx); colnames(pca.melt)<-c("id","pc","value")
 add.cols<-colnames(ev.melt)[4:7]
 pca.melt[,add.cols]<-NA
 
 for(X in unique(pca.melt$id)){
-  
+
   pca.melt[pca.melt$id==X, add.cols]<-ev.melt.uniqueID[ev.melt.uniqueID$id==X, add.cols]
-  
+
 }
 
 
-# Re map ... 
+# Re map ...
 pca.display <- dcast(pca.melt, id ~ pc, value.var = "value", fill=NA)
 
 pca.display[,add.cols]<-NA
 
 for(X in unique(pca.display$id)){
-  
+
   pca.display[pca.display$id==X, add.cols]<-ev.melt.uniqueID[ev.melt.uniqueID$id==X, add.cols]
-  
+
 }
 
 
 # Display celltype
 px<-ggscatter(pca.display, x =PCx, y = PCy , color="celltype", size = 2, alpha=0.5) +
   xlab(paste0(PCx,"  (", round(percent_var[1],0),"%)")) +
-  ylab(paste0(PCy,"  (", round(percent_var[2],0),"%)")) + 
-  font("ylab",size=30) + 
-  font("xlab",size=30) + 
-  font("xy.text", size=20) + 
-  rremove("legend") + 
-  scale_color_manual(values = my_colors[2:3]) + 
-  annotate("text", x=-0.025, y=0.21,label="Macrophage", color=my_colors[2], size=10)  + 
-  annotate("text", x=0.03, y=0.21, label="Monocyte", color=my_colors[3], size=10) + 
+  ylab(paste0(PCy,"  (", round(percent_var[2],0),"%)")) +
+  font("ylab",size=30) +
+  font("xlab",size=30) +
+  font("xy.text", size=20) +
+  rremove("legend") +
+  scale_color_manual(values = my_colors[2:3]) +
+  annotate("text", x=-0.025, y=0.21,label="Macrophage", color=my_colors[2], size=10)  +
+  annotate("text", x=0.03, y=0.21, label="Monocyte", color=my_colors[3], size=10) +
   annotate("text", x=0.05-0.02, y=-0.155, label=paste0(dim(mat.sc.imp)[1], " proteins"), size=8) +
   annotate("text", x=0.062-0.03, y=-0.11, label=paste0(dim(mat.sc.imp)[2], " cells"), size=8)
 
@@ -1481,7 +1481,7 @@ ggsave(px, filename = "figs/pca_signaling.pdf", device="pdf", width = 6, height 
 PCx<-"PC1"
 PCy<-"PC2"
 
-# Data to use: 
+# Data to use:
 mat.sc.imp<-cr_norm_log(matrix.sc.batch[rownames(matrix.sc.batch)%in%plow, ])
 dim(mat.sc.imp)
 
@@ -1489,10 +1489,10 @@ dim(mat.sc.imp)
 r1<-cor(t(mat.sc.imp))
 rsum<-rowSums(r1^2)
 
-# Calculate the weighted data matrix: 
+# Calculate the weighted data matrix:
 
 X.m <- mat.sc.imp
-X.m <- diag(rsum) %*%  X.m 
+X.m <- diag(rsum) %*%  X.m
 pca.imp.cor <- cor(X.m)
 
 # PCA
@@ -1506,41 +1506,41 @@ pca_var <- sc.pca$values
 percent_var<- pca_var/sum(pca_var)*100
 plot(1:length(percent_var), percent_var, xlab="PC", ylab="% of variance explained")
 
-# Map meta data 
+# Map meta data
 pca.melt <- melt(scx); colnames(pca.melt)<-c("id","pc","value")
 add.cols<-colnames(ev.melt)[4:7]
 pca.melt[,add.cols]<-NA
 
 for(X in unique(pca.melt$id)){
-  
+
   pca.melt[pca.melt$id==X, add.cols]<-ev.melt.uniqueID[ev.melt.uniqueID$id==X, add.cols]
-  
+
 }
 
 
-# Re map ... 
+# Re map ...
 pca.display <- dcast(pca.melt, id ~ pc, value.var = "value", fill=NA)
 
 pca.display[,add.cols]<-NA
 
 for(X in unique(pca.display$id)){
-  
+
   pca.display[pca.display$id==X, add.cols]<-ev.melt.uniqueID[ev.melt.uniqueID$id==X, add.cols]
-  
+
 }
 
 
 # Display celltype
 px<-ggscatter(pca.display, x =PCx, y = PCy , color="celltype", size = 2, alpha=0.5) +
   xlab(paste0(PCx,"  (", round(percent_var[1],0),"%)")) +
-  ylab(paste0(PCy,"  (", round(percent_var[2],0),"%)")) + 
-  font("ylab",size=30) + 
-  font("xlab",size=30) + 
-  font("xy.text", size=20) + 
-  rremove("legend") + 
-  scale_color_manual(values = my_colors[2:3]) + 
-  annotate("text", x=-0.025, y=0.21,label="Macrophage", color=my_colors[2], size=10)  + 
-  annotate("text", x=0.03, y=0.21, label="Monocyte", color=my_colors[3], size=10) + 
+  ylab(paste0(PCy,"  (", round(percent_var[2],0),"%)")) +
+  font("ylab",size=30) +
+  font("xlab",size=30) +
+  font("xy.text", size=20) +
+  rremove("legend") +
+  scale_color_manual(values = my_colors[2:3]) +
+  annotate("text", x=-0.025, y=0.21,label="Macrophage", color=my_colors[2], size=10)  +
+  annotate("text", x=0.03, y=0.21, label="Monocyte", color=my_colors[3], size=10) +
   annotate("text", x=0.05-0.02, y=-0.155, label=paste0(dim(mat.sc.imp)[1], " proteins"), size=8) +
   annotate("text", x=0.062-0.03, y=-0.11, label=paste0(dim(mat.sc.imp)[2], " cells"), size=8)
 
@@ -1553,7 +1553,7 @@ ggsave(px, filename = "figs/pca_lowabundance.pdf", device="pdf", width = 6, heig
 # Calculate the Laplacian of the correlation matrix (+1 to all values, so that no values are negative)
 W <- 1 + pca.imp.cor
 D <- diag(rowSums(W))
-L <- D - W 
+L <- D - W
 
 # Get the eigenvalues and eigenvectors of the Laplacian
 eigs<-eigen(L)
@@ -1640,15 +1640,15 @@ my_col2<-c(rgb(0,0,1,0.5),rgb(0,0,1,0.5),"white",rgb(1,0,0,0.5),rgb(1,0,0,0.5))
 my_col2<-c("blue","blue","white","red","red")
 my_col2<-c("blue",rgb(0,0,1,0.5),"white",rgb(1,0,0,0.5),"red")
 
-# Plot! 
-pl2<-ggplot(melt(mat.p), aes(x=Var2, y=Var1, fill=value))+ 
-  geom_tile() + 
-  scale_fill_gradientn(colors=my_col2, values=qs.varx) + 
+# Plot!
+pl2<-ggplot(melt(mat.p), aes(x=Var2, y=Var1, fill=value))+
+  geom_tile() +
+  scale_fill_gradientn(colors=my_col2, values=qs.varx) +
   #scale_fill_gradient2(low="blue", mid="white",high="red", midpoint=0) +
-  rremove("xy.text") + 
-  rremove("ticks") + 
-  ylab("Proteins") + 
-  xlab("Cells") + 
+  rremove("xy.text") +
+  rremove("ticks") +
+  ylab("Proteins") +
+  xlab("Cells") +
   font("xylab", size=20)
 
 
@@ -1658,23 +1658,23 @@ dfx$y<-1
 vdf<-data.frame(vec.m[order(vec.m[,2], decreasing=T),2]); vdf$num<-1:nrow(vdf); colnames(vdf)<-c("eigen","num")
 vdf$celltype<-dfx$var[order(dfx$x, decreasing=F)]
 
-# Plot! 
+# Plot!
 
 pl1<-ggbarplot(vdf, x="num", y="eigen", fill="celltype", color="celltype") + theme_pubr() +
   rremove("xy.text") + rremove("xylab") + rremove("ticks")+
-  scale_x_continuous( limits = c(min(vdf$num)-1, max(vdf$num))+1, expand = c(0, 0)) + 
-  scale_fill_manual(values=my_colors[c(2,3)])  + 
-  scale_color_manual(values=my_colors[c(2,3)]) + 
+  scale_x_continuous( limits = c(min(vdf$num)-1, max(vdf$num))+1, expand = c(0, 0)) +
+  scale_fill_manual(values=my_colors[c(2,3)])  +
+  scale_color_manual(values=my_colors[c(2,3)]) +
   rremove("legend") + rremove("axis")
 
 plot_cells<-ggplot(dfx, aes(x=x,y=y, fill=var))+geom_tile() +
-  theme_pubr() + 
-  rremove("legend") + 
-  rremove("xylab") + 
-  rremove("axis") + 
-  rremove("ticks") + 
-  rremove("xy.text") + 
-  scale_fill_manual(values=my_colors[c(2,3)]) 
+  theme_pubr() +
+  rremove("legend") +
+  rremove("xylab") +
+  rremove("axis") +
+  rremove("ticks") +
+  rremove("xy.text") +
+  scale_fill_manual(values=my_colors[c(2,3)])
 
 # Final figure
 
@@ -1702,15 +1702,15 @@ dim(mat.sc.imp.m0)
 r1<-cor(t(mat.sc.imp.m0))
 rsum<-rowSums(r1^2)
 
-# Calculate the weighted data matrix: 
+# Calculate the weighted data matrix:
 X.m <- mat.sc.imp.m0
-X.m <- diag(rsum) %*%  X.m 
+X.m <- diag(rsum) %*%  X.m
 pca.imp.mac <- cor(X.m)
 
 # Calculate the Laplacian of the correlation matrix (+1 to all values, so that no values are negative)
 W <-  1+ (pca.imp.mac)
 D <- diag( rowSums(W))
-L <- D - W 
+L <- D - W
 
 # Get the eigenvalues and eigenvectors of the Laplacian
 eigs<-eigen(L)
@@ -1791,16 +1791,16 @@ qs.varx<-quantile(rescale(varx), probs=c(0,0.10,0.5,0.9,1))
 
 my_col2<-c("blue",rgb(0,0,1,0.5),"white",rgb(1,0,0,0.5),"red")
 
-# Plot! 
+# Plot!
 dim(mat.p)
-pl2<-ggplot(melt(mat.p), aes(x=Var2, y=Var1, fill=value))+ 
-  geom_tile() + 
-  scale_fill_gradientn(colors=my_col2, values=qs.varx) + 
+pl2<-ggplot(melt(mat.p), aes(x=Var2, y=Var1, fill=value))+
+  geom_tile() +
+  scale_fill_gradientn(colors=my_col2, values=qs.varx) +
   #scale_fill_gradient2(low="blue", mid="white",high="red", midpoint=0) +
-  rremove("xy.text") + 
-  rremove("ticks") + 
-  ylab("Proteins") + 
-  xlab("Cells") + 
+  rremove("xy.text") +
+  rremove("ticks") +
+  ylab("Proteins") +
+  xlab("Cells") +
   font("xylab", size=20)
 
 dfx<-data.frame(var1<-ev.melt.uniqueID$celltype[match(colnames(mat.c), ev.melt.uniqueID$id)]); colnames(dfx)<-c("var")
@@ -1813,19 +1813,19 @@ vdf$celltype<-dfx$var[order(dfx$x, decreasing=F)]
 
 pl1<-ggbarplot(vdf, x="num", y="eigen", fill="celltype", color="celltype") + theme_pubr() +
   rremove("xy.text") + rremove("xylab") + rremove("ticks")+
-  scale_x_continuous( limits = c(min(vdf$num)-1, max(vdf$num))+1, expand = c(0, 0)) + 
-  scale_fill_manual(values=my_colors[c(2,3)])  + 
-  scale_color_manual(values=my_colors[c(2,3)]) + 
+  scale_x_continuous( limits = c(min(vdf$num)-1, max(vdf$num))+1, expand = c(0, 0)) +
+  scale_fill_manual(values=my_colors[c(2,3)])  +
+  scale_color_manual(values=my_colors[c(2,3)]) +
   rremove("legend") + rremove("axis")
 
 plot_cells<-ggplot(dfx, aes(x=x,y=y, fill=var))+geom_tile() +
-  theme_pubr() + 
-  rremove("legend") + 
-  rremove("xylab") + 
-  rremove("axis") + 
-  rremove("ticks") + 
-  rremove("xy.text") + 
-  scale_fill_manual(values=my_colors[c(2,3)]) + 
+  theme_pubr() +
+  rremove("legend") +
+  rremove("xylab") +
+  rremove("axis") +
+  rremove("ticks") +
+  rremove("xy.text") +
+  scale_fill_manual(values=my_colors[c(2,3)]) +
   theme(plot.margin = margin(0, 1, 0, 5, "cm"))
 
 # Extract markers of M1 and M2 polarization and look at their quantitation across spectrum
@@ -1866,10 +1866,10 @@ qs<-quantile(m1d$Var2, probs=seq(0,1,0.1))[-1]
 m1d$quantile<-NA
 
 for(i in round(qs[order(qs, decreasing = T)],0)){
-  
+
   print(i)
   m1d$quantile[m1d$Var2%in%1:i]<-i
-  
+
 }
 
 qs<-quantile(m2d$Var2, probs=seq(0,1,0.1))[-1]
@@ -1877,10 +1877,10 @@ qs<-quantile(m2d$Var2, probs=seq(0,1,0.1))[-1]
 m2d$quantile<-NA
 
 for(i in round(qs[order(qs, decreasing = T)],0)){
-  
+
   print(i)
   m2d$quantile[m2d$Var2%in%1:i]<-i
-  
+
 }
 
 sdf<-data.frame( aggregate(value~quantile, data=m1d, FUN = median), aggregate(value~quantile, data=m1d, FUN = se) )
@@ -1892,15 +1892,15 @@ sdf$quantile1<-sdf$quantile1-13
 
 rhom1<-cor(sdf$quantile1, sdf$median)
 
-sp1<-ggscatter(sdf, x="quantile1",y="median") + geom_smooth(method = "lm") + 
-  geom_errorbar(data = sdf, aes(x = quantile1, y = median, ymin = median - se, ymax = median + se)) + 
-  rremove("xy.text") + 
-  rremove("xlab") + 
+sp1<-ggscatter(sdf, x="quantile1",y="median") + geom_smooth(method = "lm") +
+  geom_errorbar(data = sdf, aes(x = quantile1, y = median, ymin = median - se, ymax = median + se)) +
+  rremove("xy.text") +
+  rremove("xlab") +
   rremove("ticks")+
   xlim(c(0, ncol(mat.p)))+
-  scale_x_continuous(expand = c(0, 0)) + 
-  scale_y_continuous(breaks=c(-0.1,0,0.15), labels=c("-100%", "0%", "100%") ) + 
-  rremove("legend")  +  geom_text(x=200, y=0.1, label=paste0("r = ",round(rhom1,2)), size=7) + 
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(breaks=c(-0.1,0,0.15), labels=c("-100%", "0%", "100%") ) +
+  rremove("legend")  +  geom_text(x=200, y=0.1, label=paste0("r = ",round(rhom1,2)), size=7) +
   ylab("M1-genes") + font("ylab", size=20) #+ geom_hline(yintercept=0, color="black", size=1)
 
 
@@ -1912,15 +1912,15 @@ rhom2<-cor(sdf$quantile1, sdf$median)
 
 sdf$quantile1<-sdf$quantile1-13
 
-sp2<-ggscatter(sdf, x="quantile1",y="median") + geom_smooth(method = "lm") + 
-  geom_errorbar(data = sdf, aes(x = quantile1, y = median, ymin = median - se, ymax = median + se)) + 
-  rremove("xy.text") + 
-  rremove("xlab") + 
+sp2<-ggscatter(sdf, x="quantile1",y="median") + geom_smooth(method = "lm") +
+  geom_errorbar(data = sdf, aes(x = quantile1, y = median, ymin = median - se, ymax = median + se)) +
+  rremove("xy.text") +
+  rremove("xlab") +
   rremove("ticks")+
   xlim(c(0, ncol(mat.p)))+
-  scale_x_continuous(expand = c(0, 0)) + 
-  #scale_y_continuous(breaks=c(-0.1,0,0.15), labels=c("-100%", "0%", "100%") ) + 
-  rremove("legend")  +  #geom_text(x=50, y=0.1, label=paste0("r = ",round(rhom2,2)), size=7) + 
+  scale_x_continuous(expand = c(0, 0)) +
+  #scale_y_continuous(breaks=c(-0.1,0,0.15), labels=c("-100%", "0%", "100%") ) +
+  rremove("legend")  +  #geom_text(x=50, y=0.1, label=paste0("r = ",round(rhom2,2)), size=7) +
   ylab("M2-genes") + font("ylab", size=20) #+ geom_hline(yintercept=0, color="black", size=1)
 
 print(rhom1); print(rhom2)
@@ -1936,29 +1936,29 @@ ggsave("figs/mac.png", device="png", plot=px, width=5, height=7)
 # Fiedler vector values distributions  ------------------------------------------------------------------------
 
 
-# # Eigenvectors used to perform spectral clustering on both macrophage-like + monocyte, and macrophage-like only data matrices: 
+# # Eigenvectors used to perform spectral clustering on both macrophage-like + monocyte, and macrophage-like only data matrices:
 # mac_vec<-c(mac_vec, rep(NA, length(mac_mono_vec) - length(mac_vec)))
 # dfxx<-data.frame(mac_mono_vec, mac_vec)
 # dfxm<-melt(dfxx)
-# 
-# # Plot! 
-# px<-ggplot(data=dfxm, aes(x=value, y=variable)) + geom_density_ridges(aes(fill=variable)) + theme_pubr() + 
-#   scale_fill_manual(values=my_colors[c(1,2)]) + 
-#   xlab("Eigenvector value") + ylab("Density") + rremove("y.ticks") + rremove("y.text") + 
+#
+# # Plot!
+# px<-ggplot(data=dfxm, aes(x=value, y=variable)) + geom_density_ridges(aes(fill=variable)) + theme_pubr() +
+#   scale_fill_manual(values=my_colors[c(1,2)]) +
+#   xlab("Eigenvector value") + ylab("Density") + rremove("y.ticks") + rremove("y.text") +
 #   font("xylab", size=20) +
-#   font("x.text", size=20) + 
-#   #xlim(c(-0.15, 0.35)) + 
-#   #annotate("text", x=0.25, y= 1.5, label="Monocyte and\n macrophage-like", size=6)+ 
-#   #annotate("text", x=0.25, y= 3, label="Macrophage-like", size=6) + 
+#   font("x.text", size=20) +
+#   #xlim(c(-0.15, 0.35)) +
+#   #annotate("text", x=0.25, y= 1.5, label="Monocyte and\n macrophage-like", size=6)+
+#   #annotate("text", x=0.25, y= 3, label="Macrophage-like", size=6) +
 #   rremove("legend")
-# 
+#
 # ggsave("figs/fiedler.png", plot=px, width=5, height=5)
 
 
 
 # Coverage 1/2 ----------------------------------------------------------------
 
-# Spectra only: 
+# Spectra only:
 ev_standard_filtering_so<-ev_standard_filtering[ev_standard_filtering$Raw.file %in% ev.melt$Raw.file[ev.melt$id%in%colnames(ev.matrix.sc.f)], ]
 ev_standard_filtering_so$fdr<-calc_fdr(ev_standard_filtering_so$PEP)
 ev_standard_filtering_so<-ev_standard_filtering_so[ev_standard_filtering_so$fdr < 0.01, ]
@@ -1973,7 +1973,7 @@ head(coverage_df_melt)
 #write.csv(coverage_df_melt, "dat/coverage_spectra_only.csv")
 
 
-# Dart ID: 
+# Dart ID:
 ev_standard_filtering<-ev_standard_filtering[ev_standard_filtering$Raw.file %in% ev.melt$Raw.file[ev.melt$id%in%colnames(ev.matrix.sc.f)], ]
 ev_standard_filtering$fdr<-calc_fdr(ev_standard_filtering$dart_PEP)
 ev_standard_filtering<-ev_standard_filtering[ev_standard_filtering$fdr < 0.01, ]
@@ -1992,29 +1992,29 @@ colnames(coverage_df)<-c("Peptides", "Peptides,\n filtered","Proteins", "Protein
 coverage_df_melt<-melt(coverage_df)
 coverage_df_melt$type<-"1% FDR"; coverage_df_melt$type[grep("filtered", coverage_df_melt$variable)]<-"strict filtering"
 
-px<-ggboxplot(coverage_df_melt, x="variable", y="value", fill="type") + 
-  theme(text=element_text(size=20)) + 
+px<-ggboxplot(coverage_df_melt, x="variable", y="value", fill="type") +
+  theme(text=element_text(size=20)) +
   xlab("")+
   ylab("# quantified / run\n") +
   font("ylab",size=30)+
   font("xlab",size=30)+
   scale_fill_manual(values = c("white","lightpink") ) +
-  rremove("x.ticks") + 
+  rremove("x.ticks") +
   font("x.text", size=20) +
-  theme(axis.text.x  = element_text(angle=30, vjust=0.5)) + 
-  theme(legend.position = c(0.7, 0.9)) + 
+  theme(axis.text.x  = element_text(angle=30, vjust=0.5)) +
+  theme(legend.position = c(0.7, 0.9)) +
   theme(legend.background = element_rect(fill="white",
-                                         size=1, linetype="solid", 
+                                         size=1, linetype="solid",
                                          colour ="white")) +
-  font("legend.title", size= 20) + 
-  font("legend.text", size= 20) + 
-  guides(colour = guide_legend(override.aes = list(shape = 15))) + 
-  theme(legend.key.size = unit(1.2,"line")) + 
-  rremove("legend.title") +   
-  rremove("x.ticks") + 
+  font("legend.title", size= 20) +
+  font("legend.text", size= 20) +
+  guides(colour = guide_legend(override.aes = list(shape = 15))) +
+  theme(legend.key.size = unit(1.2,"line")) +
   rremove("legend.title") +
-  rremove("xlab") + 
-  ylim(0,3000) 
+  rremove("x.ticks") +
+  rremove("legend.title") +
+  rremove("xlab") +
+  ylim(0,3000)
 
 #write.csv(coverage_df_melt, "dat/coverage.csv")
 
@@ -2044,47 +2044,47 @@ celltypes<-c()
 GO<-c()
 prot_topx<-c()
 for(X in c(u.enriched, m0.enriched)){
-  
+
   i <- which(gs$geneset.names==X)
-  
+
   prots.t<-sapply(gs$genesets[i], paste0)
-  
+
   mat.t<-mat.sc.imp[rownames(mat.sc.imp)%in%prots.t, ]
   print(nrow(mat.t))
   fct_top<-0
   jk<-NA
   for(j in 1:nrow(mat.t)){
-    
-    
-    
+
+
+
     # c1<-c(mat.t[j,colnames(mat.sc.imp)%in%u.ids])
-    # c2<-c(mat.t[j,colnames(mat.sc.imp)%in%m0.ids])    
+    # c2<-c(mat.t[j,colnames(mat.sc.imp)%in%m0.ids])
     c1<-c(rank(mat.t[j,],na.last=NA)[colnames(mat.sc.imp)%in%u.ids])
     c2<-c(rank(mat.t[j,],na.last=NA)[colnames(mat.sc.imp)%in%m0.ids])
 
     fct<-abs(median(c2, na.rm = T) - median(c1, na.rm = T))
-    
+
     if(fct > fct_top){
-      
+
       fct_top<-fct
       jk<-j
       prot_top<-which(rownames(mat.sc.imp)==rownames(mat.t)[j])
-      
+
     }
   }
-  
+
   c1<-NA; c2<-NA
-  
-  
+
+
   c1<-c(mat.t[jk,colnames(mat.sc.imp)%in%u.ids])
   c2<-c(mat.t[jk,colnames(mat.sc.imp)%in%m0.ids])
-  
+
   quant<-c(quant, c1, c2)
   celltypes<-c(celltypes, rep("u",length(c1)), rep("m0",length(c2)))
   GO<-c(GO, rep(X, length(c(c1,c2))))
   prot_topx<-c(prot_topx, rep(prot_top, length(c(c1,c2))))
-  
-  
+
+
 }
 
 selectdf<-data.frame(GO,celltypes,quant, prot_topx)
@@ -2093,20 +2093,20 @@ selectdf$GO <- factor(selectdf$GO, levels = c(u.enriched, m0.enriched ))
 selectdf$prot_topx <- factor(selectdf$prot_topx, levels = c(unique(selectdf$prot_topx)))
 
 # Plot!
-px<-ggplot(data=selectdf, aes(x=quant, y=prot_topx)) + 
-  geom_density_ridges(aes(fill=celltypes, alpha=0.5), scale=1) + 
+px<-ggplot(data=selectdf, aes(x=quant, y=prot_topx)) +
+  geom_density_ridges(aes(fill=celltypes, alpha=0.5), scale=1) +
   theme_pubr() +
   scale_fill_manual(values=my_colors[c(2,3)]) +
   scale_x_continuous(limits=c(-2.5,2.5)) +
   coord_flip() +
-  xlab("Protein level, log2") + 
-  ylab("Gene ontology") + 
-  rremove("y.ticks") + 
+  xlab("Protein level, log2") +
+  ylab("Gene ontology") +
+  rremove("y.ticks") +
   #rremove("x.text") +
   rremove("xlab") +
   font("ylab", size=30) +
   font("xy.text", size=30) +
-  rremove("legend") + 
+  rremove("legend") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 ggsave(plot=px, "figs/go.pdf", width = 10, height = 5)
@@ -2114,28 +2114,28 @@ ggsave(plot=px, "figs/go.pdf", width = 10, height = 5)
 # Loading RNA data ----------------------------------------------------------
 
 # ldl<-read.delim("dat/ldl.conlnames.txt", header = F)
-# 
+#
 # library(Matrix)
 # r1<-readMM("dat/matrix1.mtx")
 # r2<-readMM("dat/matrix2.mtx")
-# 
+#
 # r1r<-read.delim("dat/s1_features.tsv", header=F)
 # r2r<-read.delim("dat/s2_features.tsv", header=F)
-# 
+#
 # r1c<-read.delim("dat/s1_barcodes.tsv", header=F)
 # r2c<-read.delim("dat/s2_barcodes.tsv", header=F)
-# 
-# 
+#
+#
 # r1<-as.matrix(r1)
 # r2<-as.matrix(r2)
 # colnames(r1)<-r1c$V1
 # colnames(r2)<-r2c$V1
-# 
+#
 # rownames(r1)<-r1r$V2
 # rownames(r2)<-r2r$V2
-# 
+#
 # all(rownames(r1)==rownames(r2))
-# 
+#
 # rmx<-cbind(r1[,paste0("RNA1_",colnames(r1))%in%ldl$V1],r2[,paste0("RNA2_",colnames(r2))%in%ldl$V1])
 # sum(paste0("RNA1_",colnames(r1))%in%ldl$V1); sum(paste0("RNA2_",colnames(r2))%in%ldl$V1)
 # #502 cells from r1, 516 cells from r2 (for batch correction purposes)
@@ -2196,7 +2196,7 @@ save(gn_uni, rm.f2, rm.f3,rm.i,rm.batch,file="dat/rna_dat.RData")
 PCx<-"PC1"
 PCy<-"PC2"
 
-# Data to use: 
+# Data to use:
 mat.sc.imp<-cr_norm_log(rm.batch)
 mat.sc.imp<-rmat
 
@@ -2206,7 +2206,7 @@ r1<-cor(t(mat.sc.imp))
 rsum<-rowSums(r1^2)
 
 X.m <- mat.sc.imp
-X.m <- diag(rsum) %*%  X.m 
+X.m <- diag(rsum) %*%  X.m
 pca.imp.cor <- cor(X.m)
 
 # PCA
@@ -2220,21 +2220,21 @@ pca_var <- sc.pca$values
 percent_var<- pca_var/sum(pca_var)*100
 plot(1:length(percent_var), percent_var, xlab="PC", ylab="% of variance explained")
 
-# Map meta data 
+# Map meta data
 pca.melt <- melt(scx); colnames(pca.melt)<-c("id","pc","value")
 
-# Re map ... 
+# Re map ...
 pca.display <- dcast(pca.melt, id ~ pc, value.var = "value", fill=NA)
 
 
 # Display celltype
 ggscatter(pca.display, x =PCx, y = PCy, size = 2, alpha=0.3) +
   xlab(paste0(PCx,"  (", round(percent_var[1],0),"%)")) +
-  ylab(paste0(PCy,"  (", round(percent_var[2],0),"%)")) + 
-  font("ylab",size=30) + 
-  font("xlab",size=30) + 
-  font("xy.text", size=20) + 
-  rremove("legend") + 
+  ylab(paste0(PCy,"  (", round(percent_var[2],0),"%)")) +
+  font("ylab",size=30) +
+  font("xlab",size=30) +
+  font("xy.text", size=20) +
+  rremove("legend") +
   annotate("text", x=0.05-0.03, y=-0.155, label=paste0(dim(mat.sc.imp)[1], " RNA"), size=8) +
   annotate("text", x=0.062-0.034, y=-0.13, label=paste0(dim(mat.sc.imp)[2], " cells"), size=8)
 
@@ -2265,16 +2265,16 @@ dim(pmat)
 
 rmat<-rmat[match(rownames(pmat), rownames(rmat) ), ]
 
-# Compute fiedler vectors: 
+# Compute fiedler vectors:
 mat.sc.imp<-cr_norm_log(pmat)
 r1<-cor(t(mat.sc.imp))
 rsum<-rowSums(r1^2)
 X.m <- mat.sc.imp
-X.m <- diag(rsum) %*%  X.m 
+X.m <- diag(rsum) %*%  X.m
 pca.imp.cor <- cor(X.m)
 W <- 1 + pca.imp.cor
 D <- diag(rowSums(W))
-L <- D - W 
+L <- D - W
 eigs<-eigen(L)
 vec<-eigs$vectors
 val<-eigs$values
@@ -2282,16 +2282,16 @@ vec<-vec[,order(val, decreasing=F)]
 vec.m<-vec[,1:2]
 mac_mono_vec_p<-vec.m[,2]
 
-# Compute fiedler vectors: 
+# Compute fiedler vectors:
 mat.sc.imp<-cr_norm_log(rmat)
 r1<-cor(t(mat.sc.imp))
 rsum<-rowSums(r1^2)
 X.m <- mat.sc.imp
-X.m <- diag(rsum) %*%  X.m 
+X.m <- diag(rsum) %*%  X.m
 pca.imp.cor <- cor(X.m)
 W <- 1 + pca.imp.cor
 D <- diag(rowSums(W))
-L <- D - W 
+L <- D - W
 eigs<-eigen(L)
 vec<-eigs$vectors
 val<-eigs$values
@@ -2330,15 +2330,15 @@ mat.sc.imp.m0<-cr_norm_log(rmat.mac)
 r1<-cor(t(mat.sc.imp.m0))
 rsum<-rowSums(r1^2)
 
-# Calculate the weighted data matrix: 
+# Calculate the weighted data matrix:
 X.m <- mat.sc.imp.m0
-X.m <- diag(rsum) %*%  X.m 
+X.m <- diag(rsum) %*%  X.m
 pca.imp.mac <- cor(X.m)
 
 # Calculate the Laplacian of the correlation matrix (+1 to all values, so that no values are negative)
 W <-  1+ (pca.imp.mac)
 D <- diag( rowSums(W))
-L <- D - W 
+L <- D - W
 
 # Get the eigenvalues and eigenvectors of the Laplacian
 eigs<-eigen(L)
@@ -2419,16 +2419,16 @@ qs.varx<-quantile(rescale(varx), probs=c(0,0.10,0.5,0.9,1))
 
 my_col2<-c("blue",rgb(0,0,1,0.5),"white",rgb(1,0,0,0.5),"red")
 
-# Plot! 
+# Plot!
 dim(mat.p)
-pl2<-ggplot(melt(mat.p), aes(x=Var2, y=Var1, fill=value))+ 
-  geom_tile() + 
-  scale_fill_gradientn(colors=my_col2, values=qs.varx) + 
+pl2<-ggplot(melt(mat.p), aes(x=Var2, y=Var1, fill=value))+
+  geom_tile() +
+  scale_fill_gradientn(colors=my_col2, values=qs.varx) +
   #scale_fill_gradient2(low="blue", mid="white",high="red", midpoint=0) +
-  rremove("xy.text") + 
-  rremove("ticks") + 
-  ylab("Proteins") + 
-  xlab("Cells") + 
+  rremove("xy.text") +
+  rremove("ticks") +
+  ylab("Proteins") +
+  xlab("Cells") +
   font("xylab", size=20)
 
 dfx<-data.frame(var1<-ev.melt.uniqueID$celltype[match(colnames(mat.c), ev.melt.uniqueID$id)]); colnames(dfx)<-c("var")
@@ -2441,19 +2441,19 @@ vdf$celltype<-dfx$var[order(dfx$x, decreasing=F)]
 
 pl1<-ggbarplot(vdf, x="num", y="eigen", fill="#048ABF", color="#048ABF") + theme_pubr() +
   rremove("xy.text") + rremove("xylab") + rremove("ticks")+
-  scale_x_continuous( limits = c(min(vdf$num)-1, max(vdf$num))+1, expand = c(0, 0)) + 
-  scale_fill_manual(values=my_colors[c(2,3)])  + 
-  scale_color_manual(values=my_colors[c(2,3)]) + 
+  scale_x_continuous( limits = c(min(vdf$num)-1, max(vdf$num))+1, expand = c(0, 0)) +
+  scale_fill_manual(values=my_colors[c(2,3)])  +
+  scale_color_manual(values=my_colors[c(2,3)]) +
   rremove("legend") + rremove("axis")
 
 plot_cells<-ggplot(dfx, aes(x=x,y=y, fill=var))+geom_tile() +
-  theme_pubr() + 
-  rremove("legend") + 
-  rremove("xylab") + 
-  rremove("axis") + 
-  rremove("ticks") + 
-  rremove("xy.text") + 
-  scale_fill_manual(values=my_colors[c(2,3)]) + 
+  theme_pubr() +
+  rremove("legend") +
+  rremove("xylab") +
+  rremove("axis") +
+  rremove("ticks") +
+  rremove("xy.text") +
+  scale_fill_manual(values=my_colors[c(2,3)]) +
   theme(plot.margin = margin(0, 1, 0, 5, "cm"))
 
 # Extract markers of M1 and M2 polarization and look at their quantitation across spectrum
@@ -2494,10 +2494,10 @@ qs<-quantile(m1d$Var2, probs=seq(0,1,0.1))[-1]
 m1d$quantile<-NA
 
 for(i in round(qs[order(qs, decreasing = T)],0)){
-  
+
   print(i)
   m1d$quantile[m1d$Var2%in%1:i]<-i
-  
+
 }
 
 qs<-quantile(m2d$Var2, probs=seq(0,1,0.1))[-1]
@@ -2505,10 +2505,10 @@ qs<-quantile(m2d$Var2, probs=seq(0,1,0.1))[-1]
 m2d$quantile<-NA
 
 for(i in round(qs[order(qs, decreasing = T)],0)){
-  
+
   print(i)
   m2d$quantile[m2d$Var2%in%1:i]<-i
-  
+
 }
 
 sdf<-data.frame( aggregate(value~quantile, data=m1d, FUN = median), aggregate(value~quantile, data=m1d, FUN = se) )
@@ -2520,15 +2520,15 @@ sdf$quantile1<-sdf$quantile1-13
 
 rhom1<-cor(sdf$quantile1, sdf$median)
 
-sp1<-ggscatter(sdf, x="quantile1",y="median") + geom_smooth(method = "lm") + 
-  geom_errorbar(data = sdf, aes(x = quantile1, y = median, ymin = median - se, ymax = median + se)) + 
-  rremove("xy.text") + 
-  rremove("xlab") + 
+sp1<-ggscatter(sdf, x="quantile1",y="median") + geom_smooth(method = "lm") +
+  geom_errorbar(data = sdf, aes(x = quantile1, y = median, ymin = median - se, ymax = median + se)) +
+  rremove("xy.text") +
+  rremove("xlab") +
   rremove("ticks")+
   xlim(c(0, ncol(mat.p)))+
-  scale_x_continuous(expand = c(0, 0)) + 
-  scale_y_continuous(breaks=c(-0.1,0,0.15), labels=c("-100%", "0%", "100%") ) + 
-  rremove("legend")  +  geom_text(x=200, y=0.1, label=paste0("r = ",round(rhom1,2)), size=7) + 
+  scale_x_continuous(expand = c(0, 0)) +
+  scale_y_continuous(breaks=c(-0.1,0,0.15), labels=c("-100%", "0%", "100%") ) +
+  rremove("legend")  +  geom_text(x=200, y=0.1, label=paste0("r = ",round(rhom1,2)), size=7) +
   ylab("M1-genes") + font("ylab", size=20) #+ geom_hline(yintercept=0, color="black", size=1)
 
 
@@ -2540,15 +2540,15 @@ rhom2<-cor(sdf$quantile1, sdf$median)
 
 sdf$quantile1<-sdf$quantile1-13
 
-sp2<-ggscatter(sdf, x="quantile1",y="median") + geom_smooth(method = "lm") + 
-  geom_errorbar(data = sdf, aes(x = quantile1, y = median, ymin = median - se, ymax = median + se)) + 
-  rremove("xy.text") + 
-  rremove("xlab") + 
+sp2<-ggscatter(sdf, x="quantile1",y="median") + geom_smooth(method = "lm") +
+  geom_errorbar(data = sdf, aes(x = quantile1, y = median, ymin = median - se, ymax = median + se)) +
+  rremove("xy.text") +
+  rremove("xlab") +
   rremove("ticks")+
   xlim(c(0, ncol(mat.p)))+
-  scale_x_continuous(expand = c(0, 0)) + 
-  #scale_y_continuous(breaks=c(-0.1,0,0.15), labels=c("-100%", "0%", "100%") ) + 
-  rremove("legend")  +  #geom_text(x=50, y=0.1, label=paste0("r = ",round(rhom2,2)), size=7) + 
+  scale_x_continuous(expand = c(0, 0)) +
+  #scale_y_continuous(breaks=c(-0.1,0,0.15), labels=c("-100%", "0%", "100%") ) +
+  rremove("legend")  +  #geom_text(x=50, y=0.1, label=paste0("r = ",round(rhom2,2)), size=7) +
   ylab("M2-genes") + font("ylab", size=20) #+ geom_hline(yintercept=0, color="black", size=1)
 
 print(rhom1); print(rhom2)
@@ -2590,7 +2590,7 @@ head(ev.meltq)
 colnames(tev)[30:40]<-paste0("Reporter.intensity.",1:11)
 
 
-tevm<-melt(tev, id.vars = colnames(tev)[-30:-40]) 
+tevm<-melt(tev, id.vars = colnames(tev)[-30:-40])
 
 tevm<-tevm[tevm$variable%in%paste0("Reporter.intensity.",1:11)[4:11], ]
 
@@ -2620,14 +2620,14 @@ pm<-c(pm, rep(NA, length(rmat)-length(pm))); length(pm)
 
 df<-data.frame(rm, pm, ppm)
 
-# Convert S/N to number of ions on QE: 
+# Convert S/N to number of ions on QE:
 noise<- 3.5*sqrt(240000 / 70000)
 df[,2:3]<-df[,2:3]*noise
 
 # Rearrange data for convenience
 dfm<-melt(df)
 
-# Calculate Poisson error: 
+# Calculate Poisson error:
 pep.error<-round( 1 / sqrt( median ( df$ppm , na.rm=T)),2)*100
 prot.error<-round( 1 / sqrt( median ( df$pm , na.rm=T)),2)*100
 rna.error<-round( 1 / sqrt( median ( df$rm , na.rm=T)),2)*100
@@ -2670,23 +2670,23 @@ p1<-ggplot(dfm, aes(x = valuelog10, y = variable, fill=variable)) +
 
 
 p2<-ggplot(dat, aes(x,y)) + geom_line(size=1, color="black") +
-  scale_x_continuous(limits = c(0, 4.6), breaks = c(0,1,2,3,4)) + 
-  scale_y_continuous(limits = c(0, 100), breaks = c(0,50,100)) + 
-  ylab("CV,  %") + 
-  scale_y_continuous(labels = scales::percent_format(accuracy = 1, suffix="")) + 
+  scale_x_continuous(limits = c(0, 4.6), breaks = c(0,1,2,3,4)) +
+  scale_y_continuous(limits = c(0, 100), breaks = c(0,50,100)) +
+  ylab("CV,  %") +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 1, suffix="")) +
   theme_ridges(center_axis_labels = TRUE) +
   #theme(panel.grid.major.y = element_blank())+
-  rremove("x.text") + 
-  rremove("xlab") + 
-  geom_point(aes(x=log10( median ( df$rm , na.rm=T) ), y=rna.error/100), colour="blue", size=7) + 
+  rremove("x.text") +
+  rremove("xlab") +
+  geom_point(aes(x=log10( median ( df$rm , na.rm=T) ), y=rna.error/100), colour="blue", size=7) +
   geom_point(aes(x=log10( median ( df$pm , na.rm=T) ), y=prot.error/100), colour="red", size=7) +
   geom_point(aes(x=log10( median ( df$ppm , na.rm=T) ), y=pep.error/100), colour="orange", size=7) +
-  annotate("text",x=3.5, y=0.45, label = expression(paste(CV==frac(1, sqrt(n)))), size=8) + 
-  annotate("text",x=3.5, y=0.9, label = "Counting error:", size=9) + 
-  font("title", size=20) + 
+  annotate("text",x=3.5, y=0.45, label = expression(paste(CV==frac(1, sqrt(n)))), size=8) +
+  annotate("text",x=3.5, y=0.9, label = "Counting error:", size=9) +
+  font("title", size=20) +
   font("ylab",size=28) +
-font("y.text",size=25) 
-#theme(axis.line.x = element_line(color="black")) 
+font("y.text",size=25)
+#theme(axis.line.x = element_line(color="black"))
 
 px<-plot_spacer() + p2 +plot_spacer()+ p1 + plot_layout(ncol = 1, heights = c(0.1,2,0.2, 5))
 
@@ -2705,7 +2705,7 @@ ct2<-(rm.batch[,colnames(rm.batch)%in%maclike])
 c1<-c(cor(ct1, use="pairwise.complete.obs", method="spearman"))
 c2<-c(cor(ct2, use="pairwise.complete.obs", method="spearman"))
 
-# Combine into data frame: 
+# Combine into data frame:
 c2<-c(c2, rep(NA, length(c1)-length(c2)))
 dfxxx<-data.frame(c1, c2)
 dxm<-melt(dfxxx)
@@ -2725,7 +2725,7 @@ c2<-c(cor(ct2, use="pairwise.complete.obs", method="spearman"))
 
 mean(c1); mean(c2)
 
-# Combine into data frame: 
+# Combine into data frame:
 c1<-c(c1, rep(NA, length(c2)-length(c1)))
 dfxxx<-data.frame(c1, c2)
 dxm2<-melt(dfxxx)
@@ -2736,24 +2736,24 @@ dxm2$dataset<-"Protein"
 dxm3<-rbind(dxm, dxm2)
 
 
-px<-ggplot(data = dxm3, aes(y=dataset, x= value, alpha=0.5)) + 
-  geom_density_ridges(aes(fill=variable, scale=0.75)) + 
-  scale_fill_manual(values=my_colors[c(3,2)]) + 
+px<-ggplot(data = dxm3, aes(y=dataset, x= value, alpha=0.5)) +
+  geom_density_ridges(aes(fill=variable, scale=0.75)) +
+  scale_fill_manual(values=my_colors[c(3,2)]) +
   xlim(c(-0.1,0.65)) +
-  theme_pubr() + 
-  rremove("legend") + 
-  rremove("y.ticks") + 
-  rremove("y.text") + 
-  ylab("Density") + 
+  theme_pubr() +
+  rremove("legend") +
+  rremove("y.ticks") +
+  rremove("y.text") +
+  ylab("Density") +
   xlab("Spearman correlation between cells") +
-  ggtitle("Similarity within cell type") + 
-  font("title", size=40) + 
-  font("xylab", size=30) + 
+  ggtitle("Similarity within cell type") +
+  font("title", size=40) +
+  font("xylab", size=30) +
   font("x.text", size=30) +
-  annotate("text", x=-0.1, y=1.5, label="Protein", size=15) + 
-  annotate("text", x=-0.1, y=2.5, label="mRNA", size=15) + 
-  annotate("text", x=0.5, y=2.45, label="Macrophage", size=10, color=my_colors[2]) + 
-  annotate("text", x=0.5, y=2.25, label="Monocyte", size=10, color=my_colors[3]) + 
+  annotate("text", x=-0.1, y=1.5, label="Protein", size=15) +
+  annotate("text", x=-0.1, y=2.5, label="mRNA", size=15) +
+  annotate("text", x=0.5, y=2.45, label="Macrophage", size=10, color=my_colors[2]) +
+  annotate("text", x=0.5, y=2.25, label="Monocyte", size=10, color=my_colors[3]) +
   theme(panel.grid.minor = element_line(colour="gray", size=0.5))
 
 ggsave("figs/density_correlation.pdf", plot=px, width=6, height=5)
