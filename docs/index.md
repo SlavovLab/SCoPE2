@@ -41,6 +41,6 @@ The fate and physiology of individual cells are controlled by protein interactio
 
 ## About the project
 
-SCoPE2 is a project developed in the [Slavov Laboratory](http://slavovlab.net) at [Northeastern University](https://www.northeastern.edu/) [Bioengineering](http://www.bioe.neu.edu/), and was authored by [Harrison Specht](harrisonspecht.com), [Ed Emmott](http://edemmott.co.uk/), Aleksandra Petelski, R. Gray Huffman, David H Perlman, Marco Serra, [Peter Kharchenko](http://pklab.med.harvard.edu/), [Toni Koller](http://slavovlab.net/people.htm), and [Nikolai Slavov](https://coe.northeastern.edu/people/slavov-nikolai/).
+SCoPE2 is a project developed in the [Slavov Laboratory](http://slavovlab.net) at [Northeastern University](https://www.northeastern.edu/) [Bioengineering](http://www.bioe.neu.edu/), and was authored by [Harrison Specht](http://harrisonspecht.com), [Ed Emmott](http://edemmott.co.uk/), Aleksandra Petelski, R. Gray Huffman, David H Perlman, Marco Serra, [Peter Kharchenko](http://pklab.med.harvard.edu/), [Toni Koller](http://slavovlab.net/people.htm), and [Nikolai Slavov](https://coe.northeastern.edu/people/slavov-nikolai/).
 
 Contact the authors by email: [nslavov\{at\}northeastern.edu](mailto:nslavov@northeastern.edu).
