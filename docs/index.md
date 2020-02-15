@@ -15,7 +15,7 @@ permalink: /
 
 ### Quantifying proteins in single cells at high-throughput with mass spectrometry
 
-[SCoPE2 Preprint](https://doi.org/10.1101/665307){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[GitHub](https://github.com/SlavovLab/SCoPE2/tree/master/code){: .btn .fs-5 .mb-4 .mb-md-0 }[Perspective](https://pubs.acs.org/doi/10.1021/acs.jproteome.8b00257){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
+[SCoPE2 Preprint](https://doi.org/10.1101/665307){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[GitHub](https://github.com/SlavovLab/SCoPE2/tree/master/code){: .btn .fs-5 .mb-4 .mb-md-0 }[JPR Perspective](https://pubs.acs.org/doi/10.1021/acs.jproteome.8b00257){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}[Science Perspective](https://science.sciencemag.org/content/367/6477/512){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
 
 ------------
 
