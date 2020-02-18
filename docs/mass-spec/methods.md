@@ -7,7 +7,7 @@ permalink: mass-spec/methods
 
 ---
 
-# Related methods for ultrasensitive mass-spec analysis
+# Methods for ultrasensitive mass-spec analysis
 
 &nbsp;
 
