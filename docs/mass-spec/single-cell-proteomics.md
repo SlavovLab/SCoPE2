@@ -37,9 +37,9 @@ Recently, the throughput of single-cell transcriptomics and genomics technologie
 &nbsp;
 
 
-### [single-cell proteomics conference](http://single-cell.net)
+### Single-cell proteomics conference
 
-We look forward to providing a stimulating platform of scientific exchanges and to welcoming you in Boston.
+We look forward to providing a stimulating [meeting](http://single-cell.net) of scientific exchanges and to welcoming you in Boston.
 
 <div style="text-align: center;">
 <a class="twitter-timeline" href="https://twitter.com/SCP_meeting" data-widget-id="499599916843274240">Tweets by @SCP_meeting</a>
