@@ -21,7 +21,7 @@ Recently, the throughput of single-cell transcriptomics and genomics technologie
 
 &nbsp;
 
-** Methods
+### Methods
 
 * [Single-Cell ProtEomics by Mass Spectrometry (SCoPE-MS)](http://slavovlab.net/2016_SCoPE-MS/index.html)
 * [Data-driven Alignment of Retention Times for IDentification (DART-ID)](https://dart-id.slavovlab.net)
@@ -29,7 +29,7 @@ Recently, the throughput of single-cell transcriptomics and genomics technologie
 
 &nbsp;
 
-** Blog posts
+### Blog posts
  * [When do you need single-cell analysis?](https://web.northeastern.edu/slavovlab/blog/2019/08/14/when-do-you-need-single-cell-analysis/)
  * [Single-cell analysis](https://web.northeastern.edu/slavovlab/blog/2018/11/14/single-cell-analysis/)
 
@@ -37,4 +37,11 @@ Recently, the throughput of single-cell transcriptomics and genomics technologie
 &nbsp;
 
 
-** [single-cell proteomics conference](http://single-cell.net)
+### [single-cell proteomics conference](http://single-cell.net)
+
+We look forward to providing a stimulating platform of scientific exchanges and to welcoming you in Boston.
+
+<div style="text-align: center;">
+<a class="twitter-timeline" href="https://twitter.com/SCP_meeting" data-widget-id="499599916843274240">Tweets by @SCP_meeting</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
