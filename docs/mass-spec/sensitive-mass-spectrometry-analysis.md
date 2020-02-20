@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Sensitive MS methods
+title: Sensitive mass-spec analysis
 nav_order: 5
 description: "Methods for single-cell proteomics developed in the Slavov Laboratory, Northeastern University, Boston"
 permalink: mass-spec/sensitive-mass-spectrometry-analysis
 
 ---
 
-# Ultrasensitive mass-spec analysis
+# Ultrasensitive mass-spectrometry analysis
 
 &nbsp;
 
