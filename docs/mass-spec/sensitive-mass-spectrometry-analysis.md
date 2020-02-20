@@ -24,11 +24,16 @@ The sensitivity of mass spectrometry analysis depends on many factors, including
 * [Data-driven Alignment of Retention Times for IDentification (DART-ID)](https://dart-id.slavovlab.net)
 * [Data-driven Optimization of Mass-Spectrometry (DO-MS)](https://do-ms.slavovlab.net)
 
-These methods are major contributors to the increased throughput and quantitative accuracy of SCoPE2 compared to [Single-Cell ProtEomics by Mass Spectrometry (SCoPE-MS)](http://slavovlab.net/2016_SCoPE-MS/index.html). 
+These methods are major contributors to the increased throughput and quantitative accuracy of SCoPE2 compared to [Single-Cell ProtEomics by Mass Spectrometry (SCoPE-MS)](http://slavovlab.net/2016_SCoPE-MS/index.html). Below are vodeo presentaions of these methods by Gray Huffman and Albert Chen. 
 
 &nbsp;
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/XNyYZ8w_8jY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+&nbsp;
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IWeasIXs5F0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 
 &nbsp;
