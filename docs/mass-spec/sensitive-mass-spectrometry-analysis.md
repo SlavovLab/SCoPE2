@@ -21,10 +21,11 @@ permalink: mass-spec/sensitive-mass-spectrometry-analysis
 
 The sensitivity of mass spectrometry analysis depends on many factors, including sample preprations, data aquision, and data interpretaion. These factors can be benchmarked and optimized by methods developed in the [Slavov Laboratory](http://slavovlab.net):
 
-* [Data-driven Alignment of Retention Times for IDentification (DART-ID)](https://dart-id.slavovlab.net)
 * [Data-driven Optimization of Mass-Spectrometry (DO-MS)](https://do-ms.slavovlab.net)
+* [Data-driven Alignment of Retention Times for IDentification (DART-ID)](https://dart-id.slavovlab.net)
 
-These methods are major contributors to the increased throughput and quantitative accuracy of SCoPE2 compared to [Single-Cell ProtEomics by Mass Spectrometry (SCoPE-MS)](http://slavovlab.net/2016_SCoPE-MS/index.html). Below are vodeo presentaions of these methods by Gray Huffman and Albert Chen. 
+
+[DO-MS](https://do-ms.slavovlab.net) and [DART-ID](https://dart-id.slavovlab.net) are major contributors to the increased throughput and quantitative accuracy of SCoPE2 compared to [Single-Cell ProtEomics by Mass Spectrometry (SCoPE-MS)](http://slavovlab.net/2016_SCoPE-MS/index.html). Below are vodeo presentaions of these methods by Gray Huffman and Albert Chen. 
 
 &nbsp;
 
