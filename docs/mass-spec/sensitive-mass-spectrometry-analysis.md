@@ -19,7 +19,7 @@ permalink: mass-spec/sensitive-mass-spectrometry-analysis
 
 
 
-SCoPE2 uses and builds upon related methods and technologies developed in the [Slavov Laboratory](http://slavovlab.net). Related methods include:
+The sensitivity of mass spectrometry analysis depends on many factors, including sample preprations, data aquision, and data interpretaion. These factors can be benchmarked and optimized by methods developed in the [Slavov Laboratory](http://slavovlab.net):
 
 * [Single-Cell ProtEomics by Mass Spectrometry (SCoPE-MS)](http://slavovlab.net/2016_SCoPE-MS/index.html)
 * [Data-driven Alignment of Retention Times for IDentification (DART-ID)](https://dart-id.slavovlab.net)
