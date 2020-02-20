@@ -7,7 +7,7 @@ permalink: mass-spec/sensitive-mass-spectrometry-analysis
 
 ---
 
-# Methods for ultrasensitive mass-spec analysis
+# Ultrasensitive mass-spec analysis
 
 &nbsp;
 
