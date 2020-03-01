@@ -1,3 +1,3 @@
-Each themeatic part of the SCoPE2_analysis.R script is bounded by an R "region". These can be minimized when not in use. You will need to create "figs","dat", and "code" sub-directories.
+Each thematic part of the SCoPE2_analysis.R script is bounded by an R "region". These can be minimized when not in use. You will need to create "figs","dat", and "code" sub-directories.
 
 To execute the ladder_experiment_analysis.R script you will have to change the path to the ladder experiment evidence file provided on MassIVE, as well as install packages ggpubr and reshape2 from CRAN. The ladder_experiment_design.csv is not necessary for script execution.
