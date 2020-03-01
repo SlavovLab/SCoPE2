@@ -1,8 +1,8 @@
 # **SCoPE2**
 
-<u>D</u>ata-Driven <u>O</u>ptimization of <u>M</u>ass <u>S</u>pectrometry Methods
+Single-Cell ProtEomics by Mass Spectrometry
 
-![GitHub release](https://img.shields.io/github/release/SlavovLab/DO-MS.svg)
+<!--![GitHub release](https://img.shields.io/github/release/SlavovLab/DO-MS.svg)-->
 ![GitHub](https://img.shields.io/github/license/SlavovLab/DO-MS.svg)
 
 * [Website](https://scope2.slavovlab.net)
