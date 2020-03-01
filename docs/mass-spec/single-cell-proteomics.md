@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Single-cell proteomics
-nav_order: 6
+nav_order: 7
 description: "Single-cell proteomics methods developed in the Slavov Laboratory, Northeastern University, Boston"
 permalink: mass-spec/single-cell-proteomics
 
