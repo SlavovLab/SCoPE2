@@ -6,18 +6,13 @@ Single-Cell ProtEomics by Mass Spectrometry
 ![GitHub](https://img.shields.io/github/license/SlavovLab/DO-MS.svg)
 
 * [Website](https://scope2.slavovlab.net)
-* [Get started now](#getting-started)
-* [Download](https://github.com/SlavovLab/SCoPE2/releases/latest)
+* [Running](#running)
+* [Download data](https://scope2.slavovlab.net/docs/data)
 * [Manuscript](https://www.biorxiv.org/content/10.1101/665307v3)
 
 <img src="http://scope2.slavovlab.net/assets/images/SCOPE2-ac.png" width="70%">
 
 
-## Getting Started
-
-Please read our detailed getting started guides:
-* [Getting started on the application](https://do-ms.slavovlab.net/docs/getting-started-application)
-* [Getting started on the command-line](https://do-ms.slavovlab.net/docs/getting-started-command-line)
 
 ### Requirements
 
