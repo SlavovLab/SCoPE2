@@ -21,7 +21,7 @@ To increase the throughput and quantitative accuracy of single-cell protein anal
 &nbsp;
 
 
-<h2 style="letter-spacing: 2px; font-size: 26px;" id="decreasing-coisolation" >Decreasing coisolation withy narrow isolation windows</h2>
+<h2 style="letter-spacing: 2px; font-size: 26px;" id="decreasing-coisolation" >Decreasing co-isolation with narrow isolation windows</h2>
 
 ![]({{site.baseurl}}Figures/SCoPE2_Purity_of_MS2_Spectra.png){: width="50%" .center-image}
 
