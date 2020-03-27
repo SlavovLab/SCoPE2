@@ -23,11 +23,11 @@ To increase the throughput and quantitative accuracy of single-cell protein anal
 
 <h2 style="letter-spacing: 2px; font-size: 26px;" id="Decreasing-coisolation" >Decreasing coisolation withy narrow isolation windows</h2>
 
-![]({{site.baseurl}}mass-spec/Figures/SCoPE2_Purity_of_MS2_Spectra.png){: width="50%" .center-image}
+![]({{site.baseurl}}Figures/SCoPE2_Purity_of_MS2_Spectra.png){: width="50%" .center-image}
 
 
 
-The degree of coisolation (or purity of MS2 spectra) was evluated as a function of the width of the isolation window. [MaxQuant]() uses the precursor intensity fractions (PIF) to estimate the fraction of the ion intensity originating from the precursor assigned to a peptide spectral match for each MS2 spectrum. The distributions of PIF values for two controlled experiments indicate that the isolation window width used by SCoPE2 (0.7 Th) results in purer spectra compared to the isolation with used with SCoPE-MS. The associated [DO-MS report]({{site.baseurl}}mass-spec/DO-MS_Reports/DO-MS_Report_MS2_isolation_window.html) includes dozens of additional plots demonstrating that these  experiments were well controlled. It alos shows that the wider isolation wiwndow of 1 Th results in slighly more identified peptides. 
+The degree of coisolation (or purity of MS2 spectra) was evluated as a function of the width of the isolation window. [MaxQuant]() uses the precursor intensity fractions (PIF) to estimate the fraction of the ion intensity originating from the precursor assigned to a peptide spectral match for each MS2 spectrum. The distributions of PIF values for two controlled experiments indicate that the isolation window width used by SCoPE2 (0.7 Th) results in purer spectra compared to the isolation with used with SCoPE-MS. The associated [DO-MS report]({{site.baseurl}}DO-MS_Reports/DO-MS_Report_MS2_isolation_window.html) includes dozens of additional plots demonstrating that these  experiments were well controlled. It alos shows that the wider isolation wiwndow of 1 Th results in slighly more identified peptides. 
 
 
 
