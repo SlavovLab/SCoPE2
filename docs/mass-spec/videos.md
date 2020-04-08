@@ -1,9 +1,9 @@
 ---
 layout: default
 title: SCoPE2 videos
-nav_order: 4
+nav_order: 7
 description: "Video presentations from the single-cell proteomics conference, Northeastern University, Boston, MA"
-permalink: docs/videos
+permalink: mass-spec/videos
 description: "Watch video presentations on generating and analyzing SCoPE2 single-cell proteomics data" 
 ---
 

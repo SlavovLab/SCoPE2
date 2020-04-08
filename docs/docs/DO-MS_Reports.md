@@ -1,6 +1,6 @@
 ---
 layout: default
-title: DO-MS reports
+title: Explore data
 nav_order: 3
 permalink: docs/do-ms
 description: "explore single-cell proteomics data from SCoPE2, a second generation SCoPE-MS" 
