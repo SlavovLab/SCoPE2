@@ -37,9 +37,10 @@ The degree of coisolation (or purity of MS2 spectra) was evluated as a function 
 
 <h2 style="letter-spacing: 2px; font-size: 26px;" id="Apex-targetting" >Improving apex targetting</h2>
 
-![]({{site.baseurl}}Figures/SCoPE-MS__SCoPE2__Apex-offsets.png){: width="45%" .center-image}&nbsp;&nbsp;![]({{site.baseurl}}Figures/SCoPE-MS__SCoPE2__PIF.png){: width="45%" .center-image}
+![]({{site.baseurl}}Figures/SCoPE-MS__SCoPE2__Apex-offsets.png){: width="42%" }&nbsp;&nbsp;![]({{site.baseurl}}Figures/SCoPE-MS__SCoPE2__PIF.png){: width="42%" }
 
-
+Distributions of apex offsets for data from [SCoPE-MS]()  and from SCoPE2. These offsets are computed by MaxQuant as the time between the apex of the elution peak and the time when the ion is sampled for MS2 analysis. The discreetness of the SCoPE-MS distributions is due to the long duty cycles, and thus low time resolution of sampling the elution peaks. The improved apex sampling with SCoPE2 results   
+Distributions of precursor ion fractions (PIF), which MaxQuant computes as estimates for spectral purity, i.e., the fraction of the ion intensity originating from the precursor assigned to a peptide spectral match for each MS2 spectrum
 &nbsp;
 
 
