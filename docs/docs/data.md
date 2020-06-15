@@ -38,6 +38,9 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 
 &nbsp;
 
+* [Minimal data files](https://drive.google.com/drive/folders/1H3upHNUZNb1bVUNivUiZkX9-RbCs1fh0?usp=sharing) necessary for generating Peptides-raw.csv and Proteins-processed.csv
+
+&nbsp;
 * [Additional data files](https://drive.google.com/open?id=1VzBfmNxziRYqayx3SP-cOe2gu129Obgx) necessary for generating figures from the [SCoPE2 article](https://doi.org/10.1101/665307).
 
 &nbsp;
