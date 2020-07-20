@@ -15,11 +15,11 @@ permalink: /
 
 ### Quantifying proteins in single cells at high-throughput with mass spectrometry
 
-[SCoPE2 Preprint](https://doi.org/10.1101/665307){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[GitHub](https://github.com/SlavovLab/SCoPE2/tree/master/code){: .btn .fs-5 .mb-4 .mb-md-0 }[JPR Perspective](https://pubs.acs.org/doi/10.1021/acs.jproteome.8b00257){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}[Science Perspective](https://science.sciencemag.org/content/367/6477/512){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
+[SCoPE2 Preprint](https://doi.org/10.1101/665307){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[GitHub](https://github.com/SlavovLab/SCoPE2/tree/master/code){: .btn .fs-5 .mb-4 .mb-md-0 }[JPR Perspectives]({{site.baseurl}}#perspectives){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
+[Science Perspective](https://science.sciencemag.org/content/367/6477/512){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
 
 ------------
-
-## Abstract
 
 The fate and physiology of individual cells are controlled by protein interactions. Yet, our ability to quantitatively analyze proteins in single cells has remained limited. To overcome this barrier, we developed SCoPE2. It lowers cost and hands-on time by introducing automated and miniaturized sample preparation while substantially increasing quantitative accuracy. These advances enabled us to analyze the emergence of cellular heterogeneity as homogeneous monocytes differentiated into macrophage-like cells in the absence of polarizing cytokines. SCoPE2 quantified over 2,700 proteins in 1,018 single monocytes and macrophages in ten days of instrument time, and the quantified proteins allowed us to discern single cells by cell type. Furthermore, the data uncovered a continuous gradient of proteome states for the macrophage-like cells, suggesting that macrophage heterogeneity may emerge even in the absence of polarizing cytokines. Parallel measurements of transcripts by 10x Genomics scRNA-seq suggest that SCoPE2 samples 20-fold more copies per gene, thus supporting quantification with improved count statistics. Joint analysis of the data indicated that most genes had similar responses at the protein and RNA levels, though the responses of hundreds of genes differed. Our methodology lays the foundation for automated and quantitative single-cell analysis of proteins by mass-spectrometry.
 
@@ -38,6 +38,9 @@ The fate and physiology of individual cells are controlled by protein interactio
 ## Perspectives
 * [Transformative Opportunities for Single-Cell Proteomics](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6089608/)
 * [Unpicking the proteome in single cells](https://science.sciencemag.org/content/367/6477/512)
+
+## Reviews
+* [Single-cell protein analysis by mass spectrometry](https://doi.org/10.1016/j.cbpa.2020.04.018)
 
 ## About the project
 
