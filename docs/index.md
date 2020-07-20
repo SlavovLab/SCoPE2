@@ -16,8 +16,11 @@ permalink: /
 ### Quantifying proteins in single cells at high-throughput with mass spectrometry
 
 [SCoPE2 Preprint](https://doi.org/10.1101/665307){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[GitHub](https://github.com/SlavovLab/SCoPE2/tree/master/code){: .btn .fs-5 .mb-4 .mb-md-0 }[JPR Perspectives]({{site.baseurl}}#perspectives){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
-[Science Perspective](https://science.sciencemag.org/content/367/6477/512){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
+[GitHub](https://github.com/SlavovLab/SCoPE2/tree/master/code){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Highlights]({{site.baseurl}}#highlights){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
+[Reviews]({{site.baseurl}}#reviews){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
+[Perspectives]({{site.baseurl}}#perspectives){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
+
 
 ------------
 
@@ -36,14 +39,18 @@ The fate and physiology of individual cells are controlled by protein interactio
 * [The single cell proteomics revolution](https://www.bioanalysis-zone.com/2020/02/11/single-cell-proteomics-revolution_bo/)
 
 ## Perspectives
-* [Transformative Opportunities for Single-Cell Proteomics](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6089608/)
-* [Unpicking the proteome in single cells](https://science.sciencemag.org/content/367/6477/512)
+* [Transformative Opportunities for Single-Cell Proteomics](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6089608/), *Journal of Proteome Research*
+* [Unpicking the proteome in single cells](https://science.sciencemag.org/content/367/6477/512), *Science*
 
 ## Reviews
-* [Single-cell protein analysis by mass spectrometry](https://doi.org/10.1016/j.cbpa.2020.04.018)
+* [Single-cell protein analysis by mass spectrometry](https://doi.org/10.1016/j.cbpa.2020.04.018), *Current Opinion in Chemical Biology*
 
 ## About the project
 
 SCoPE2 is a project developed in the [Slavov Laboratory](http://slavovlab.net) at [Northeastern University](https://www.northeastern.edu/) [Bioengineering](http://www.bioe.neu.edu/), and was authored by [Harrison Specht](http://harrisonspecht.com), [Ed Emmott](http://edemmott.co.uk/), Aleksandra Petelski, R. Gray Huffman, David H Perlman, Marco Serra, [Peter Kharchenko](http://pklab.med.harvard.edu/), [Toni Koller](http://slavovlab.net/people.htm), and [Nikolai Slavov](https://coe.northeastern.edu/people/slavov-nikolai/).
 
 Contact the authors by email: [nslavov\{at\}northeastern.edu](mailto:nslavov@northeastern.edu).
+
+This project was supported by funding from the [NIH Director's Award](https://projectreporter.nih.gov/project_info_description.cfm?aid=9167004&icde=31336575).
+
+ 
