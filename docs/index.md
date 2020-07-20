@@ -38,13 +38,15 @@ The fate and physiology of individual cells are controlled by protein interactio
 * [News in Proteomics Research](http://proteomicsnews.blogspot.com/2019/12/over-1000-single-cell-proteomes-2700.html)
 * [The single cell proteomics revolution](https://www.bioanalysis-zone.com/2020/02/11/single-cell-proteomics-revolution_bo/)
 
+## Reviews
+* [Single-cell protein analysis by mass spectrometry](https://doi.org/10.1016/j.cbpa.2020.04.018), *Current Opinion in Chemical Biology*
+* [Single cell protein analysis for systems biology](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6204083/),	*Essays in biochemistry*
+
 ## Perspectives
 * [Transformative Opportunities for Single-Cell Proteomics](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6089608/), *Journal of Proteome Research*
 * [Unpicking the proteome in single cells](https://science.sciencemag.org/content/367/6477/512), *Science*
 
-## Reviews
-* [Single-cell protein analysis by mass spectrometry](https://doi.org/10.1016/j.cbpa.2020.04.018), *Current Opinion in Chemical Biology*
-* [Single cell protein analysis for systems biology](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6204083/),	*Essays in biochemistry*
+
 
 ## About the project
 
