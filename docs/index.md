@@ -44,6 +44,7 @@ The fate and physiology of individual cells are controlled by protein interactio
 
 ## Reviews
 * [Single-cell protein analysis by mass spectrometry](https://doi.org/10.1016/j.cbpa.2020.04.018), *Current Opinion in Chemical Biology*
+* [Single cell protein analysis for systems biology](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6204083/),	*Essays in biochemistry*
 
 ## About the project
 
@@ -52,5 +53,3 @@ SCoPE2 is a project developed in the [Slavov Laboratory](http://slavovlab.net) a
 Contact the authors by email: [nslavov\{at\}northeastern.edu](mailto:nslavov@northeastern.edu).
 
 This project was supported by funding from the [NIH Director's Award](https://projectreporter.nih.gov/project_info_description.cfm?aid=9167004&icde=31336575).
-
- 
