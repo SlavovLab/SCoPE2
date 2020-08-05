@@ -22,3 +22,9 @@ paper:
   href: 'https://doi.org/'
   title: 'Paper'
   fa-icon: 'fa-book'
+
+data:
+  id: 'data'
+  href: 'https://scope2.slavovlab.net/docs/'
+  title: 'Data'
+  fa-icon: 'fa-database'

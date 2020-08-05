@@ -5,6 +5,7 @@ nav_order: 2
 permalink: docs/data
 description: "download single-cell proteomics data from SCoPE2, a second generation SCoPE-MS"
 ---
+{% include social-media-links.html %}
 
 # Download single-cell protein and RNA data
 
