@@ -5,6 +5,7 @@ nav_order: 1
 description: "SCoPE2: Single-cell protein analysis by mass spectrometry; second generation SCoPE-MS"
 permalink: /
 ---
+{% include social-media-links.html %}
 
 # **SCoPE2**:
 
@@ -15,11 +16,14 @@ permalink: /
 
 ### Quantifying proteins in single cells at high-throughput with mass spectrometry
 
-[SCoPE2 Preprint](https://doi.org/10.1101/665307){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }[GitHub](https://github.com/SlavovLab/SCoPE2/tree/master/code){: .btn .fs-5 .mb-4 .mb-md-0 }[JPR Perspective](https://pubs.acs.org/doi/10.1021/acs.jproteome.8b00257){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}[Science Perspective](https://science.sciencemag.org/content/367/6477/512){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
+[SCoPE2 Preprint](https://doi.org/10.1101/665307){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[GitHub](https://github.com/SlavovLab/SCoPE2/tree/master/code){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Highlights]({{site.baseurl}}#highlights){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
+[Reviews]({{site.baseurl}}#reviews){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
+[Perspectives]({{site.baseurl}}#perspectives){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2}
+
 
 ------------
-
-## Abstract
 
 The fate and physiology of individual cells are controlled by protein interactions. Yet, our ability to quantitatively analyze proteins in single cells has remained limited. To overcome this barrier, we developed SCoPE2. It lowers cost and hands-on time by introducing automated and miniaturized sample preparation while substantially increasing quantitative accuracy. These advances enabled us to analyze the emergence of cellular heterogeneity as homogeneous monocytes differentiated into macrophage-like cells in the absence of polarizing cytokines. SCoPE2 quantified over 2,700 proteins in 1,018 single monocytes and macrophages in ten days of instrument time, and the quantified proteins allowed us to discern single cells by cell type. Furthermore, the data uncovered a continuous gradient of proteome states for the macrophage-like cells, suggesting that macrophage heterogeneity may emerge even in the absence of polarizing cytokines. Parallel measurements of transcripts by 10x Genomics scRNA-seq suggest that SCoPE2 samples 20-fold more copies per gene, thus supporting quantification with improved count statistics. Joint analysis of the data indicated that most genes had similar responses at the protein and RNA levels, though the responses of hundreds of genes differed. Our methodology lays the foundation for automated and quantitative single-cell analysis of proteins by mass-spectrometry.
 
@@ -35,12 +39,20 @@ The fate and physiology of individual cells are controlled by protein interactio
 * [News in Proteomics Research](http://proteomicsnews.blogspot.com/2019/12/over-1000-single-cell-proteomes-2700.html)
 * [The single cell proteomics revolution](https://www.bioanalysis-zone.com/2020/02/11/single-cell-proteomics-revolution_bo/)
 
+## Reviews
+* [Single-cell protein analysis by mass spectrometry](https://doi.org/10.1016/j.cbpa.2020.04.018), *Current Opinion in Chemical Biology*
+* [Single cell protein analysis for systems biology](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6204083/),	*Essays in biochemistry*
+
 ## Perspectives
-* [Transformative Opportunities for Single-Cell Proteomics](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6089608/)
-* [Unpicking the proteome in single cells](https://science.sciencemag.org/content/367/6477/512)
+* [Transformative Opportunities for Single-Cell Proteomics](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6089608/), *Journal of Proteome Research*
+* [Unpicking the proteome in single cells](https://science.sciencemag.org/content/367/6477/512), *Science*
+
+
 
 ## About the project
 
 SCoPE2 is a project developed in the [Slavov Laboratory](http://slavovlab.net) at [Northeastern University](https://www.northeastern.edu/) [Bioengineering](http://www.bioe.neu.edu/), and was authored by [Harrison Specht](http://harrisonspecht.com), [Ed Emmott](http://edemmott.co.uk/), Aleksandra Petelski, R. Gray Huffman, David H Perlman, Marco Serra, [Peter Kharchenko](http://pklab.med.harvard.edu/), [Toni Koller](http://slavovlab.net/people.htm), and [Nikolai Slavov](https://coe.northeastern.edu/people/slavov-nikolai/).
 
 Contact the authors by email: [nslavov\{at\}northeastern.edu](mailto:nslavov@northeastern.edu).
+
+This project was supported by funding from the [NIH Director's Award](https://projectreporter.nih.gov/project_info_description.cfm?aid=9167004&icde=31336575).

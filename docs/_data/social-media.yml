@@ -1,0 +1,30 @@
+twitter:
+  id: 'SlavovLab'
+  href: 'https://www.twitter.com/'
+  title: 'Twitter'
+  fa-icon: 'fa-twitter-square'
+
+github:
+  id: 'SCoPE2'
+  href: 'https://github.com/SlavovLab/'
+  title: 'GitHub'
+  fa-icon: 'fa-github-square'
+
+
+youtube:
+  id: 'list=PLHLRxq8iKFsLExgQ7EBrlej71TvVOGRzJ'
+  href: 'https://www.youtube.com/playlist?'
+  title: 'Youtube'
+  fa-icon: 'fa-youtube-square'
+
+paper:
+  id: '10.1101/665307'
+  href: 'https://doi.org/'
+  title: 'Paper'
+  fa-icon: 'fa-book'
+
+data:
+  id: 'data'
+  href: 'https://scope2.slavovlab.net/docs/'
+  title: 'Data'
+  fa-icon: 'fa-database'

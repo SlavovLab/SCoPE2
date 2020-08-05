@@ -4,8 +4,9 @@ title: Mass-spec analysis
 nav_order: 10
 description: "Methods for single-cell proteomics developed in the Slavov Laboratory, Northeastern University, Boston"
 permalink: mass-spec/sensitive-mass-spectrometry-analysis
-
 ---
+{% include social-media-links.html %}
+
 
 # Ultrasensitive mass-spectrometry analysis
 
@@ -25,7 +26,7 @@ The sensitivity of mass spectrometry analysis depends on many factors, including
 * [Data-driven Alignment of Retention Times for IDentification (DART-ID)](https://dart-id.slavovlab.net)
 
 
-[DO-MS](https://do-ms.slavovlab.net) and [DART-ID](https://dart-id.slavovlab.net) are major contributors to the increased throughput and quantitative accuracy of SCoPE2 compared to [Single-Cell ProtEomics by Mass Spectrometry (SCoPE-MS)](http://slavovlab.net/2016_SCoPE-MS/index.html). Below are video presentaions of these methods by Gray Huffman and Albert Chen. 
+[DO-MS](https://do-ms.slavovlab.net) and [DART-ID](https://dart-id.slavovlab.net) are major contributors to the increased throughput and quantitative accuracy of SCoPE2 compared to [Single-Cell ProtEomics by Mass Spectrometry (SCoPE-MS)](http://slavovlab.net/2016_SCoPE-MS/index.html). Below are video presentaions of these methods by Gray Huffman and Albert Chen.
 
 &nbsp;
 

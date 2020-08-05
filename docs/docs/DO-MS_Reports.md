@@ -3,8 +3,9 @@ layout: default
 title: Explore data
 nav_order: 3
 permalink: docs/do-ms
-description: "explore single-cell proteomics data from SCoPE2, a second generation SCoPE-MS" 
+description: "explore single-cell proteomics data from SCoPE2, a second generation SCoPE-MS"
 ---
+{% include social-media-links.html %}
 
 # Distribution plots of SCoPE2 data:
 
