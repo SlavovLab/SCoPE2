@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Isobaric Carrier
+title: Isobaric carrier optimization
 nav_order: 8
 permalink: mass-spec/Isobaric-carrier-optimization
 description: "Optimizing accuracy and depth of protein quantification in experiments using isobaric carriers"
