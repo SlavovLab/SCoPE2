@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Isobaric Carrier
-nav_order: 5
+nav_order: 8
 permalink: mass-spec/Isobaric-carrier-optimization
 description: "Optimizing accuracy and depth of protein quantification in experiments using isobaric carriers"
 ---
@@ -31,7 +31,7 @@ To increase the throughput and quantitative accuracy of single-cell protein anal
 
 <h2 style="letter-spacing: 2px; font-size: 26px;" id="guidelines" >Guidelines for optimizing isobaric carrier experiments</h2>
 
-![]({{site.baseurl}}Figures/Single-cell_Applications_iCarrier.png){: width="50%" .center-image}
+![]({{site.baseurl}}Figures/Single-cell_Applications_iCarrier.png){: width="90%" .center-image}
 
 
 
