@@ -42,10 +42,9 @@ To increase the throughput and quantitative accuracy of single-cell protein anal
 
 
 
-<!--
-<h2 style="letter-spacing: 2px; font-size: 26px;" id="single-cell-sample-preparation" >Apex </h2>
 
--->
+<h2 style="letter-spacing: 2px; font-size: 26px;" id="data" >Data from experiments with increasing isobaric carriers</h2>
+
 
 
 
