@@ -39,7 +39,7 @@ To increase the throughput and quantitative accuracy of single-cell protein anal
 
 - **Estimate the reliability of quantification for each protein.**  Estimate the sampling error on a per-protein basis as previously [demonstrated](https://doi.org/10.1101/665307), benchmark protein quantification or estimate the reliability of quantification based on the consistency of the quantification of peptides originating from the same protein as demonstrated by Franks and colleagues. If the reliability of quantification is limited by counting noise, improved sampling can increase reliability. However, if the reliability is limited by other factors, such as sample preparation, improved copy-number sampling may have limited benefits.  
 
-- **Incorporate estimates of reliability in all subsequent analysis.** Data points should be weighted based on their reliability, with weights proportional to the reliability. Use error propagation methods to reflect the noise in the final results. For example, correlations between noisy variables can be divided by the corresponding their reliability to estimate the fraction of explained variance independent from the noise.
+- **Incorporate estimates of reliability in all subsequent analysis.** Data points should be weighted based on their reliability, with weights proportional to the reliability. Use error propagation methods to reflect the noise in the final results. For example, correlations between noisy variables can be divided by the corresponding reliability to estimate the fraction of explained variance independent from the noise.
 
 
 
@@ -57,8 +57,20 @@ To increase the throughput and quantitative accuracy of single-cell protein anal
   - [**http:**  MSV000086004](https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?task=b432a22b241e4c4881d63f1a97db4a4e)
   - [**ftp:** &nbsp; MSV000086004](ftp://massive.ucsd.edu/MSV000086004)
 
+  &nbsp;
+
+  &nbsp;
+
+## DO-MS Reports
+
+  &nbsp;
+
+  &nbsp;
 
 
+
+## Media
+- [Twitter thread](https://threadreaderapp.com/thread/1298059519201869826.html)
 
 &nbsp;
 
