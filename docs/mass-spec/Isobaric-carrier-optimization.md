@@ -88,6 +88,13 @@ To increase the throughput and quantitative accuracy of single-cell protein anal
 
 &nbsp;
 
+## About the project
+
+This project on characterizing the isobaric carrier was conducted in the [Slavov Laboratory](http://slavovlab.net) and [SCP Center](http://center.single-cell.net) at [Northeastern University](https://www.northeastern.edu/), and was authored by [Harrison Specht](http://harrisonspecht.com) and [Nikolai Slavov](https://coe.northeastern.edu/people/slavov-nikolai/).   
+
+
+This project was supported by funding from the [NIH Director's Award](https://projectreporter.nih.gov/project_info_description.cfm?aid=9167004&icde=31336575).
+
 &nbsp;
 
 &nbsp;
