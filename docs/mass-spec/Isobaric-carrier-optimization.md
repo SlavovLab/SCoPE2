@@ -63,6 +63,9 @@ To increase the throughput and quantitative accuracy of single-cell protein anal
 
 ## DO-MS Reports
 
+* [DO-MS Report for the low MS2 AGC target](DO-MS_Reports/DO-MS_Report_lowAGC.html)
+* [DO-MS Report for the high MS2 AGC target](DO-MS_Reports/DO-MS_Report_highAGC.html)
+
   &nbsp;
 
   &nbsp;
