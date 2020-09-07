@@ -14,6 +14,7 @@ description: "Optimizing accuracy and depth of protein quantification in experim
 [Preprint](https://www.biorxiv.org/content/10.1101/2020.08.24.264994v1){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Guidelines]({{site.baseurl}}#guidelines){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Data]({{site.baseurl}}#data){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Code](https://github.com/SlavovLab/isobaric-carrier){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [DO-MS Reports]({{site.baseurl}}#do-ms-reports){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
 <!--
 [Sample preparation]({{site.baseurl}}#single-cell-sample-preparation){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
