@@ -39,13 +39,15 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 
 &nbsp;
 
+* [Signal-to-noise data](https://drive.google.com/file/d/1Te83nbAvIVBRBZNyE0HPi7oj2bQOyQsG/view?usp=sharing)
+  - `Peptides` and `Proteins` **x** `single cells` at 1% FDR.  The first 2 columns list the corresponding protein identifiers and peptide sequences and each subsequent column corresponds to a single cell. The quantitation is the Signal-to-noise (S/N) ratio for each single cell's corresponding reporter ion extracted from the RAW file. The single cell identification numbers are [mapped](https://drive.google.com/file/d/1Esz9v41gl2s1YOPCF9nNfcCFWDJhgZZv/view?usp=sharing) to cell type and RAW file. Complete extracted S/N for each RAW file can be found [here](https://drive.google.com/drive/folders/18_BQ15_JQKzbDt1JZo36MaJuOhN3tJCX?usp=sharing).  
+
+&nbsp;
+
 * [Minimal data files](https://drive.google.com/drive/folders/1H3upHNUZNb1bVUNivUiZkX9-RbCs1fh0?usp=sharing) necessary for generating Peptides-raw.csv and Proteins-processed.csv
 
 &nbsp;
 * [Additional data files](https://drive.google.com/open?id=1VzBfmNxziRYqayx3SP-cOe2gu129Obgx) necessary for generating figures from the [SCoPE2 article](https://doi.org/10.1101/665307).
-
-&nbsp;
-* [S/N extracted for all raw files](https://drive.google.com/drive/folders/18_BQ15_JQKzbDt1JZo36MaJuOhN3tJCX?usp=sharing) necessary for generating figures from the [SCoPE2 article](https://doi.org/10.1101/665307).
 
 &nbsp;
 
