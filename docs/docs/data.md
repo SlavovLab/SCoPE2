@@ -50,6 +50,10 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 * [Additional data files](https://drive.google.com/open?id=1VzBfmNxziRYqayx3SP-cOe2gu129Obgx) necessary for generating figures from the [SCoPE2 article](https://doi.org/10.1101/665307).
 
 &nbsp;
+* [GSEA: input and GOrilla output](https://drive.google.com/drive/folders/1DCp_euY0Cj_NWWG5xQsx7CTN3ju5LI_O?usp=sharing)
+
+
+&nbsp;
 
 * [Processed Data](https://drive.google.com/open?id=1cMQ-SIGpHwSfx9wJF2fIa-t8yX329LPM) from the [first version (v1) of the SCoPE2 preprint](https://www.biorxiv.org/content/10.1101/665307v1)
 
