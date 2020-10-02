@@ -19,22 +19,22 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 
 <h2 style="letter-spacing: 2px; font-size: 26px;" id="processed-single-cell-protein-data" >SCoPE2 data processed to ASCII text matrices</h2>
 
-* [Peptides-raw.csv](https://drive.google.com/open?id=1c9fwYI4qf9LzaQHf0wXoYAr2fuqNhNll)
+* [Peptides-raw.csv](https://drive.google.com/file/d/15DwDzAKFuRDTV31EnU83aRRhuAyz85_v/view?usp=sharing)
   - `Peptides` **x** `single cells` at 1% FDR.  The first 2 columns list the corresponding protein identifiers and peptide sequences and each subsequent column corresponds to a single cell. Peptide identification is based on spectra analyzed by [MaxQuant](https://www.maxquant.org/)  and is enhanced by using [DART-ID](https://dart-id.slavovlab.net/) to incorporate retention time information. See [Specht et al., 2019](https://www.biorxiv.org/content/10.1101/665307v3) for details.   
 
 &nbsp;
 
-* [Proteins-processed.csv](https://drive.google.com/open?id=1c5Z3b_2gOwDyHCLm9ycY3hXckY1GDd5L)
+* [Proteins-processed.csv](https://drive.google.com/file/d/1sF5STkofF_f2msnYaaYdWabou84Qf2Xr/view?usp=sharing)
    - `Proteins` **x** `single cells` at 1% FDR, imputed and batch corrected.
 
 &nbsp;
 
-* [Cells.csv](https://drive.google.com/open?id=1c0nUlgQN1CjeWMZGjC_bTmcAe-e9rfaT)
+* [Cells.csv](https://drive.google.com/file/d/16vf6rjIsk-oK9naAH6BQnCFrlWnYtJsS/view?usp=sharing)
    - `Annotation` **x**  `single cells`. Each column corresponds to a single cell and the rows include relevant metadata, such as, cell type if known, measurements from the isolation of the cell, and derivative quantities, i.e., rRI, CVs, reliability.
 
 &nbsp;
 
-* [Joint protein-RNA data](https://drive.google.com/open?id=1bzLv2h6A91CtWMc73rKZrZGmyHP5c4B5)
+* [Joint protein-RNA data](https://drive.google.com/file/d/130FWc-s-Pd-mx3ymg22bI1qH5fiT7Ktv/view?usp=sharing)
    - `Gene` **x**  `single cells`. Boths sets imputed and batch-corrected separately then combined, taking only genes common to both data sets. Uniprot accession numbers used to denote gene.
 
 &nbsp;
@@ -44,14 +44,19 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 
 &nbsp;
 
-* [Minimal data files](https://drive.google.com/drive/folders/1H3upHNUZNb1bVUNivUiZkX9-RbCs1fh0?usp=sharing) necessary for generating Peptides-raw.csv and Proteins-processed.csv
+* [Minimal data files](https://drive.google.com/drive/folders/10pOMMlxHsFIyPa9X2auq6xKJssqFgo-D?usp=sharing) necessary for generating Peptides-raw.csv and Proteins-processed.csv
 
 &nbsp;
-* [Additional data files](https://drive.google.com/open?id=1VzBfmNxziRYqayx3SP-cOe2gu129Obgx) necessary for generating figures from the [SCoPE2 article](https://doi.org/10.1101/665307).
+* [Additional data files](https://drive.google.com/drive/folders/1Zhjik_JFjCQNIVjg63-fooJ4K0HZxWjV?usp=sharing) necessary for generating figures from the [SCoPE2 article](https://doi.org/10.1101/665307).
 
 &nbsp;
 * [GSEA: GOrilla output](https://drive.google.com/drive/folders/1DCp_euY0Cj_NWWG5xQsx7CTN3ju5LI_O?usp=sharing)
 
+https://drive.google.com/drive/folders/1NJODxiKrnfW2_nTP-_n_UDvIpwcDEz4C?usp=sharing
+
+&nbsp;
+
+* [Processed Data](https://drive.google.com/drive/folders/1NJODxiKrnfW2_nTP-_n_UDvIpwcDEz4C?usp=sharing) from the [second version (v2) of the SCoPE2 preprint](https://www.biorxiv.org/content/10.1101/665307v3)
 
 &nbsp;
 
