@@ -47,17 +47,19 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 * [Signal-to-noise data](https://drive.google.com/file/d/16dmI7qNdpJlPOn83dOZFhHfXv0du5Dip/view?usp=sharing)
   - `Peptides` and `Proteins` **x** `single cells` at 1% FDR.  The first 2 columns list the corresponding protein identifiers and peptide sequences and each subsequent column corresponds to a single cell. The quantitation is the Signal-to-noise (S/N) ratio for each single cell's corresponding reporter ion extracted from the RAW file. The single cell identification numbers are [mapped](https://drive.google.com/file/d/1PUfiGhmInYP3JW5Xoul7Tikl9RSHyQcN/view?usp=sharing) to cell type and RAW file. Complete extracted S/N for each RAW file can be found [here](https://drive.google.com/drive/folders/18_BQ15_JQKzbDt1JZo36MaJuOhN3tJCX?usp=sharing).  
 
+
+&nbsp;
+* [DART-ID input](https://drive.google.com/drive/folders/1ohLco5KHX95jyXIZUAZDvrrbip1RzZ_1?usp=sharing)
+
+
+&nbsp;
+* [GSEA: GOrilla output](https://drive.google.com/drive/folders/1DCp_euY0Cj_NWWG5xQsx7CTN3ju5LI_O?usp=sharing)
 &nbsp;
 
 * [Minimal data files](https://drive.google.com/drive/folders/10pOMMlxHsFIyPa9X2auq6xKJssqFgo-D?usp=sharing) necessary for generating Peptides-raw.csv and Proteins-processed.csv
 
 &nbsp;
 * [Additional data files](https://drive.google.com/drive/folders/1Zhjik_JFjCQNIVjg63-fooJ4K0HZxWjV?usp=sharing) necessary for generating figures from the [SCoPE2 article](https://doi.org/10.1101/665307).
-
-&nbsp;
-* [GSEA: GOrilla output](https://drive.google.com/drive/folders/1DCp_euY0Cj_NWWG5xQsx7CTN3ju5LI_O?usp=sharing)
-
-https://drive.google.com/drive/folders/1NJODxiKrnfW2_nTP-_n_UDvIpwcDEz4C?usp=sharing
 
 &nbsp;
 
