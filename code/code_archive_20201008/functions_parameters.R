@@ -1,72 +1,18 @@
 
-####################################################################################################################################
-####################################################################################################################################
-####################################################################################################################################
-# Libraries
-####################################################################################################################################
-####################################################################################################################################
-####################################################################################################################################
+
+### Code settigngs:
 
 
-## Uncomment the lines below if first time executing: 
-
-#devtools::install_github("thomasp85/patchwork")
-
-# if (!requireNamespace("BiocManager", quietly = TRUE))
-#   install.packages("BiocManager")
-# BiocManager::install("impute", version = "3.8")
-# BiocManager::install("genefilter")
-
-# This code requires SVA v3.30.1 to run without error. Error related
-# to this known issue with SVA: https://github.com/jtleek/sva-devel/pull/35
-# packageurl <- "https://bioconductor.statistik.tu-dortmund.de/packages/3.8/bioc/src/contrib/sva_3.30.1.tar.gz"
-# install.packages(packageurl, repos=NULL, type="source")
-
-
-# Check for presence of required packages for the import script
-req.pkg<-c("plyr", "gridExtra", "stringr", "ggpubr", "Rcpp", "reshape2",
-           "ggplot2", "gridExtra", "gridGraphics", "grid", "ggridges",
-           "matrixStats","patchwork", "scales","stylo", "readr", "tidyverse")
-
-
-
-
-present.pkg<-installed.packages()[,1]
-
-if(any(!req.pkg%in%present.pkg)){
-  
-  install.packages( req.pkg[ !req.pkg%in%present.pkg ] )
-  
-}
-
-### load libraries and functions
-library(readr)
-library(reshape2)
-library(scales)
-library(ggplot2)
-library(gridGraphics)
-library(grid)
-library(gridExtra)
-library(stringr)
-library(ggpubr)
-library(ggridges)
-library(matrixStats)
-library(patchwork)
-library("sva")
-#library(stylo)
-library(tidyverse)
-library("genefilter")
-
-####################################################################################################################################
-####################################################################################################################################
-####################################################################################################################################
-# Parameters
-####################################################################################################################################
-####################################################################################################################################
-####################################################################################################################################
+ref_demo<-F
 
 
 my_col2<-c("blue",rgb(0,0,1,0.5),"white",rgb(1,0,0,0.5),"red")
+
+# FDR or PEP filtering?
+fdr<-T
+
+# Remove peptides that are more abundant that 10% of the carrier channel from the single cell runs
+remove_abundant_peptides<-T
 
 # Use dart-enhanced spectra or spectra
 dart_or_spectra<-"dart"
@@ -74,9 +20,22 @@ dart_or_spectra<-"dart"
 # Normalize the 10 x 10 cell and 10 x 100 cell runs to their median value
 norm_10_100_median<-T
 
+# Only look at sets FP94+97 (same experiment, sorted onto two different 384-well plates)
+only_fp94_97<-T
+
+# Load the data fresh from search output, else use saved version (.RData, which is quicker to load)
+load_fresh<-F
+
+# Correct for isotopic cross-contamination from TMT11 -- this will not work properly because MQ did the correction already
+# for the data I am using
+iso_cor<-F
+
 # Minimum number of peptides observed to consider an experiment worth doing further analysis:
-thres_ids_sc <- 500
+thres_ids_sc <- 300
 thres_ids_c10c100 <- 200
+
+# Save data along the way?
+save_tmp <- F
 
 # Figure dimensions in inches
 w.t<-5
@@ -96,54 +55,71 @@ na.row<-0.99
 k.t<-3
 
 
+
+
 ####################################################################################################################################
 ####################################################################################################################################
 ####################################################################################################################################
-# Functions
+# Functions and libraries
 ####################################################################################################################################
 ####################################################################################################################################
 ####################################################################################################################################
 
 
-# Cosine Distance
-# Function for computing a cosine similarity of a matrix of values,
-# e.g. a table of word frequencies.
-# The implementation inspired by the following post:
-# http://stackoverflow.com/questions/2535234/find-cosine-similarity-in-r
-#
-# Argument: a matrix or data table containing at least 2 rows and 2 cols 
 
-dist.cosine = function(x){
-  
-  # test if the input dataset is acceptable
-  if(is.matrix(x) == FALSE & is.data.frame(x) == FALSE) {
-    stop("cannot apply a distance measure: wrong data format!")
-  }
-  # then, test whether the number of rows and cols is >1
-  if(length(x[1,]) < 2 | length(x[,1]) < 2) {
-    stop("at least 2 cols and 2 rows are needed to compute a distance!")
-  }
-  
-  # to get Centered Cosine dist (=Pearson Correlation Coeff.), one needs 
-  # to normalize the feature vectors by subtracting the vector means
-  # x = t( t(x) - colMeans(x) )
-  
-  # this computes cosine dissimilarity; to have similarity, 1- applies
-  y = 1 - as.dist( x %*% t(x) / (sqrt(rowSums(x^2) %*% t(rowSums(x^2)))) ) 
-  # alternative way of approaching it:
-  # crossprod(x, y) / sqrt(crossprod(x) * crossprod(y))
-  
-  return(y)
+
+# Check for presence of required packages for the import script
+req.pkg<-c("plyr", "gridExtra", "stringr", "ggpubr", "Rcpp", "reshape2",
+           "ggplot2", "gridExtra", "gridGraphics", "grid", "ggridges",
+           "matrixStats","patchwork", "scales","stylo", "readr", "tidyverse")
+
+
+#devtools::install_github("thomasp85/patchwork")
+
+
+present.pkg<-installed.packages()[,1]
+
+if(any(!req.pkg%in%present.pkg)){
+
+  install.packages( req.pkg[ !req.pkg%in%present.pkg ] )
+
 }
 
+## If installing impute or sva for the first time, uncomment the 3 lines below:
+
+# if (!requireNamespace("BiocManager", quietly = TRUE))
+#   install.packages("BiocManager")
+ # BiocManager::install("impute", version = "3.8")
+#BiocManager::install("genefilter")
+#BiocManager::install("sva")
+
+
 ####################################################################################################################################
 ####################################################################################################################################
 ####################################################################################################################################
 
-min.na<-function(x){min(x,na.rm=T)}
+### load libraries and functions
+library(readr)
+library(reshape2)
+library(scales)
+library(ggplot2)
+library(gridGraphics)
+library(grid)
+library(gridExtra)
+library(stringr)
+library(ggpubr)
+library(ggridges)
+library(matrixStats)
+library(patchwork)
+library("sva")
+library(stylo)
+library(tidyverse)
+library("genefilter")
 
 
-
+####################################################################################################################################
+####################################################################################################################################
+####################################################################################################################################
 # Column and row normalize
 
 cr_norm<-function(dat){
@@ -192,30 +168,6 @@ cr_norm_log<-function(dat){
   return(dat)
 }
 
-####################################################################################################################################
-####################################################################################################################################
-####################################################################################################################################
-# Column and row normalize on log scale
-
-cr_norm_log_med<-function(dat){
-  
-  for(k in 1:ncol(dat)){
-    
-    dat[,k]<-dat[,k]-median(dat[,k], na.rm = T)
-    
-    
-  }
-  
-  
-  for(k in 1:nrow(dat)){
-    
-    dat[k,]<-dat[k,]-median(dat[k,], na.rm = T)
-    
-  }
-  
-  return(dat)
-}
-
 
 ####################################################################################################################################
 ####################################################################################################################################
@@ -230,7 +182,7 @@ hknn<-function(dat, k){
   # Calculate similarity metrics for all column pairs (default is Euclidean distance)
   dist.mat<-as.matrix( dist(t(dat)) )
   #dist.mat<- 1-as.matrix(cor((dat), use="pairwise.complete.obs"))
-  
+
   #dist.mat<-as.matrix(as.dist( dist.cosine(t(dat)) ))
   
   # Column names of the similarity matrix, same as data matrix
@@ -572,7 +524,7 @@ filt.mat.rc<-function(mat, pct.r,pct.c){
   
   mat<-mat[,kc]
   
-  
+
   
   
   
@@ -657,27 +609,27 @@ cvna<-function(x){
 # Calculate peptide level FDR
 
 pep_fdr_greaterthan<-function(dat, thres){
+
+rmi<-c()
+
+for(X in unique(dat$modseq)){
   
-  rmi<-c()
+  dp<-dat$dart_PEP[dat$modseq==X]
   
-  for(X in unique(dat$modseq)){
-    
-    dp<-dat$dart_PEP[dat$modseq==X]
-    
-    rawt<-dat$Raw.file[dat$modseq==X]
-    
-    dpf<-calc_fdr(dp)
-    
-    rk<-rawt[which(dpf>thres)]
-    
-    indt<-which(dat$Raw.file%in%rk & dat$modseq==X)
-    
-    rmi<-c(rmi, indt)
-    
-  }
+  rawt<-dat$Raw.file[dat$modseq==X]
   
-  return(rmi)
+  dpf<-calc_fdr(dp)
   
+  rk<-rawt[which(dpf>thres)]
+  
+  indt<-which(dat$Raw.file%in%rk & dat$modseq==X)
+  
+  rmi<-c(rmi, indt)
+  
+}
+
+return(rmi)
+
 }
 
 
