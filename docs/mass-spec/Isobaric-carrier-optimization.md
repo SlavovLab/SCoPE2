@@ -11,10 +11,10 @@ description: "Optimizing accuracy and depth of protein quantification in experim
 
 &nbsp;
 
-<p class="text-center">
+<span class="text-center">
 [JPR Article](https://doi.org/10.1021/acs.jproteome.0c00675){: .btn-blue .fs-6 .mb-4 .mb-md-0 .mr-3 }
 [bioRxiv Preprint](https://doi.org/10.1101/2020.08.24.264994){: .btn-blue .fs-6 .mb-4 .mb-md-0 .mr-3 }
-</p>
+</span>
 <br>
 
 [Guidelines]({{site.baseurl}}#guidelines){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
