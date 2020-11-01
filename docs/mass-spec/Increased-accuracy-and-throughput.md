@@ -4,7 +4,7 @@ title: Improvements of SCoPE2
 nav_order: 1
 permalink: mass-spec/Increased-accuracy-and-throughput
 description: "Improvements in the accuracy and throughout of SCoPE2 over SCoPE-MS"
-parent: Optimizing
+parent: Optimization
 ---
 {% include social-media-links.html %}
 

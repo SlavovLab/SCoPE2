@@ -4,7 +4,7 @@ title: Mass-spec analysis
 nav_order: 3
 description: "Methods for single-cell proteomics developed in the Slavov Laboratory, Northeastern University, Boston"
 permalink: mass-spec/sensitive-mass-spectrometry-analysis
-parent: Optimizing
+parent: Optimization 
 ---
 {% include social-media-links.html %}
 
