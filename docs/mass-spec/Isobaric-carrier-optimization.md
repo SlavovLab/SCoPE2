@@ -11,8 +11,8 @@ description: "Optimizing accuracy and depth of protein quantification in experim
 
 &nbsp;
 
-[JPR Article](https://doi.org/10.1021/acs.jproteome.0c00675){: .btn-blue .fs-6 .mb-4 .mb-md-0 .mr-2 }
-[bioRxiv Preprint](https://doi.org/10.1101/2020.08.24.264994){: .btn-blue .fs-6 .mb-4 .mb-md-0 .mr-2 }
+[JPR Article](https://doi.org/10.1021/acs.jproteome.0c00675){: .btn-blue .fs-6 .mb-5 .mb-md-0 .mr-2 }
+[bioRxiv Preprint](https://doi.org/10.1101/2020.08.24.264994){: .btn-blue .fs-6 .mb-5 .mb-md-0 .mr-2 }
 <br>
 
 [Guidelines]({{site.baseurl}}#guidelines){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
@@ -91,7 +91,7 @@ To increase the throughput and quantitative accuracy of single-cell protein anal
 This project on characterizing the isobaric carrier was conducted in the [Slavov Laboratory](http://slavovlab.net) and [SCP Center](http://center.single-cell.net) at [Northeastern University](https://www.northeastern.edu/), and was authored by [Harrison Specht](http://harrisonspecht.com) and [Nikolai Slavov](https://coe.northeastern.edu/people/slavov-nikolai/).   
 
 
-This project was supported by funding from the [NIH Director's Award](https://projectreporter.nih.gov/project_info_description.cfm?aid=9167004&icde=31336575) and by an  Allen [Distinguished Investigator Award](https://alleninstitute.org/what-we-do/frontiers-group/distinguished-investigators/projects/tracking-proteome-dynamics-single-cells) from the Paul G. Allen Frontiers Group.
+This project was supported by funding from the [NIH Director's Award](https://projectreporter.nih.gov/project_info_description.cfm?aid=9167004&icde=31336575) and by an [Allen Distinguished Investigator Award](https://alleninstitute.org/what-we-do/frontiers-group/distinguished-investigators/projects/tracking-proteome-dynamics-single-cells) from the Paul G. Allen Frontiers Group.
 
 &nbsp;  
 
