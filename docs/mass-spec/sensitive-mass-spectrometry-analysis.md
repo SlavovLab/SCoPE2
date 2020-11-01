@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Mass-spec analysis
+title: Resources
 nav_order: 3
 description: "Methods for single-cell proteomics developed in the Slavov Laboratory, Northeastern University, Boston"
 permalink: mass-spec/sensitive-mass-spectrometry-analysis
-parent: Optimization 
+parent: Optimization
 ---
 {% include social-media-links.html %}
 
@@ -20,14 +20,17 @@ parent: Optimization
 ------------
 
 
-
-The sensitivity of mass spectrometry analysis depends on many factors, including sample preprations, data aquision, and data interpretaion. These factors can be benchmarked and optimized by methods developed in the [Slavov Laboratory](http://slavovlab.net):
+## Methods and tools for optimizing sensitive mass spectrometry analysis
+The sensitivity of mass spectrometry analysis depends on many factors, including sample preparations, data acquisition, and data interpretation. These factors can be benchmarked and optimized by methods developed in the [Slavov Laboratory](http://slavovlab.net):
 
 * [Data-driven Optimization of Mass-Spectrometry (DO-MS)](https://do-ms.slavovlab.net)
 * [Data-driven Alignment of Retention Times for IDentification (DART-ID)](https://dart-id.slavovlab.net)
 
 
-[DO-MS](https://do-ms.slavovlab.net) and [DART-ID](https://dart-id.slavovlab.net) are major contributors to the increased throughput and quantitative accuracy of SCoPE2 compared to [Single-Cell ProtEomics by Mass Spectrometry (SCoPE-MS)](http://slavovlab.net/2016_SCoPE-MS/index.html). Below are video presentaions of these methods by Gray Huffman and Albert Chen.
+[DO-MS](https://do-ms.slavovlab.net) and [DART-ID](https://dart-id.slavovlab.net) are major contributors to the increased throughput and quantitative accuracy of SCoPE2 compared to [Single-Cell ProtEomics by Mass Spectrometry (SCoPE-MS)](http://slavovlab.net/2016_SCoPE-MS/index.html). Below are video presentations by Gray Huffman and Albert Chen describing these methods.
+
+
+
 
 &nbsp;
 
@@ -38,7 +41,23 @@ The sensitivity of mass spectrometry analysis depends on many factors, including
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IWeasIXs5F0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
+## Principles for optimizing experiments using isobaric carriers
 
-&nbsp;
+These [controlled experiments](https://www.biorxiv.org/content/10.1101/2020.08.24.264994v4) describe general principles and suggest guidelines for experiments using isobaric carriers.
 
-Read more about our [single-cell proteomics research](http://slavovlab.net/research.htm#SCoPE-MS) and the [single-cell proteomics conference](http://single-cell.net) that we organize.  
+
+
+
+## Further resources  
+
+ * [Single-Cell Proteomics Center](http://center.single-cell.net)
+ * [Single-cell Proteomics Conference](http://single-cell.net)
+ * [Introduction to mass-spectrometry analysis](http://slavovlab.net/teaching/Methods-of-Bioengineering.html)
+
+
+
+ Read more about our [single-cell proteomics research](http://slavovlab.net/research.htm#SCoPE-MS) and the our active [single-cell proteomics projects](http://center.single-cell.net/single-cell-proteomics/research).
+
+ &nbsp;
+
+ &nbsp;
