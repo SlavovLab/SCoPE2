@@ -1,14 +1,15 @@
 ---
 layout: default
-title: Improvements of SCoPE2
-nav_order: 1
-permalink: mass-spec/Increased-accuracy-and-throughput
-description: "Improvements in the accuracy and throughout of SCoPE2 over SCoPE-MS"
-parent: Optimizing
+title: Optimizing
+nav_order: 4
+permalink: mass-spec/optimizing_single-cell-proteomics
+description: "Optimizing mass-spectrometry analysis of single cells by SCoPE2 and other methods using isobaric carriers"
+has_children: true
 ---
 {% include social-media-links.html %}
 
-# Technical improvements of SCoPE2
+# Optimizing single-cell MS analysis
+
 
 &nbsp;
 

@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Isobaric carrier optimization
-nav_order: 8
+nav_order: 2
 permalink: mass-spec/Isobaric-carrier-optimization
 description: "Optimizing accuracy and depth of protein quantification in experiments using isobaric carriers"
+parent: Optimizing
+
 ---
 {% include social-media-links.html %}
 
@@ -12,8 +14,8 @@ description: "Optimizing accuracy and depth of protein quantification in experim
 &nbsp;
 
 <span class="text-center"></span>
-[JPR Article](https://doi.org/10.1021/acs.jproteome.0c00675){: .btn .fs-5 .mr-4}
-[bioRxiv Preprint](https://doi.org/10.1101/2020.08.24.264994){: .btn .fs-5 .mr-4}
+[JPR Article](https://doi.org/10.1021/acs.jproteome.0c00675){: .btn .fs-5 .mr-4 .center-image}
+[bioRxiv Preprint](https://doi.org/10.1101/2020.08.24.264994){: .btn .fs-5 .mr-4 .center-image}
 <br>
 
 [Guidelines]({{site.baseurl}}#guidelines){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
