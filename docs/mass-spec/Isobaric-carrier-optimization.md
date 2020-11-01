@@ -12,8 +12,8 @@ description: "Optimizing accuracy and depth of protein quantification in experim
 &nbsp;
 
 <span class="text-center">
-[JPR Article](https://doi.org/10.1021/acs.jproteome.0c00675){: .btn-blue .fs-6 .mb-4 .mb-md-0 .mr-3 }
-[bioRxiv Preprint](https://doi.org/10.1101/2020.08.24.264994){: .btn-blue .fs-6 .mb-4 .mb-md-0 .mr-3 }
+[JPR Article](https://doi.org/10.1021/acs.jproteome.0c00675){: .btn .fs-6 .mb-4 .mb-md-0 .mr-3 .text-center }
+[bioRxiv Preprint](https://doi.org/10.1101/2020.08.24.264994){: .btn .fs-6 .mb-4 .mb-md-0 .mr-3 .text-center}
 </span>
 <br>
 
