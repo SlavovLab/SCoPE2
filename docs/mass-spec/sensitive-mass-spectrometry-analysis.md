@@ -56,7 +56,7 @@ These [controlled experiments](https://www.biorxiv.org/content/10.1101/2020.08.2
 
 
 
- Read more about our [single-cell proteomics research](http://slavovlab.net/research.htm#SCoPE-MS) and the our active [single-cell proteomics projects](http://center.single-cell.net/single-cell-proteomics/research).
+ Read more about the [single-cell proteomics research](http://slavovlab.net/research.htm#SCoPE-MS), its active [single-cell proteomics projects](http://center.single-cell.net/single-cell-proteomics/research) and [ultrasensitive MS analysis](https://scope2.slavovlab.net/mass-spec/single-cell-proteomics).
 
  &nbsp;
 
