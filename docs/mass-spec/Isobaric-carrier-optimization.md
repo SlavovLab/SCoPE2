@@ -69,7 +69,7 @@ To increase the throughput and quantitative accuracy of single-cell protein anal
   &nbsp;
 
 ## DO-MS Reports
-
+These reports contain plots with detailed information for the chromatographic separation (elution peaks), precursor ion intensities, ion accumulation times, apex sampling, number of MS2 scans per experiment and the confidence of the assigned PSMs, and contaminants. This information is provided as distributions across all ions as previously described. For more information, see [Data-driven Optimization of Mass-Spectrometry (DO-MS)](https://do-ms.slavovlab.net).  
 * [DO-MS Report for the low MS2 AGC target](DO-MS_Reports/DO-MS_Report_lowAGC.html)
 * [DO-MS Report for the high MS2 AGC target](DO-MS_Reports/DO-MS_Report_highAGC.html)
 
