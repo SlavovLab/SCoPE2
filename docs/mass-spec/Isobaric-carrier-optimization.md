@@ -22,7 +22,7 @@ parent: Optimization
 
 1. [Abstract](#abstract)
 2. [RAW Data](#data)
-3. [DO-MS Report](#do-ms-reportst)
+3. [DO-MS Report](#do-ms-reports)
 4. [Guidelines](#guidelines)
 
 ## Abstract
