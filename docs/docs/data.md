@@ -11,9 +11,9 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 
 &nbsp;
 
-[Processed Protein Data]({{site.baseurl}}#processed-single-cell-protein-data){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[RAW Protein Data]({{site.baseurl}}#RAW-single-cell-protein-data){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[10x Genomics RNA Data]({{site.baseurl}}#single-cell-RNA-data){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Processed SCoPE2 Data]({{site.baseurl}}#processed-single-cell-protein-data){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[RAW SCoPE2 Data]({{site.baseurl}}#RAW-single-cell-protein-data){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[10x Genomics Data]({{site.baseurl}}#single-cell-RNA-data){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 &nbsp;
 
@@ -71,7 +71,7 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 
 &nbsp;
 
-* [Single cell proteomics data processing](https://uclouvain-cbio.github.io/scp/): The analysis of the data described here has been replicated by Christophe Vanderaa and Laurent Gatto with the scp Bioconductor pckage: The scp package is used to process and analyse mass spectrometry-based single cell proteomics data and is freely avilable from their [Github repository](https://github.com/UCLouvain-CBIO/scp/). The scp package and the replication are described in this [video](https://youtu.be/XMxZkw8yorY). 
+* [Single cell proteomics data processing](https://uclouvain-cbio.github.io/scp/): The analysis of the data described here has been replicated by Christophe Vanderaa and Laurent Gatto with the scp Bioconductor pckage: The scp package is used to process and analyse mass spectrometry-based single cell proteomics data and is freely avilable from their [Github repository](https://github.com/UCLouvain-CBIO/scp/). The scp package and the replication are described in this [video](https://youtu.be/XMxZkw8yorY).
 
 
 
