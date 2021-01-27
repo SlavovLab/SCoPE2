@@ -40,7 +40,7 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 &nbsp;
 
 * [Joint protein-RNA data](https://drive.google.com/file/d/130FWc-s-Pd-mx3ymg22bI1qH5fiT7Ktv/view?usp=sharing)
-   - `Gene` **x**  `single cells`. Boths sets imputed and batch-corrected separately then combined, taking only genes common to both data sets. Uniprot accession numbers used to denote gene.
+   - `Gene` **x**  `single cells`. Both sets imputed and batch-corrected separately then combined, taking only genes common to both data sets. Uniprot accession numbers used to denote gene.
 
 &nbsp;
 
@@ -71,7 +71,7 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 
 &nbsp;
 
-* [Single cell proteomics data processing](https://uclouvain-cbio.github.io/scp/): The analysis of the data described here has been replicated by Christophe Vanderaa and Laurent Gatto with the scp Bioconductor pckage: The scp package is used to process and analyse mass spectrometry-based single cell proteomics data and is freely avilable from their [Github repository](https://github.com/UCLouvain-CBIO/scp/). The scp package and the replication are described in this [video](https://youtu.be/XMxZkw8yorY).
+* [Single cell proteomics data processing](https://uclouvain-cbio.github.io/scp/): The analysis of the data described here has been replicated by Christophe Vanderaa and Laurent Gatto with the scp Bioconductor package: The scp package is used to process and analyze mass spectrometry-based single cell proteomics data and is freely available from their [Github repository](https://github.com/UCLouvain-CBIO/scp/). The scp package and the replication are described in this [video](https://youtu.be/XMxZkw8yorY).
 
 
 
