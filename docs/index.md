@@ -18,7 +18,7 @@ permalink: /
 
 [SCoPE2 Preprint](https://doi.org/10.1101/665307){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [SCoPE2 Paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02267-5){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[GitHub](https://github.com/SlavovLab/SCoPE2/tree/master/code){: .btn .fs-5 .mb-4 .mb-md-0 }
+[SCoPE2 code on GitHub](https://github.com/SlavovLab/SCoPE2/tree/master/code){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 * [Highlights]({{site.baseurl}}#highlights)
 * [Reviews]({{site.baseurl}}#reviews)
