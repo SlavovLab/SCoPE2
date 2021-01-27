@@ -33,8 +33,8 @@ search_enabled: true
 #    - "https://github.com/SlavovLab/SCoPE2"
 
 aux_links:
-  "SCoPE2 Preprint":
-    - "https://doi.org/10.1101/665307"
+  "SCoPE2 Paper":
+    - "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02267-5"
   "Slavov Lab":
     - "https://slavovlab.net"
   "SCP Center":
@@ -43,7 +43,7 @@ aux_links:
 
 
 github_link: https://github.com/SlavovLab/SCoPE2
-preprint_link: https://www.biorxiv.org/content/10.1101/512152v3
+preprint_link: https://www.biorxiv.org/content/10.1101/512152v5
 jpr_link: https://pubs.acs.org/doi/10.1021/acs.jproteome.9b00039
 
 # Color scheme currently only supports "dark" or nil (default)
