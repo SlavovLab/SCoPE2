@@ -13,5 +13,5 @@ To facilitate the exploration of the SCoPE2 data, we plotted the distributions o
 
 
 * [Set 1]({{site.baseurl}}mass-spec/A1_glance/)
-* [Set 2]({{site.baseurl}}mass-spec/AB_glance/)
+* [Set 2]({{site.baseurl}}mass-spec/A1_glance/)
 * [Set 3]({{site.baseurl}}mass-spec/B2_glance/)
