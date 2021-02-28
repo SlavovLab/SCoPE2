@@ -1,19 +1,17 @@
 ---
 layout: default
-title: Improvements of SCoPE2
-nav_order: 1
+title: Improvments
+nav_order: 4
 permalink: mass-spec/Increased-accuracy-and-throughput
 description: "Improvements in the accuracy and throughout of SCoPE2 over SCoPE-MS"
-parent: Optimization
 ---
-{% include social-media-links.html %}
 
-# Technical improvements of SCoPE2
+# Technical improvements
 
 &nbsp;
 
 [Decreasing coisolation]({{site.baseurl}}#decreasing-coisolation){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Apex targeting]({{site.baseurl}}#Apex-targetting){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Apex targetting]({{site.baseurl}}#Apex-targetting){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
 <!--
 [Sample preparation]({{site.baseurl}}#single-cell-sample-preparation){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
 -->
@@ -37,11 +35,11 @@ The degree of coisolation (or purity of MS2 spectra) was evaluated as a function
 
 &nbsp;
 
-<h2 style="letter-spacing: 2px; font-size: 26px;" id="Apex-targeting" >Improving apex targeting</h2>
+<h2 style="letter-spacing: 2px; font-size: 26px;" id="Apex-targetting" >Improving apex targetting</h2>
 
 ![]({{site.baseurl}}Figures/SCoPE-MS__SCoPE2__Apex-offsets.png){: width="42%" }&nbsp;&nbsp;![]({{site.baseurl}}Figures/SCoPE-MS__SCoPE2__PIF.png){: width="42%" }
 
-Distributions of apex offsets for data from [SCoPE-MS](http://scope.slavovlab.net) and from SCoPE2. These offsets are computed by MaxQuant as the time between the apex of the elution peak and the time when the ion is sampled for MS2 analysis. The discreetness of the SCoPE-MS distributions is due to the long duty cycles, and thus low time resolution of sampling the elution peaks. The application of [DO-MS](http://do-ms.slavovlab.net) allowed sampling elution peaks closer to their apexes. This improved apex sampling with SCoPE2 results in much lower coisolation, quantified by the precursor ion fractions (PIF), which MaxQuant computes as estimates for spectral purity, i.e., the fraction of the ion intensity originating from the precursor assigned to a peptide spectral match for each MS2 spectrum.
+Distributions of apex offsets for data from [SCoPE-MS](http://scope.slavovlab.net) and from SCoPE2. These offsets are computed by MaxQuant as the time between the apex of the elution peak and the time when the ion is sampled for MS2 analysis. The discreetness of the SCoPE-MS distributions is due to the long duty cycles, and thus low time resolution of sampling the elution peaks. The application of [DO-MS](http://do-ms.slavovlab.net) allowed sampling elution peaks closer to their apecies. This improved apex sampling with SCoPE2 results in much lower coisolation, qantified by the precursor ion fractions (PIF), which MaxQuant computes as estimates for spectral purity, i.e., the fraction of the ion intensity originating from the precursor assigned to a peptide spectral match for each MS2 spectrum.
 
 &nbsp;
 
