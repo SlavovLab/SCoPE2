@@ -1,0 +1,15 @@
+Set,RI1,RI2,RI3,RI4,RI5,RI6,RI7,RI8,RI9,RI10,RI11,RI12,RI13,RI14,RI15,RI16
+wAP329,carrier,reference,unused,unused,sc_h,sc_u,sc_h,sc_u,sc_h,sc_u,sc_h,sc_u,sc_h,sc_u,control,sc_pos
+wAP330,carrier,reference,unused,unused,sc_h,sc_u,sc_h,sc_u,sc_h,sc_u,sc_h,sc_u,sc_h,sc_u,control,sc_pos
+wAP331,carrier,reference,unused,unused,sc_h,sc_u,sc_h,sc_u,sc_h,sc_u,sc_h,sc_u,sc_h,sc_u,control,sc_pos
+wAP332,carrier,reference,unused,unused,sc_pos,control,sc_u,sc_h,sc_u,sc_h,sc_u,sc_h,sc_u,sc_h,sc_u,sc_h
+wAP333,carrier,reference,unused,unused,sc_pos,control,sc_u,sc_h,sc_u,sc_h,sc_u,sc_h,sc_u,sc_h,sc_u,sc_h
+wAP334,carrier,reference,unused,unused,sc_pos,control,sc_u,sc_h,sc_u,sc_h,sc_u,sc_h,sc_u,sc_h,sc_u,sc_h
+wAP376,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub
+wAP377,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub
+wAP378,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub
+wAP379,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub
+wAP383,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub
+wAP384,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub
+wAP385,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub
+wAP386,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub,sc_hb,sc_ub
