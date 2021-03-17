@@ -4,7 +4,6 @@ title: SCoPE2 protocol
 nav_order: 6
 description: "Protocol for multiplexed and automated single-cell proteomics by mass-spectrometry using SCoPE2"
 permalink: mass-spec/protocol
-description: "Detailed protocol for multiplexed single-cell proteomics using SCoPE2"
 ---
 
 # SCoPE2 protocol
