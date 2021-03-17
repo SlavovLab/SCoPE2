@@ -11,14 +11,12 @@ description: "Detailed protocol for single-cell proteomics via SCoPE2"
 
 [SCoPE2 Protocol Preprint](https://www.biorxiv.org/content/10.1101/2021.03.12.435034v1){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [SCoPE2 code on GitHub](https://github.com/SlavovLab/SCoPE2/tree/master/code){: .btn .fs-5 .mb-4 .mb-md-0 }
-
-* [Data]({{site.baseurl}}#data)
-* [Video protocols]({{site.baseurl}}#videoprotocols)
-
-
 ------------
 
 Many biological systems are composed of diverse single cells. This diversity necessitates functional and molecular single-cell analysis. Single-cell protein analysis has long relied on affinity reagents, but emerging mass-spectrometry methods (either label-free or multiplexed) have enabled quantifying over 1,000 proteins per cell while simultaneously increasing the specificity of protein quantification. Isobaric carrier based multiplexed single-cell proteomics is a scalable, reliable, and cost-effective method that can be fully automated and implemented on widely available equipment. It uses inexpensive reagents and is applicable to any sample that can be processed to a single-cell suspension. Here we describe an automated SCoPE2 workflow that allows analyzing about 200 single cells per 24 hours using only standard commercial equipment. We emphasize experimental steps and benchmarks required for achieving quantitative protein analysis.
+
+* [Data]({{site.baseurl}}#data)
+* [Video protocols]({{site.baseurl}}#workshops)
 
 &nbsp;
 
@@ -44,8 +42,8 @@ Many biological systems are composed of diverse single cells. This diversity nec
 
 
 
-## Video protocols
-The presentations below describe sample preparation and data analysis for the latest version of Single Cell ProtEomics by Mass Spectrometry (SCoPE-MS), [SCoPE2](https://www.biorxiv.org/content/10.1101/665307v5)
+## Workshops
+The presentations below describe sample preparation and data analysis for the latest version of Single Cell ProtEomics by Mass Spectrometry (SCoPE-MS), [SCoPE2](https://www.biorxiv.org/content/10.1101/665307v5). They were presented at the workshop of the second [Single Cell Proteomics Conference](https://single-cell.net/proteomics/scp2019).
 
 
 * [Design of single-cell proteomics experiments using SCoPE2](https://youtu.be/mz6Yq2XSu-8)
