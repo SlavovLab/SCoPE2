@@ -15,8 +15,8 @@ description: "Detailed protocol for single-cell proteomics via SCoPE2"
 
 Many biological systems are composed of diverse single cells. This diversity necessitates functional and molecular single-cell analysis. Single-cell protein analysis has long relied on affinity reagents, but emerging mass-spectrometry methods (either label-free or multiplexed) have enabled quantifying over 1,000 proteins per cell while simultaneously increasing the specificity of protein quantification. Isobaric carrier based multiplexed single-cell proteomics is a scalable, reliable, and cost-effective method that can be fully automated and implemented on widely available equipment. It uses inexpensive reagents and is applicable to any sample that can be processed to a single-cell suspension. Here we describe an automated SCoPE2 workflow that allows analyzing about 200 single cells per 24 hours using only standard commercial equipment. We emphasize experimental steps and benchmarks required for achieving quantitative protein analysis.
 
-* [Data]({{site.baseurl}}#data)
-* [Video protocols]({{site.baseurl}}#workshops)
+[Data]({{site.baseurl}}#data){: .btn .fs-3}
+[Workshops]({{site.baseurl}}#workshops){: .btn .fs-3}
 
 &nbsp;
 
@@ -53,3 +53,9 @@ The presentations below describe sample preparation and data analysis for the la
 &nbsp;
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Eq_s6Jlzfnk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
