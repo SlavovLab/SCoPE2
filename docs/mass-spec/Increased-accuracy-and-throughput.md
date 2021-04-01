@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Improvments
-nav_order: 4
+nav_order: 2
 permalink: mass-spec/Increased-accuracy-and-throughput
 description: "Improvements in the accuracy and throughout of SCoPE2 over SCoPE-MS"
+parent: Optimization
 ---
 
 # Technical improvements
