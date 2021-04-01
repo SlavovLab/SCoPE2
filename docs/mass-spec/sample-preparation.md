@@ -2,7 +2,7 @@
 layout: default
 title: Sample preparation
 nav_order: 4
-permalink: mass-spec/optimizing_single-cell-proteomics
+permalink: mass-spec/sample-preparation
 description: "Optimizing mass-spectrometry analysis of single cells by SCoPE2 and other methods using isobaric carriers"
 has_children: true
 ---
