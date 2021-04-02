@@ -9,7 +9,9 @@ parent: Sample preparation
 ---
 {% include social-media-links.html %}
 
-# Minimal ProteOmic sample Preparation (mPOP)
+# Minimal sample preparation
+
+## Minimal ProteOmic sample Preparation (mPOP)
 
 &nbsp;
 

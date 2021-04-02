@@ -8,7 +8,7 @@ has_children: true
 ---
 {% include social-media-links.html %}
 
-# Sample preparation for single-cell MS analysis
+# Sample preparation for single-cell proteomics
 
 
 &nbsp;
