@@ -10,9 +10,11 @@ parent: Sample preparation
 {% include social-media-links.html %}
 # Droplet sample preparation
 
-## Nano-ProteOmic sample Preparation (nPOP)
+## nano ProteOmic sample Preparation (nPOP)
 
 &nbsp;
+
+Mass spectrometry methods have enabled quantifying thousands of proteins at the single cell level. These methods open the door to tackling many biological challenges, such as characterizing heterogeneity in the tumor micro-environment and better understanding signaling pathways driving stem cell differentiation. To further advance single-cell MS analysis, we developed an automated nano-ProteOmic sample Preparation (nPOP). nPOP isolates individual cells in 300 picoliter volumes and performs all subsequent preparation steps in small droplets on a hydrophobic glass slide, which allows to keep sample volumes below 15 nl.
 
 <!--
 <span class="text-center"></span>
@@ -26,7 +28,7 @@ parent: Sample preparation
 
 ## Abstract
 
-A major limitation to applying quantitative LC-MS/MS proteomics to small samples, such as single cells, are the losses incurred during sample cleanup. To relieve this limitation, we developed a Minimal ProteOmic sample Preparation (mPOP) method for culture-grown mammalian cells. mPOP obviates cleanup and thus eliminates cleanup-related losses while expediting sample preparation and simplifying its automation. Bulk SILAC samples processed by mPOP or by conventional urea-based methods indicated that mPOP results in complete cell lysis and accurate relative quantification. mPOP can be easily intergraded with the Single Cell ProtEomics by Mass Spectrometry (SCoPE-MS) and with its second generation SCoPE2 as described in this [protocol](https://www.biorxiv.org/content/10.1101/2021.03.12.435034v1).
+Mass spectrometry methods have enabled quantifying thousands of proteins at the single cell level. These methods open the door to tackling many biological challenges, such as characterizing heterogeneity in the tumor micro-environment and better understanding signaling pathways driving stem cell differentiation. To further advance single-cell MS analysis, we developed an automated nano-ProteOmic sample Preparation (nPOP). nPOP isolates individual cells in 300 picoliter volumes and performs all subsequent preparation steps in small droplets on a hydrophobic glass slide, which allows to keep sample volumes below 15 nl.
 
 
  
