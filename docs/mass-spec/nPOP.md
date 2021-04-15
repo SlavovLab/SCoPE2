@@ -49,6 +49,7 @@ Mass spectrometry methods have enabled quantifying thousands of proteins at the 
 
 * [Proteins-processed.csv](https://drive.google.com/file/d/1sF5STkofF_f2msnYaaYdWabou84Qf2Xr/view?usp=sharing)
    - `Proteins` **x** `single cells` at 1% FDR, imputed and batch corrected.
+
 &nbsp;
 
 * [HeLa-proteins.csv](https://drive.google.com/file/d/1sF5STkofF_f2msnYaaYdWabou84Qf2Xr/view?usp=sharing)
@@ -56,7 +57,7 @@ Mass spectrometry methods have enabled quantifying thousands of proteins at the 
 
 &nbsp;
 
-* [U-937-proteins.csv](https://drive.google.com/file/d/1sF5STkofF_f2msnYaaYdWabou84Qf2Xr/view?usp=sharing)
+* [U-937-proteins.csv](https://drive.google.com/file/d/14gMoHcEP91hVmGtUNJIVl2S6R8b6rhi-/view?usp=sharing)
    - `Proteins` **x** `single cells` for U-937 cells at 1% FDR, unimputed and zscored.
 
 &nbsp;
@@ -68,7 +69,7 @@ Mass spectrometry methods have enabled quantifying thousands of proteins at the 
 &nbsp;
 
 * [CellCycle-Proteins.csv](https://drive.google.com/file/d/1sF5STkofF_f2msnYaaYdWabou84Qf2Xr/view?usp=sharing)
-   - A list of cell cycle dependent proteins used in analysis. Proteins used taken form [Botstein et al, 2002](http://genome-www.stanford.edu/Human-CellCycle/Hela/)
+   - A list of cell cycle dependent proteins used in analysis. Cell cycle protein and phases information was used from [Botstein et al, 2002](http://genome-www.stanford.edu/Human-CellCycle/Hela/).
 
 &nbsp;
 
