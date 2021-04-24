@@ -10,7 +10,7 @@ parent: Sample preparation
 {% include social-media-links.html %}
 # Droplet sample preparation
 
-## nano ProteOmic sample Preparation (nPOP)
+## nano-ProteOmic sample Preparation (nPOP)
 
 &nbsp;
 
