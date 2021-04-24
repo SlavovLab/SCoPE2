@@ -25,9 +25,11 @@ parent: Sample preparation
 3. [Processed Data](#proc_data)
 
 
-## Abstract
-Mass spectrometry methods have enabled quantifying thousands of proteins at the single cell level. These methods open the door to tackling many biological challenges, such as characterizing heterogeneity in the tumor micro-environment and better understanding signaling pathways driving stem cell differentiation. To further advance single-cell MS analysis, we developed an automated nano-ProteOmic sample Preparation (nPOP).
+## Introduction
+Mass spectrometry methods have enabled quantifying thousands of proteins at the single cell level. These methods open the door to many biological opportunities, such as characterizing heterogeneity in the tumor micro-environment, signaling pathways driving stem cell differentiation, and intrinsically single-cell processes, such as the cell division cycle. To further advance single-cell MS analysis, we developed an automated nano-ProteOmic sample Preparation (nPOP). nPOP uses piezo acoustic dispensing to isolate individual cells in 300 picoliter volumes and performs all subsequent preparation steps in small droplets on a hydrophobic slide. This allows massively parallel sample preparation, including lysing, digesting, and labeling individual cells in volumes below 20 nl.
 
+## Application
+Single-cell protein analysis using nPOP classified cells by cell type and by cell cycle phase. Furthermore, the data allowed us to quantify the covariation between cell cycle protein markers and thousands of proteins. Based on this covariation, we identify cell cycle associated proteins and functions that are shared across cell types and those that differ between cell types.   
 
 
 <h2 style="letter-spacing: 2px; font-size: 26px;" id="raw_data" >Raw Data from experiments benchmarking nPOP</h2>
@@ -59,18 +61,18 @@ Mass spectrometry methods have enabled quantifying thousands of proteins at the 
 
 
 * [HeLa-proteins.csv](https://drive.google.com/file/d/1BMj5YF_qVu34JXkcBn54GhdB2fS2-_0z/view?usp=sharing)
-   - `Proteins` **x** `single cells` for HeLa cells at 1% FDR, unimputed and zscored.
+   - `Proteins` **x** `single cells` for HeLa cells at 1% FDR, unimputed and z-scored.
 
 &nbsp;
 
 * [U-937-proteins.csv](https://drive.google.com/file/d/1BLNher4z0agGGoJjM2VRRGAGS077ONYi/view?usp=sharing)
-   - `Proteins` **x** `single cells` for U-937 cells at 1% FDR, unimputed and zscored.
+   - `Proteins` **x** `single cells` for U-937 cells at 1% FDR, unimputed and z-scored.
 
 &nbsp;
 
 
 * [CellCycle-Proteins.csv](https://drive.google.com/file/d/1BM4ffkpu0vW_9rfSnmkPwA66RTGKRd21/view?usp=sharing)
-   - A list of cell cycle dependent proteins used in analysis. Cell cycle protein and phases information was used from [Botstein et al, 2002](http://genome-www.stanford.edu/Human-CellCycle/Hela/).
+   - A list of cell cycle dependent proteins used in analysis. Cell cycle protein and phases information was used from [Whitfield et al, 2002](http://genome-www.stanford.edu/Human-CellCycle/Hela/).
 
 &nbsp;
 
