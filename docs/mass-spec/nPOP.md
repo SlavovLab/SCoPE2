@@ -20,9 +20,10 @@ parent: Sample preparation
 
 **Table of Contents**
 
-1. [Abstract](#abstract)
-2. [RAW Data](#raw_data)
-3. [Processed Data](#proc_data)
+1. [Abstract](#introduction)
+2. [Application to the cell division cycle](#application)
+3. [RAW Data](#raw_data)
+4. [Processed Data](#proc_data)
 
 
 ## Introduction
