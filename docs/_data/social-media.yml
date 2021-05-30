@@ -18,7 +18,7 @@ youtube:
   fa-icon: 'fa-youtube-square'
 
 paper:
-  id: '10.1101/665307'
+  id: '10.1186/s13059-021-02267-5'
   href: 'https://doi.org/'
   title: 'Paper'
   fa-icon: 'fa-book'
