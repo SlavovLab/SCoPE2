@@ -7,10 +7,11 @@ Single-Cell ProtEomics by Mass Spectrometry
 
 * [Website](https://scope2.slavovlab.net)
 * [Running](#running)
-* [Download data](https://scope2.slavovlab.net/docs/data)
-* [Manuscript](https://www.biorxiv.org/content/10.1101/665307v3)
+* [Download data](https://scope2.slavovlab.net/mass-spec/data)
+* [Preprint](https://www.biorxiv.org/content/10.1101/665307v3)
+* [Manuscript](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02267-5)
 
-<img src="http://scope2.slavovlab.net/assets/images/SCOPE2-ac.png" width="70%">
+<img src="https://scope2.slavovlab.net/assets/images/SCOPE2-ac.png" width="70%">
 
 
 
@@ -37,7 +38,7 @@ DO-MS is a project...
 
 The manuscript for this tool is published at the Journal of Proteome Research: [https://pubs.acs.org/doi/10.1021/acs.jproteome.9b00039](https://pubs.acs.org/doi/10.1021/acs.jproteome.9b00039)
 -->
-The manuscript is freely available on bioRxiv: [Specht et al., 2019](https://www.biorxiv.org/content/10.1101/665307v3).
+The manuscript is freely available on bioRxiv: [Specht et al., 2019](https://www.biorxiv.org/content/10.1101/665307v3) and at Genome Biology [Specht et al., 2021](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02267-5).
 
 Contact the authors by email: [nslavov\{at\}northeastern.edu](mailto:nslavov@northeastern.edu).
 
@@ -56,12 +57,12 @@ All data used for the manuscript is available on [UCSD's MassIVE Repository](htt
 
 <!--
 ### Figures/Analysis
-Scripts for the figures in the DART-ID manuscript are available in a separate GitHub repository, [https://github.com/SlavovLab/DART-ID_2018](https://github.com/SlavovLab/DART-ID_2018) 
+Scripts for the figures in the DART-ID manuscript are available in a separate GitHub repository, [https://github.com/SlavovLab/DART-ID_2018](https://github.com/SlavovLab/DART-ID_2018)
 -->
 
 -------------
 
 ## Help!
 
-For any bugs, questions, or feature requests, 
+For any bugs, questions, or feature requests,
 please use the [GitHub issue system](https://github.com/SlavovLab/SCoPE2/issues) to contact the developers.
