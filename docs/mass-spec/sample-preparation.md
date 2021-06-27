@@ -10,16 +10,6 @@ has_children: true
 
 # Sample preparation for single-cell proteomics
 
-
-&nbsp;
-
-<!--
-[Decreasing coisolation]({{site.baseurl}}#decreasing-coisolation){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Apex targeting]({{site.baseurl}}#Apex-targetting){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
-
-[Sample preparation]({{site.baseurl}}#single-cell-sample-preparation){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
--->
-
 &nbsp;
 
 High accuracy and throughput of single-cell proteomics begin with efficient and automated sample preparation. The pages of this section summarize methods that use solely MS-compatible reagents and allow parallel preparation of 100s -- 1000s of single cell samples in small volumes.
