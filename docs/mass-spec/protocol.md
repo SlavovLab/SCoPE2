@@ -42,6 +42,15 @@ Many biological systems are composed of diverse single cells. This diversity nec
 
 &nbsp;
 
+* Source data for figures
+  - Figure 2: [LC-MS/MS setup for SCoPE2 experiments](https://doi.org/10.6084/m9.figshare.15060720.v1)
+
+  - Figure 3: [Evaluating data acquisition and interpretation using DO-MS diagnostic plots](https://doi.org/10.6084/m9.figshare.15060774.v1)
+
+  - Figure 4: [Principal Component Analysis of results from SCoPE2 analysis](https://doi.org/10.6084/m9.figshare.15060789.v1)
+
+  - Extended Data Figure 1: [The ABIRD device may suppress contaminant ions](https://doi.org/10.6084/m9.figshare.15060846.v1)
+
 
 
 ## Workshops

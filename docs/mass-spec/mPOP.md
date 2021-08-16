@@ -16,7 +16,7 @@ parent: Sample preparation
 &nbsp;
 
 <span class="text-center"></span>
-[bioRxiv Preprint](https://doi.org/10.1101/2020.08.24.264994){: .btn .fs-5 .mr-4 }
+[bioRxiv Preprint](https://www.biorxiv.org/content/10.1101/399774v1){: .btn .fs-5 .mr-4 }
 
 **Table of Contents**
 
