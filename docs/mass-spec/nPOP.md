@@ -17,12 +17,17 @@ parent: Sample preparation
 <span class="text-center"></span>
 [bioRxiv Preprint](https://doi.org/10.1101/2020.08.24.264994){: .btn .fs-5 .mr-4 }
 
+<span class="text-center"></span>
+[Step by Step Protocol](https://www.protocols.io/view/npop-bwy7pfzn){: .btn .fs-5 .mr-4 }
+
 
 **Table of Contents**
 
 1. [Abstract](#abstract)
 2. [RAW Data](#raw_data)
 3. [Processed Data](#proc_data)
+
+
 
 
 ## Abstract
@@ -73,6 +78,8 @@ Mass spectrometry methods have enabled quantifying thousands of proteins at the 
    - A list of cell cycle dependent proteins used in analysis. Cell cycle protein and phases information was used from [Botstein et al, 2002](http://genome-www.stanford.edu/Human-CellCycle/Hela/).
 
 &nbsp;
+
+
 
 
 <!--
