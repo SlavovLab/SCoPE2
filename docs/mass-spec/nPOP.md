@@ -15,7 +15,7 @@ parent: Sample preparation
 &nbsp;
 
 <span class="text-center"></span>
-[bioRxiv Preprint](https://www.biorxiv.org/content/10.1101/2021.04.24.441211v1){: .btn .fs-5 .mr-4 }
+[bioRxiv Preprint](https://www.biorxiv.org/content/10.1101/2021.04.24.441211v2){: .btn .fs-5 .mr-4 }
 
 <span class="text-center"></span>
 [Step by Step Protocol](https://www.protocols.io/view/npop-bwy7pfzn){: .btn .fs-5 .mr-4 }
@@ -86,7 +86,7 @@ Single-cell protein analysis using nPOP classified cells by cell type and by cel
 
 <h2 style="letter-spacing: 2px; font-size: 26px;" id="talks" >Recorded video presentaions</h2>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/chinY96ngi0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtu.be/DJ1U_KpMNcY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 <!--
