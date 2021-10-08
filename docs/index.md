@@ -49,6 +49,7 @@ The fate and physiology of individual cells are controlled by proteins. Yet, our
 ## Perspectives
 * [Transformative Opportunities for Single-Cell Proteomics](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6089608/), *Journal of Proteome Research*
 * [Unpicking the proteome in single cells](https://science.sciencemag.org/content/367/6477/512), *Science*
+* [Driving Single Cell Proteomics Forward with Innovation](https://pubmed.ncbi.nlm.nih.gov/34597050/), *Journal of Proteome Research*
 
 
 
