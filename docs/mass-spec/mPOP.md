@@ -47,6 +47,12 @@ To increase the throughput and quantitative accuracy of single-cell protein anal
   &nbsp;
 ## Talks
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mz6Yq2XSu-8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+&nbsp;
+
+&nbsp;
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/w48VxHymqo0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 &nbsp;
 
