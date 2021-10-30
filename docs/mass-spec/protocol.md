@@ -8,8 +8,9 @@ permalink: mass-spec/protocol
 
 # SCoPE2 protocol
 
-[SCoPE2 Protocol Preprint](https://www.biorxiv.org/content/10.1101/2021.03.12.435034v1){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[SCoPE2 code on GitHub](https://github.com/SlavovLab/SCoPE2/tree/master/code){: .btn .fs-5 .mb-4 .mb-md-0 }
+[SCoPE2 Protocol Preprint](https://www.biorxiv.org/content/10.1101/2021.03.12.435034v1){: .btn .fs-4 .mr-2}
+[Nature Protocols Article](https://www.nature.com/articles/s41596-021-00616-z){: .btn .fs-4 .mr-2}
+[SCoPE2 code on GitHub](https://github.com/SlavovLab/SCoPE2/tree/master/code){: .btn .fs-4 .mr-2}
 
 
 
