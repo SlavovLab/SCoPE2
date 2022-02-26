@@ -20,9 +20,10 @@ permalink: /
 [SCoPE2 Paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02267-5){: .btn .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [SCoPE2 code on GitHub](https://github.com/SlavovLab/SCoPE2/tree/master/code){: .btn .fs-5 .mb-4 .mb-md-0 }
 
-* [Highlights]({{site.baseurl}}#highlights)
-* [Reviews]({{site.baseurl}}#reviews)
+
 * [Perspectives]({{site.baseurl}}#perspectives)
+* [Reviews]({{site.baseurl}}#reviews)
+* [Highlights]({{site.baseurl}}#highlights)
 
 
 ------------
@@ -34,22 +35,26 @@ The fate and physiology of individual cells are controlled by proteins. Yet, our
 ![]({{site.baseurl}}/assets/images/SCOPE2-ac.png){: width="100%" .center-image}
 
 ------------
+## Perspectives
+* [Learning from natural variation across the proteomes of single cells](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3001512), *PLOS Biology*
+* [Driving Single Cell Proteomics Forward with Innovation](https://pubmed.ncbi.nlm.nih.gov/34597050/), *Journal of Proteome Research*
+* [Unpicking the proteome in single cells](https://science.sciencemag.org/content/367/6477/512), *Science*
+* [Transformative Opportunities for Single-Cell Proteomics](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6089608/), *Journal of Proteome Research*
+
+
+
+## Reviews
+* [Single-cell protein analysis by mass spectrometry](https://doi.org/10.1016/j.cbpa.2020.04.018), *Current Opinion in Chemical Biology*
+* [Single cell protein analysis for systems biology](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6204083/),	*Essays in biochemistry*
 
 ## Highlights
+* [Highlight by C&EN](https://cen.acs.org/biological-chemistry/proteomics/single-cell-proteomics-mass-spec/99/i40)
 * [Highlight by Nature Methods](https://www.nature.com/articles/s41592-021-01243-y)
 * [Technology feature at Nature Methods](https://www.nature.com/articles/s41592-019-0540-6)
 * [Single-cell proteomics for the Human Cell Atlas](https://news.northeastern.edu/2019/07/08/northeastern-university-proteomics-researcher-receives-grant-from-chan-zuckerberg-initiative-to-help-map-all-cells-in-the-human-body-to-better-understand-cancer-diabetes-and-other-diseases/)
 * [News in Proteomics Research](http://proteomicsnews.blogspot.com/2019/12/over-1000-single-cell-proteomes-2700.html)
 * [The single cell proteomics revolution](https://www.bioanalysis-zone.com/2020/02/11/single-cell-proteomics-revolution_bo/)
 
-## Reviews
-* [Single-cell protein analysis by mass spectrometry](https://doi.org/10.1016/j.cbpa.2020.04.018), *Current Opinion in Chemical Biology*
-* [Single cell protein analysis for systems biology](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6204083/),	*Essays in biochemistry*
-
-## Perspectives
-* [Transformative Opportunities for Single-Cell Proteomics](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6089608/), *Journal of Proteome Research*
-* [Unpicking the proteome in single cells](https://science.sciencemag.org/content/367/6477/512), *Science*
-* [Driving Single Cell Proteomics Forward with Innovation](https://pubmed.ncbi.nlm.nih.gov/34597050/), *Journal of Proteome Research*
 
 
 
