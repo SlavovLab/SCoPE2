@@ -33,8 +33,8 @@ search_enabled: true
 #    - "https://github.com/SlavovLab/SCoPE2"
 
 aux_links:
-  "SCoPE2 Paper":
-    - "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-021-02267-5"
+  "scProteomics":
+    - "https://scp.slavovlab.net/methods"
   "Slavov Lab":
     - "https://slavovlab.net"
   "SCP Center":
