@@ -4,6 +4,7 @@ title: Explore data
 nav_order: 3
 permalink: mass-spec/DO-MS_Reports
 description: "explore single-cell proteomics data from SCoPE2, a second generation SCoPE-MS"
+exclude: True
 ---
 {% include social-media-links.html %}
 
