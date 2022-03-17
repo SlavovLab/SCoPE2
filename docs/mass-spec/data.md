@@ -18,7 +18,6 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 &nbsp;
 
 <h2 style="letter-spacing: 2px; font-size: 26px;" id="processed-single-cell-protein-data" >pSCoPE data processed to ASCII text matrices</h2>
-<h3 style="letter-spacing: 2px; font-size: 26px;" id="processed-single-cell-protein-data" >Benchmarking experiments: Figure 1b/e data</h3>
 * [Peptides-raw.csv](https://drive.google.com/file/d/15DwDzAKFuRDTV31EnU83aRRhuAyz85_v/view?usp=sharing)
   - `Peptides` **x** `single cells` at 1% FDR.  The first 2 columns list the corresponding protein identifiers and peptide sequences and each subsequent column corresponds to a single cell. Peptide identification is based on spectra analyzed by [MaxQuant](https://www.maxquant.org/)  and is enhanced by using [DART-ID](https://dart-id.slavovlab.net/) to incorporate retention time information. See [Specht et al., 2019](https://www.biorxiv.org/content/10.1101/665307v3) for details.   
 
