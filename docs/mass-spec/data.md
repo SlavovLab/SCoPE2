@@ -17,7 +17,8 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 
 &nbsp;
 
-<h2 style="letter-spacing: 2px; font-size: 26px;" id="processed-single-cell-protein-data" >pSCoPE data processed to ASCII text matrices</h2>
+<h2 style="letter-spacing: 2px; font-size: 26px;" id="processed-single-cell-protein-data" >SCoPE2 data processed to ASCII text matrices</h2>
+
 * [Peptides-raw.csv](https://drive.google.com/file/d/15DwDzAKFuRDTV31EnU83aRRhuAyz85_v/view?usp=sharing)
   - `Peptides` **x** `single cells` at 1% FDR.  The first 2 columns list the corresponding protein identifiers and peptide sequences and each subsequent column corresponds to a single cell. Peptide identification is based on spectra analyzed by [MaxQuant](https://www.maxquant.org/)  and is enhanced by using [DART-ID](https://dart-id.slavovlab.net/) to incorporate retention time information. See [Specht et al., 2019](https://www.biorxiv.org/content/10.1101/665307v3) for details.   
 
@@ -71,17 +72,6 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 &nbsp;
 
 * [Single cell proteomics data processing](https://uclouvain-cbio.github.io/scp/): The analysis of the data described here has been replicated by Christophe Vanderaa and Laurent Gatto with the scp Bioconductor package: The scp package is used to process and analyze mass spectrometry-based single cell proteomics data and is freely available from their [Github repository](https://github.com/UCLouvain-CBIO/scp/). The scp package and the replication are described in this [video](https://youtu.be/XMxZkw8yorY).
-
-&nbsp;
-
-## DO-MS reports of SCoPE2 data
-
-To facilitate the exploration of the SCoPE2 data, we plotted the distributions of important and informative features of the LC-MS/MS data using the methodology of [Data-driven Optimization of MS (DO-MS)](https://do-ms.slavovlab.net) developed by Huffman et al., _J. of Proteome Research_, 2019, DOI: [10.1021/acs.jproteome.9b00039](https://doi.org/10.1021/acs.jproteome.9b00039)
-
-
-<!-- * [Set 1]({{site.baseurl}}A1_glance/index.html) -->
-* [Set 1]({{site.baseurl}}B1_glance/index.html)
-* [Set 2]({{site.baseurl}}B2_glance/index.html)
 
 
 
