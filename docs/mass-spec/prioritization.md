@@ -11,7 +11,7 @@ nav_exclude: true
 
 &nbsp;
 
-Prioritized single-cell proteomics was developed by [Huffman et al, 2022][pSCoPE_Preprint]. [pSCoPE](https://scp.slavovlab.net/pSCoPE) allows ensures duty-cycle time for analyzing prioritized peptides across all single cells (thus increasing data consistency) while analyzing identifiable peptides at full duty-cycle, thus increasing proteome depth. These strategies increased the quantified data points for challenging peptides and the overall proteome coverage about 2-fold.  
+Prioritized single-cell proteomics ([pSCoPE](https://scp.slavovlab.net/pSCoPE)) was developed by [Huffman et al, 2022][pSCoPE_Preprint]. pSCoPE allows ensures duty-cycle time for analyzing prioritized peptides across all single cells (thus increasing data consistency) while analyzing identifiable peptides at full duty-cycle, thus increasing proteome depth. These strategies increased the quantified data points for challenging peptides and the overall proteome coverage about 2-fold.  
 
 ---
 
