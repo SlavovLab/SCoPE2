@@ -62,6 +62,9 @@ description: "download single-cell proteomics data from SCoPE2, a second generat
 * [Additional data files](https://drive.google.com/drive/folders/1Zhjik_JFjCQNIVjg63-fooJ4K0HZxWjV?usp=sharing) necessary for generating figures from the [SCoPE2 article](https://doi.org/10.1101/665307).
 
 &nbsp;
+* [Figure 4c](https://drive.google.com/file/d/1CFjDmT841ncyIzamnf5Gv-tKmUMO31-G/view?usp=sharing) Log-2 transformed protein ratios (Macrophage / Monocyte) necessary to generate Figure 4C [SCoPE2 article](https://doi.org/10.1101/665307).
+
+&nbsp;
 
 * [Processed Data](https://drive.google.com/drive/folders/1NJODxiKrnfW2_nTP-_n_UDvIpwcDEz4C?usp=sharing) from the [second version (v2) of the SCoPE2 preprint](https://www.biorxiv.org/content/10.1101/665307v3)
 
