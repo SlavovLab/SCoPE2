@@ -32,7 +32,7 @@ Many biological systems are composed of diverse single cells. This diversity nec
 
 &nbsp;
 
-* [Peptides x Samples](Protocol_data/ProteinsXSamples_BulkANDSSC.txt)
+* [Proteins x Samples](Protocol_data/ProteinsXSamples_BulkANDSSC.txt)
    - `Proteins` **x** `single cells` at 1% FDR, imputed and batch corrected.
 
 &nbsp;
