@@ -3,7 +3,7 @@ layout: default
 title: Sample preparation
 nav_order: 4
 permalink: mass-spec/sample-preparation
-description: "Sample preparation methods for single-cell proteomics by mass-spectrometry. Automated and massively parallel sample preparation."
+description: "Sample preparation methods for single-cell proteomics by mass spectrometry. Automated and massively parallel sample preparation."
 has_children: true
 ---
 {% include social-media-links.html %}
