@@ -5,7 +5,7 @@ nav_order: 1
 permalink: nPOP
 description: "nano-ProteOmic sample Preparation (nPOP)"
 parent: Sample preparation
-
+nav_exclude: true
 ---
 {% include social-media-links.html %}
 # Droplet sample preparation

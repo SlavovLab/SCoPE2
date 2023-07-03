@@ -1,6 +1,7 @@
 # **SCoPE2**
 
-Single-Cell ProtEomics by Mass Spectrometry
+## Single-Cell ProtEomics by Mass Spectrometry, version 2.0
+This is a second generation method building upon [SCoPE-MS](https://scp.slavovlab.net/SCoPE-MS)
 
 <!--![GitHub release](https://img.shields.io/github/release/SlavovLab/DO-MS.svg)-->
 ![GitHub](https://img.shields.io/github/license/SlavovLab/DO-MS.svg)
