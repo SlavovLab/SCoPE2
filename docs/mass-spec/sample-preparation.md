@@ -20,7 +20,7 @@ High accuracy and throughput of single-cell proteomics begin with efficient and 
 
 &nbsp;
 
-# Sample preparation for single-cell proteomics
+# Presentations on sample preparation
 
 Recorded video presentations and tutorials are available from this [YouTube playlist](https://www.youtube.com/playlist?list=PLHLRxq8iKFsKQWxfn4uZppIwyhpYrY0Fd) with a collection of lectures and tutorials in sample preparation for single-cell proteomics by mass spectrometry.
 
